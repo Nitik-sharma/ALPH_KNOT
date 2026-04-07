@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import MegaMenu from "./MegaMenu";
+import { useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "Who we help", type: null },
@@ -12,6 +13,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const navigate=useNavigate()
   const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeMenu, setActiveMenu] = useState(null);
@@ -98,6 +100,7 @@ const Navbar = () => {
           </button>
 
           <motion.button
+            onClick={() => navigate("/hire-talent")}
             whileHover={{
               scale: 1.02,
               boxShadow: "0 0 20px rgba(201, 164, 92, 0.2)",
@@ -239,7 +242,10 @@ const Navbar = () => {
                 Book a Call
               </button>
 
-              <button className="bg-[#C9A45C] text-black py-2 rounded-full font-medium">
+              <button
+                className="bg-[#C9A45C] text-black py-2 rounded-full font-medium"
+                onClick={() => navigate("/hire-talent")}
+              >
                 Hire Talent
               </button>
             </div>
