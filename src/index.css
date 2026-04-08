@@ -4,40 +4,37 @@
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
-  
-  --color-gold-50: #fdfaf3;
-  --color-gold-100: #f9f1de;
-  --color-gold-200: #f1e0b9;
-  --color-gold-300: #e5c88a;
-  --color-gold-400: #d7aa5a;
-  --color-gold-500: #c9a45c; /* User's gold */
-  --color-gold-600: #b8934f;
-  --color-gold-700: #9a7842;
-  --color-gold-800: #7d623a;
-  --color-gold-900: #665133;
-  
-  --color-dark-950: #0b0b0f;
-  --color-dark-900: #121217;
-  --color-dark-800: #1a1a21;
+
+  /* BRAND COLORS */
+  --color-primary: #1F2E4F;   /* Dark Blue */
+  --color-secondary: #3FA7B3; /* Teal */
+  --color-accent: #C9A45C;    /* Gold */
+
+  /* GOLD SCALE (keep) */
+  --color-gold-500: #c9a45c;
+
+  /* LIGHT UI COLORS */
+  --color-light-bg: #ffffff;
+  --color-light-soft: #f8f9fb;
+  --color-border: rgba(31, 46, 79, 0.1);
 }
 
 @layer base {
   body {
-    @apply bg-dark-950 text-white font-sans antialiased;
+    @apply bg-white text-[#1F2E4F] font-sans antialiased;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+    @apply font-display text-[#1F2E4F];
   }
 }
-
 /* Custom Utilities */
 @layer utilities {
   .glass {
-    @apply bg-dark-950/80 backdrop-blur-xl border-b border-gold-500/10;
-  }
+  @apply bg-white/80 backdrop-blur-xl border-b border-[rgba(31,46,79,0.1)];
+}
   
-  .text-glow {
-    text-shadow: 0 0 20px rgba(201, 164, 92, 0.3);
-  }
+ .text-glow {
+  text-shadow: 0 0 20px rgba(201, 164, 92, 0.25);
+}
 }
