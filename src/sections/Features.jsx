@@ -22,20 +22,48 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-32 bg-[#0B0B0F]/50">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-        {data.map((item, i) => (
-          <motion.div
-            key={i}
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 20 }}
-            className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-[#C9A45C]/30"
-          >
-            <item.icon className="text-[#C9A45C] mb-4" />
-            <h3 className="text-white text-xl mb-2">{item.title}</h3>
-            <p className="text-white/50">{item.desc}</p>
-          </motion.div>
-        ))}
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* 🔥 HEADING */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E4F]">
+            Why Choose <span className="text-[#C9A45C]">Alph Knot</span>
+          </h2>
+          <p className="text-[#1F2E4F]/60 mt-3 max-w-xl mx-auto">
+            Built for ambitious businesses that need speed, quality, and
+            reliability.
+          </p>
+        </div>
+
+        {/* 🔥 CARDS */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {data.map((item, i) => (
+            <motion.div
+              key={i}
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              transition={{ delay: i * 0.2 }}
+              whileHover={{ y: -6 }}
+              className="p-8 rounded-2xl bg-white border border-[#1F2E4F]/10 shadow-sm hover:shadow-lg transition"
+            >
+              {/* ICON */}
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#C9A45C]/10 mb-5">
+                <item.icon className="text-[#C9A45C]" size={22} />
+              </div>
+
+              {/* TITLE */}
+              <h3 className="text-[#1F2E4F] text-xl font-semibold mb-2">
+                {item.title}
+              </h3>
+
+              {/* DESC */}
+              <p className="text-[#1F2E4F]/60">{item.desc}</p>
+
+              {/* HOVER LINE */}
+              <div className="mt-4 h-[2px] w-0 bg-[#3FA7B3] group-hover:w-full transition-all duration-300"></div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
