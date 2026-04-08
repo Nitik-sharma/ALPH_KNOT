@@ -1,6 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Orbit from "../components/ui/Orbit";
+import PremiumHero from "../components/ui/PremiumHero";
+import ScreenPopOnly from "../components/ui/ScreenPopOnly";
+import PremiumHeroOrbit from "./PremiumHeroOrbit";
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
 const line2 = "Ambitious CEOs and Scaling Businesses".split(" ");
@@ -113,7 +117,7 @@ const Hero = () => {
 
           {/* 🔥 RIGHT SIDE (EMPTY FOR GRAPHICS) */}
           <div className="hidden lg:flex items-center justify-center">
-            {/* Future Graphics Here */}
+          <PremiumHeroOrbit/>
           </div>
         </div>
       </div>
