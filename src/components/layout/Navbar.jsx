@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import MegaMenu from "./MegaMenu";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/Logo.png";
+import logo from "../../assets/images/logo.png";
 
 const navLinks = [
   { name: "Who we help", type: null, path: "/who-we-help" },
