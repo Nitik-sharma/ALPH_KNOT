@@ -1,34 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import Orbit from "../components/ui/Orbit";
-import PremiumHero from "../components/ui/PremiumHero";
-import ScreenPopOnly from "../components/ui/ScreenPopOnly";
-import PremiumHeroOrbit from "./PremiumHeroOrbit";
+
+import HeroVedio from '../assets/videos/Alphknot Theme.mp4'
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
 const line2 = "Ambitious CEOs and Scaling Businesses".split(" ");
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center pt-28 bg-white p-6">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
-        {/* 2 COLUMN LAYOUT */}
+    <section className="relative min-h-screen flex items-center pt-28 overflow-hidden">
+      {/* 🎬 BACKGROUND VIDEO */}
+      <video
+        src={HeroVedio}
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* 🔥 DARK OVERLAY (IMPORTANT FOR TEXT VISIBILITY) */}
+      <div className="absolute inset-0  " />
+
+      {/* 🔥 CONTENT */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* 🔥 LEFT CONTENT */}
           <div>
-            {/* BRAND */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-6 text-[#C9A45C] font-semibold tracking-widest"
-            >
-              ALPH KNOT
-            </motion.div>
-
-            {/* 🔥 HEADING */}
+            {/* HEADING */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#1F2E4F] leading-tight mb-6 max-w-2xl">
-              {/* LINE 1 */}
               <div>
                 {line1.map((word, i) => (
                   <motion.span
@@ -43,7 +44,6 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* LINE 2 */}
               <div className="mt-1">
                 {line2.map((word, i) => (
                   <motion.span
@@ -65,7 +65,7 @@ const Hero = () => {
               </div>
             </h1>
 
-            {/* 🔥 SUBHEADING (UPDATED) */}
+            {/* SUBTEXT */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Hero = () => {
               the complexity of hiring.
             </motion.p>
 
-            {/* 🔥 HIGHLIGHT LINE */}
+            {/* TAGLINE */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ const Hero = () => {
               No delays. Just execution.
             </motion.p>
 
-            {/* 🔥 CTA */}
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,7 +103,6 @@ const Hero = () => {
                 className="bg-[#C9A45C] text-white px-7 py-3 rounded-lg font-semibold flex items-center gap-2"
               >
                 Book a Call
-                <ArrowRight size={18} />
               </motion.button>
 
               <motion.button
@@ -115,10 +114,8 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* 🔥 RIGHT SIDE (EMPTY FOR GRAPHICS) */}
-          <div className="hidden lg:flex items-center justify-center">
-          <PremiumHeroOrbit/>
-          </div>
+          {/* RIGHT SIDE EMPTY */}
+          <div />
         </div>
       </div>
     </section>

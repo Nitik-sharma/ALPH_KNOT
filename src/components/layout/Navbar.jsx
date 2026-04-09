@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import MegaMenu from "./MegaMenu";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.png";
+import logo from "../../assets/images/Logo.png";
 
 const navLinks = [
   { name: "Who we help", type: null, path: "/who-we-help" },
@@ -47,7 +47,7 @@ const Navbar = () => {
             alt="Alph Knot - Global Talent & Business Solutions"
             title="Alph Knot"
             loading="eager"
-            className="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-20 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
 
