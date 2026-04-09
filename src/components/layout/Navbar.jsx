@@ -47,7 +47,7 @@ const Navbar = () => {
             alt="Alph Knot - Global Talent & Business Solutions"
             title="Alph Knot"
             loading="eager"
-            className="h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+            className="h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
 
