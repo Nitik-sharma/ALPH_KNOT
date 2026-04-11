@@ -26,7 +26,7 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* 🔥 HEADING */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1F2E4F]">
+          <h2 className="text-3xl md:text-4xl font-serif text-[#1F2E4F]">
             Why Choose <span className="text-[#C9A45C]">Alph Knot</span>
           </h2>
           <p className="text-[#1F2E4F]/60 mt-3 max-w-xl mx-auto">

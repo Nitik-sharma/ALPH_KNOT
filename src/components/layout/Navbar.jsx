@@ -32,10 +32,10 @@ const Navbar = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
         scrolled
           ? "bg-white/80 backdrop-blur-xl py-3 shadow-lg border-b border-[rgba(31,46,79,0.08)]"
-          : "bg-white py-5"
+          : "bg-white py-3"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto  flex items-center justify-between">
         {/* ✅ SEO LOGO */}
         <Link
           to="/"
@@ -107,7 +107,7 @@ const Navbar = () => {
             onClick={() => navigate("/hire-talent")}
             className="bg-[#C9A45C] text-white px-7 py-2.5 rounded-full text-sm font-semibold hover:opacity-90"
           >
-            Hire Talent
+            Hire Alph Knot
           </motion.button>
         </motion.div>
 
