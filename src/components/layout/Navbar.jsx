@@ -93,8 +93,9 @@ const Navbar = () => {
         {/* ✅ CTA */}
         <motion.div className="hidden lg:flex items-center gap-6">
           <Link
-            to="/contact"
+            to="/book-call"
             className="text-[#1F2E4F]/70 hover:text-[#3FA7B3] text-sm font-medium flex items-center gap-1 group"
+           
           >
             Book a Call
             <ArrowUpRight
@@ -137,7 +138,7 @@ const Navbar = () => {
               ))}
 
               <Link
-                to="/contact"
+                to="/book-call"
                 className="text-[#1F2E4F] border border-[#C9A45C] py-2 rounded-full text-center hover:bg-[#C9A45C] hover:text-white"
               >
                 Book a Call

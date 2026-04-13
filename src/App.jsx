@@ -3,6 +3,8 @@ import Footer from "./components/layout/Footer";
 import Home from "./pages/Home";
 import HireTalent from "./pages/HireTalent";
 import { Routes, Route } from "react-router-dom";
+import BookCall from "./pages/BookCall";
+import HowWeWork from "./pages/HowWeWork";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/hire-talent" element={<HireTalent />} />
+        <Route path="/book-call" element={<BookCall />} />
+        <Route path="/how-it-works" element={<HowWeWork />} />
       </Routes>
 
       <Footer />
