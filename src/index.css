@@ -38,3 +38,17 @@
   text-shadow: 0 0 20px rgba(201, 164, 92, 0.25);
 }
 }
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

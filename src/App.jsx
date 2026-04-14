@@ -5,6 +5,8 @@ import HireTalent from "./pages/HireTalent";
 import { Routes, Route } from "react-router-dom";
 import BookCall from "./pages/BookCall";
 import HowWeWork from "./pages/HowWeWork";
+import Services from "./pages/Services";
+import WhoWeHelp from "./pages/WhoWeHelp";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/hire-talent" element={<HireTalent />} />
         <Route path="/book-call" element={<BookCall />} />
         <Route path="/how-it-works" element={<HowWeWork />} />
+        <Route path={"/services"} element={<Services />} />
+        <Route path={"/who-we-help"} element={<WhoWeHelp/> } />
       </Routes>
 
       <Footer />
