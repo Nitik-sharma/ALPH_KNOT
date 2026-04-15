@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import HeroVedio from "../assets/videos/Alphknot Theme.mp4";
+import FinalHero from '../assets/videos/Final Hero.mp4'
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
 const line2 = "Ambitious CEOs and Scaling Businesses".split(" ");
@@ -10,7 +11,7 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-start pt-28 overflow-hidden">
       {/* 🎬 BACKGROUND VIDEO */}
       <video
-        src={HeroVedio}
+        src={FinalHero}
         autoPlay
         loop
         muted
@@ -22,7 +23,7 @@ const Hero = () => {
       <div className="relative w-full px-2">
         <div className="max-w-xl">
           {/* ✅ HEADING (ANIMATED WORD BY WORD) */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#1F2E4F] leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#C9A45C] leading-tight">
             {/* LINE 1 */}
             <div>
               {line1.map((word, i) => (
