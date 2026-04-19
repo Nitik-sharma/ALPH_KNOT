@@ -10,7 +10,6 @@ const BookCall = () => {
     return new Date().toISOString().split("T")[0];
   };
 
-  // 🔥 Generate Slots (9 AM → 5 PM)
   const generateSlots = (date) => {
     const slots = [];
     const now = new Date();
@@ -20,10 +19,7 @@ const BookCall = () => {
       const slotTime = new Date(selected);
       slotTime.setHours(hour, 0, 0);
 
-      // ✅ Remove past time if today
-      if (date === getTodayDate() && slotTime <= now) {
-        continue;
-      }
+      if (date === getTodayDate() && slotTime <= now) continue;
 
       const formatted = slotTime.toLocaleTimeString([], {
         hour: "2-digit",
@@ -36,33 +32,29 @@ const BookCall = () => {
     return slots;
   };
 
-  // 🔥 Auto-select date
   useEffect(() => {
     const now = new Date();
     const currentHour = now.getHours();
-
     let defaultDate = new Date();
 
     if (currentHour >= 17) {
       defaultDate.setDate(defaultDate.getDate() + 1);
     }
 
-    const formatted = defaultDate.toISOString().split("T")[0];
-    setSelectedDate(formatted);
+    setSelectedDate(defaultDate.toISOString().split("T")[0]);
   }, []);
 
-  // 🔥 Update slots when date changes
   useEffect(() => {
     if (selectedDate) {
       setTimeSlots(generateSlots(selectedDate));
-      setSelectedTime(null); // reset time on date change
+      setSelectedTime(null);
     }
   }, [selectedDate]);
 
   return (
-    <section className="relative min-h-screen bg-white flex items-center justify-center px-6 py-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-[#F5F8FF] to-white"></div>
+    <section className="relative min-h-screen bg-white flex items-center justify-center px-6 py-20">
+      {/* BG */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-[#F8FAFC] to-white"></div>
 
       <div className="max-w-7xl w-full grid lg:grid-cols-2 gap-12 items-center">
         {/* LEFT */}
@@ -70,7 +62,7 @@ const BookCall = () => {
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
         >
-          <h1 className="text-4xl font-sans text-[#1F2E4F] mb-4">
+          <h1 className="text-4xl md:text-5xl text-[#1F2E4F] tracking-tight mb-4">
             Book a Strategy Call
           </h1>
 
@@ -92,7 +84,10 @@ const BookCall = () => {
             value={selectedDate}
             min={getTodayDate()}
             onChange={(e) => setSelectedDate(e.target.value)}
-            className="w-full mt-2 mb-4 p-3 rounded-lg border text-black border-[#1F2E4F]/20 focus:border-[#4A90E2] outline-none"
+            className="w-full mt-2 mb-4 p-3 rounded-lg border text-black 
+            border-[#1F2E4F]/20 
+            focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
+            outline-none transition"
           />
 
           {/* TIME */}
@@ -105,11 +100,11 @@ const BookCall = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedTime(time)}
-                  className={`p-2 rounded-lg border transition 
+                  className={`p-2 rounded-lg border transition text-sm
                     ${
                       selectedTime === time
-                        ? "bg-[#1F2E4F] text-white border-[#1F2E4F]"
-                        : "bg-white text-[#1F2E4F] border-[#1F2E4F]/20 hover:border-[#4A90E2] hover:text-[#4A90E2]"
+                        ? "bg-[#C9A45C] text-white border-[#C9A45C]"
+                        : "bg-white text-[#1F2E4F] border-[#1F2E4F]/20 hover:border-[#C9A45C] hover:text-[#C9A45C]"
                     }
                   `}
                 >
@@ -127,20 +122,23 @@ const BookCall = () => {
           <input
             type="text"
             placeholder="Your Name"
-            className="w-full mb-3 p-3 text-black rounded-lg border border-[#1F2E4F]/20"
+            className="w-full mb-3 p-3 text-black rounded-lg border border-[#1F2E4F]/20 
+            focus:border-[#C9A45C] outline-none"
           />
 
           <input
             type="email"
             placeholder="Your Email"
-            className="w-full mb-4 p-3 text-black rounded-lg border border-[#1F2E4F]/20"
+            className="w-full mb-4 p-3 text-black rounded-lg border border-[#1F2E4F]/20 
+            focus:border-[#C9A45C] outline-none"
           />
 
           {/* CTA */}
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="w-full bg-[#C9A45C] text-black font-semibold py-3 rounded-lg"
+            className="w-full bg-[#C9A45C] text-white font-medium tracking-wide py-3 rounded-lg 
+            hover:shadow-[0px_8px_25px_rgba(201,164,92,0.3)] transition"
           >
             Confirm Booking
           </motion.button>

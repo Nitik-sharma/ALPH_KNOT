@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Globe, Settings, TrendingUp } from "lucide-react";
-import globe from "../assets/images/Background.png";
 import {
+  Globe,
+  Settings,
+  TrendingUp,
   Clock,
   Brain,
- 
   UserCheck,
   DollarSign,
   Globe2,
 } from "lucide-react";
-
+import globe from "../assets/images/Background.png";
 
 const data = [
   {
@@ -38,31 +38,22 @@ const WhyChooseUs = () => {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center text-3xl md:text-5xl font-serif text-[#1F2E4F] mb-16"
+          className="text-center text-3xl md:text-5xl text-[#1F2E4F] tracking-tight mb-16"
         >
           Built for Scale. Designed for{" "}
           <span className="text-[#C9A45C]">Speed.</span>
         </motion.h2>
 
         {/* 🔥 CARDS */}
-        <div className="grid md:grid-cols-3 gap-8 mb-28 ">
+        <div className="grid md:grid-cols-3 gap-8 mb-28">
           {data.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.2 }}
-              whileHover={{
-                y: -8,
-                backgroundColor: "#ffffff",
-                borderColor: "#C9A45C",
-                boxShadow: "0px 20px 40px rgba(0,0,0,0.08)",
-              }}
-              transition={{
-                duration: 0.35,
-                ease: "easeOut",
-              }}
-              className="group p-8 rounded-2xl border border-[#1F2E4F]/10 bg-white"
+              whileHover={{ y: -8 }}
+              className="group p-8 rounded-2xl border border-[#1F2E4F]/10 bg-white hover:border-[#C9A45C] hover:shadow-xl transition-all duration-300"
             >
               {/* ICON */}
               <div className="mb-6 w-14 h-14 flex items-center justify-center rounded-xl bg-[#C9A45C]/10">
@@ -70,51 +61,46 @@ const WhyChooseUs = () => {
               </div>
 
               {/* TITLE */}
-              <h3 className="text-xl font-serif text-[#1F2E4F] mb-3">
+              <h3 className="text-xl text-[#1F2E4F] font-semibold mb-3">
                 {item.title}
               </h3>
 
               {/* DESC */}
-              <p className="text-[#1F2E4F]/60 text-sm font-serif leading-relaxed">
+              <p className="text-[#1F2E4F]/60 text-sm leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* 🔥 SECOND SECTION */}
-
-        <section className="relative py-32">
-          {/* 🔥 BACKGROUND IMAGE */}
+        {/* 🔥 DARK SECTION */}
+        <section className="relative py-32 overflow-hidden">
+          {/* BACKGROUND */}
           <div className="absolute inset-0">
             <img
               src={globe}
               alt="Global network"
               className="w-full h-full object-cover"
             />
-
-            {/* 🔥 DARK OVERLAY */}
-            <div className="absolute inset-0 bg-[#0B0B0F]/70" />
-
-            {/* 🔥 GOLD LIGHT GLOW */}
+            <div className="absolute inset-0 bg-[#0B0B0F]/80" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#C9A45C]/20 via-transparent to-transparent" />
           </div>
 
-          {/* 🔥 CONTENT */}
+          {/* CONTENT */}
           <div className="relative max-w-7xl mx-auto px-6">
             {/* HEADING */}
             <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              className="text-center text-3xl md:text-5xl font-sans text-white mb-16"
+              className="text-center text-3xl md:text-5xl text-white tracking-tight mb-16"
             >
               Why Global Leaders Choose{" "}
               <span className="text-[#C9A45C]">Alph Knot</span>
             </motion.h2>
 
-            {/* 🔥 GRID */}
+            {/* GRID */}
             <div className="grid lg:grid-cols-2 gap-16">
-              {/* LEFT CONTENT */}
+              {/* LEFT */}
               <div className="space-y-10">
                 {[
                   {
@@ -140,25 +126,24 @@ const WhyChooseUs = () => {
                     transition={{ delay: i * 0.2 }}
                     className="flex items-start gap-4"
                   >
-                    {/* ICON */}
                     <div className="mt-1 text-xl">{item.icon}</div>
 
-                    {/* TEXT */}
                     <div>
-                      <h4 className="text-white text-lg font-serif">
+                      <h4 className="text-white text-lg font-semibold">
                         {item.title}
                       </h4>
-                      <p className="text-white/70 font-sans text-sm">{item.desc}</p>
+                      <p className="text-white/70 text-sm leading-relaxed">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              {/* RIGHT SIDE EMPTY (IMAGE IS BG NOW) */}
               <div />
             </div>
 
-            {/* 🔥 BOTTOM 3 CARDS */}
+            {/* BOTTOM */}
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               {[
                 {
@@ -184,10 +169,8 @@ const WhyChooseUs = () => {
                   transition={{ delay: i * 0.2 }}
                   className="flex items-start gap-4"
                 >
-                  {/* ICON */}
                   <div className="mt-1 text-xl">{item.icon}</div>
 
-                  {/* TEXT */}
                   <div>
                     <h4 className="text-white font-semibold">{item.title}</h4>
                     <p className="text-white/70 text-sm leading-relaxed">

@@ -28,7 +28,7 @@ const HireTalent = () => {
   };
 
   return (
-    <section className="min-h-screen bg-white flex items-center justify-center px-6 py-20 font-sans">
+    <section className="min-h-screen bg-white flex items-center justify-center px-6 py-20">
       {/* 🔥 CARD */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -48,56 +48,67 @@ const HireTalent = () => {
           <div className="w-3 h-3 border border-gray-300 rounded-full"></div>
         </div>
 
-        {/* HEADING */}
-        <h2 className="text-2xl font-semibold text-[#1F2E4F] text-center mb-2">
+        {/* HEADING (Poppins auto) */}
+        <h2 className="text-2xl font-semibold text-[#1F2E4F] text-center mb-2 tracking-tight">
           Ready to scale your team?
         </h2>
 
-        <p className="text-gray-500 text-center mb-8 text-sm">
+        <p className="text-[#1F2E4F]/60 text-center mb-8 text-sm">
           Tell us about your needs and we’ll match you with top-tier talent.
         </p>
 
         {/* FORM */}
         {step === 1 && (
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* FIRST NAME */}
             <div>
-              <label className="text-gray-600 text-sm">First Name</label>
+              <label className="text-[#1F2E4F]/70 text-sm">First Name</label>
               <input
                 type="text"
                 name="firstName"
                 value={data.firstName}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg px-3 text-gray-900 py-2 focus:border-[#4A90E2] outline-none"
+                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
+                outline-none transition"
               />
             </div>
 
+            {/* LAST NAME */}
             <div>
-              <label className="text-gray-600 text-sm">Last Name</label>
+              <label className="text-[#1F2E4F]/70 text-sm">Last Name</label>
               <input
                 type="text"
                 name="lastName"
                 value={data.lastName}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg px-3 text-gray-900 py-2 focus:border-[#4A90E2] outline-none"
+                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
+                outline-none transition"
               />
             </div>
 
+            {/* EMAIL */}
             <div>
-              <label className="text-gray-600 text-sm">Email Address</label>
+              <label className="text-[#1F2E4F]/70 text-sm">Email Address</label>
               <input
                 type="email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg text-gray-900 px-3 py-2 focus:border-[#4A90E2] outline-none"
+                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
+                outline-none transition"
               />
             </div>
 
+            {/* BUTTON */}
             <motion.button
               type="submit"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="w-full bg-[#C9A45C] text-black py-3 rounded-lg font-semibold mt-4"
+              className="w-full bg-[#C9A45C] text-white py-3 rounded-lg font-medium tracking-wide mt-4 
+              hover:shadow-[0px_8px_25px_rgba(201,164,92,0.3)] transition"
             >
               Next Step →
             </motion.button>
@@ -111,7 +122,7 @@ const HireTalent = () => {
             animate={{ opacity: 1, x: 0 }}
             className="text-center space-y-6"
           >
-            <h2 className="text-xl md:text-2xl font-semibold text-[#1F2E4F]">
+            <h2 className="text-xl md:text-2xl font-semibold text-[#1F2E4F] tracking-tight">
               Before we get started,
               <br /> we just need to know what brings you here
             </h2>
@@ -119,14 +130,15 @@ const HireTalent = () => {
             <div className="border border-[#C9A45C]/40 rounded-xl p-6 space-y-4">
               <motion.button
                 whileHover={{ scale: 1.03 }}
-                className="w-full bg-[#C9A45C] text-black py-3 rounded-lg font-sans"
+                className="w-full bg-[#C9A45C] text-white py-3 rounded-lg font-medium tracking-wide"
               >
                 I WANT TO HIRE Alph Knot
               </motion.button>
 
               <motion.button
                 whileHover={{ scale: 1.03 }}
-                className="w-full border border-[#1F2E4F]/20 text-[#1F2E4F] py-3 rounded-lg font-sans hover:bg-[#F5F8FF]"
+                className="w-full border border-[#1F2E4F]/20 text-[#1F2E4F] py-3 rounded-lg font-medium 
+                hover:border-[#C9A45C] hover:text-[#C9A45C] transition"
               >
                 I WANT Alph Knot TO HIRE ME
               </motion.button>

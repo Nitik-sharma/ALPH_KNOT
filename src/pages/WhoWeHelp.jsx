@@ -45,7 +45,7 @@ const clients = [
 
 const WhoWeHelp = () => {
   return (
-    <div className="bg-white font-sans">
+    <div className="bg-white">
       {/* 🔥 SEO */}
       <Helmet>
         <title>
@@ -59,11 +59,11 @@ const WhoWeHelp = () => {
 
       {/* 🔥 HERO */}
       <section className="pt-32 pb-20 text-center max-w-4xl mx-auto px-6">
-        <h1 className="text-4xl md:text-5xl text-[#1F2E4F] mb-6 font-sans">
+        <h1 className="text-4xl md:text-5xl text-[#1F2E4F] tracking-tight mb-6">
           U.S.-Based Support Partner for Ambitious CEOs & Scaling Businesses
         </h1>
 
-        <p className="text-[#1F2E4F]/60 text-lg font-sans">
+        <p className="text-[#1F2E4F]/60 text-lg">
           We partner with startups, SaaS companies, and growing businesses to
           deliver reliable outsourcing, virtual assistant, and operational
           support — helping you scale faster with less friction.
@@ -72,7 +72,7 @@ const WhoWeHelp = () => {
 
       {/* 🔥 SECTION TITLE */}
       <section className="max-w-7xl mx-auto px-6 pb-24">
-        <h2 className="text-3xl text-[#1F2E4F] mb-12 text-center font-sans">
+        <h2 className="text-3xl text-[#1F2E4F] text-center mb-12 tracking-tight">
           Who We Help
         </h2>
 
@@ -82,21 +82,29 @@ const WhoWeHelp = () => {
             <motion.div
               key={index}
               whileHover={{ y: -6 }}
-              className="group p-6 border border-transparent rounded-2xl hover:shadow-xl hover:border-[#C9A45C] hover:bg-[#1F2E4F]/5 transition-all duration-300"
+              className="group p-6 border border-[#1F2E4F]/10 rounded-2xl bg-white 
+              hover:border-[#C9A45C] 
+              hover:shadow-[0px_10px_30px_rgba(201,164,92,0.25)] 
+              transition-all duration-300"
             >
               {/* ICON */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#3FA7B3]/10 group-hover:bg-[#C9A45C]/20 transition mb-4">
+              <div
+                className="w-12 h-12 flex items-center justify-center rounded-xl 
+              bg-[#C9A45C]/10 group-hover:bg-[#C9A45C]/20 transition mb-4"
+              >
                 <client.icon
                   size={22}
-                  className="text-[#3FA7B3] group-hover:text-[#C9A45C]"
+                  className="text-[#C9A45C] group-hover:scale-110 transition"
                 />
               </div>
 
               {/* TITLE */}
-              <h3 className="text-[#1F2E4F] mb-2 font-sans">{client.title}</h3>
+              <h3 className="text-[#1F2E4F] font-semibold mb-2 group-hover:text-[#C9A45C] transition">
+                {client.title}
+              </h3>
 
               {/* DESC */}
-              <p className="text-sm text-[#1F2E4F]/60 font-sans leading-relaxed">
+              <p className="text-sm text-[#1F2E4F]/60 leading-relaxed">
                 {client.desc}
               </p>
             </motion.div>
@@ -106,15 +114,18 @@ const WhoWeHelp = () => {
 
       {/* 🔥 CTA */}
       <section className="bg-[#1F2E4F] text-white py-20 text-center">
-        <h2 className="text-3xl mb-4 font-sans">
+        <h2 className="text-3xl mb-4 tracking-tight">
           Ready to Scale with the Right Support?
         </h2>
 
-        <p className="text-white/70 mb-8 font-sans">
+        <p className="text-white/70 mb-8">
           Let’s build your remote team and streamline your operations.
         </p>
 
-        <button className="bg-[#C9A45C] px-8 py-3 rounded-full font-sans hover:opacity-90">
+        <button
+          className="bg-[#C9A45C] px-8 py-3 rounded-full font-medium tracking-wide 
+        hover:shadow-[0px_8px_25px_rgba(201,164,92,0.3)] transition"
+        >
           Book a Call
         </button>
       </section>

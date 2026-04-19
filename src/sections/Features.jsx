@@ -7,17 +7,17 @@ const Features = () => {
     {
       icon: Shield,
       title: "Vetted Excellence",
-      desc: "Rigorous screening process.",
+      desc: "Rigorous screening process to ensure only top-tier professionals.",
     },
     {
       icon: Users,
       title: "Elite Network",
-      desc: "Access top 1% talent.",
+      desc: "Access the top 1% of global talent across industries.",
     },
     {
       icon: Zap,
       title: "Rapid Deployment",
-      desc: "Hire 60% faster.",
+      desc: "Scale your team 60% faster with our streamlined hiring.",
     },
   ];
 
@@ -26,10 +26,11 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* 🔥 HEADING */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif text-[#1F2E4F]">
+          <h2 className="text-3xl md:text-4xl text-[#1F2E4F] tracking-tight">
             Why Choose <span className="text-[#C9A45C]">Alph Knot</span>
           </h2>
-          <p className="text-[#1F2E4F]/60 mt-3 max-w-xl mx-auto">
+
+          <p className="text-[#1F2E4F]/60 mt-4 max-w-xl mx-auto text-lg leading-relaxed">
             Built for ambitious businesses that need speed, quality, and
             reliability.
           </p>
@@ -44,7 +45,7 @@ const Features = () => {
               initial={{ opacity: 0, y: 30 }}
               transition={{ delay: i * 0.2 }}
               whileHover={{ y: -6 }}
-              className="p-8 rounded-2xl bg-white border border-[#1F2E4F]/10 shadow-sm hover:shadow-lg transition"
+              className="group p-8 rounded-2xl bg-white border border-[#1F2E4F]/10 shadow-sm hover:shadow-xl hover:border-[#C9A45C] transition-all duration-300  hover:shadow-[0px_10px_30px_rgba(201,164,92,0.25)]"
             >
               {/* ICON */}
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#C9A45C]/10 mb-5">
@@ -57,10 +58,7 @@ const Features = () => {
               </h3>
 
               {/* DESC */}
-              <p className="text-[#1F2E4F]/60">{item.desc}</p>
-
-              {/* HOVER LINE */}
-              <div className="mt-4 h-[2px] w-0 bg-[#3FA7B3] group-hover:w-full transition-all duration-300"></div>
+              <p className="text-[#1F2E4F]/60 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
