@@ -168,9 +168,9 @@ const Services = () => {
   return (
     <div
       className="bg-[#F7F4EF] min-h-screen"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      {/* ── HERO with background image ── */}
+      {/* ── HERO ── */}
       <section
         className="relative pt-40 pb-28 text-center overflow-hidden"
         style={{
@@ -179,9 +179,7 @@ const Services = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-[#1F2E4F]/80" />
-        {/* Gold grain overlay */}
         <div
           className="absolute inset-0 opacity-10"
           style={{
@@ -206,7 +204,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Scalable Talent Solutions <br />
             <span className="text-[#C9A45C]">for Modern Businesses</span>
@@ -217,6 +215,7 @@ const Services = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white/60 text-lg max-w-2xl mx-auto"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
             From executive support to AI-driven operations — we help you scale
             faster, reduce costs, and operate with precision.
@@ -240,38 +239,33 @@ const Services = () => {
                 key={index}
                 variants={cardAnim}
                 onClick={() => navigate(service.path)}
-                className="group cursor-pointer rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-400 border border-[#e8e2d8]"
+                className="group cursor-pointer rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-2xl border border-[#e8e2d8]"
                 style={{
                   transition: "box-shadow 0.3s ease, transform 0.3s ease",
                 }}
                 whileHover={{ y: -6 }}
               >
-                {/* ── Card Image ── */}
+                {/* Image */}
                 <div className="relative h-44 overflow-hidden">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Gradient overlay on image */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E4F]/70 via-transparent to-transparent" />
-
-                  {/* Icon badge */}
                   <div className="absolute bottom-3 left-4 w-9 h-9 rounded-xl bg-[#C9A45C] flex items-center justify-center shadow-lg">
                     <Icon size={16} color="white" strokeWidth={1.8} />
                   </div>
-
-                  {/* Arrow */}
                   <div className="absolute bottom-3 right-4 w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <ArrowUpRight size={14} color="white" />
                   </div>
                 </div>
 
-                {/* ── Card Body ── */}
+                {/* Body */}
                 <div className="p-5">
                   <h3
-                    className="text-[#1F2E4F] font-semibold text-[15px] mb-3 group-hover:text-[#C9A45C] transition-colors duration-200"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
+                    className="text-[#1F2E4F] font-semibold text-[18px] mb-3 group-hover:text-[#C9A45C] transition-colors duration-200"
+                    style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {service.title}
                   </h3>
@@ -280,7 +274,8 @@ const Services = () => {
                     {service.items.map((item, i) => (
                       <div
                         key={i}
-                        className="flex items-center gap-2 text-[12.5px] text-[#1F2E4F]/60"
+                        className="flex items-center gap-2 text-[14px] text-[#1F2E4F]/60"
+                        style={{ fontFamily: "'Inter', sans-serif" }}
                       >
                         <div className="w-1.5 h-1.5 rounded-full bg-[#C9A45C] flex-shrink-0" />
                         {item}
@@ -288,9 +283,8 @@ const Services = () => {
                     ))}
                   </div>
 
-                  {/* Learn more link */}
                   <div
-                    className="mt-4 flex items-center gap-1 text-[11px] font-semibold text-[#C9A45C] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    className="mt-4 flex items-center gap-1 text-[12px] font-semibold text-[#C9A45C] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Learn more <ArrowUpRight size={11} />
@@ -321,11 +315,14 @@ const Services = () => {
           </p>
           <h2
             className="text-3xl md:text-4xl font-bold text-white mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Ready to Scale Your Business?
           </h2>
-          <p className="text-white/60 mb-8 text-[15px]">
+          <p
+            className="text-white/60 mb-8 text-[15px]"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
             Hire top global talent and start executing faster today.
           </p>
           <button

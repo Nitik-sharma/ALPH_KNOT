@@ -1,108 +1,203 @@
 import React from "react";
 import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+
+const socialIcons = [
+  { icon: FaInstagram, link: "https://www.instagram.com/alphknot" },
+  { icon: FaFacebook, link: "https://www.facebook.com/alphknot" },
+  { icon: FaTwitter, link: "https://www.x.com/alphknot" },
+  { icon: FaLinkedin, link: "https://www.linkedin.com/company/alph-knot" },
+];
+
+const services = [
+  { title: "Executive & Business Support", path: "/services/executive-support" },
+  { title: "Customer Operations", path: "/services/customer-operations" },
+  { title: "Back Office & Operations", path: "/services/back-office" },
+  { title: "Finance & Accounting", path: "/services/finance" },
+  { title: "Human Resource Services", path: "/services/hr" },
+  { title: "Digital Growth", path: "/services/digital-growth" },
+  { title: "Tech & Development", path: "/services/tech" },
+  { title: "Knowledge Process", path: "/services/kpo" },
+  { title: "Industry Specific Solutions", path: "/services/industry-solutions" },
+  { title: "Custom Workforce", path: "/services/custom" },
+  { title: "Team Pods", path: "/services/team-pods" },
+];
+
+const company = [
+  { title: "About Us", path: "/about" },
+  { title: "Who We Help", path: "/who-we-help" },
+  { title: "How It Works", path: "/how-it-works" },
+  { title: "Our Philosophy", path: "/philosophy" },
+  { title: "Careers", path: "/careers" },
+  { title: "Case Studies", path: "/case-studies" },
+  { title: "Contact", path: "/contact" },
+];
 
 const Footer = () => {
-  const socialIcons = [
-    { icon: FaInstagram, link: "https://www.instagram.com/alphknot" },
-    { icon: FaFacebook, link: "https://www.facebook.com/alphknot" },
-    { icon: FaTwitter, link: "https://www.x.com/alphknot" },
-    { icon: FaLinkedin, link: "https://www.linkedin.com/company/alph-knot" },
-  ];
-
   return (
-    <footer className="bg-white border-t border-[#1F2E4F]/10">
-      {/* 🔥 TOP CTA */}
-      <div className="max-w-7xl mx-auto px-6 py-16 border-b border-[#1F2E4F]/10">
+    <footer
+      className="bg-white border-t border-[#1F2E4F]/10"
+      style={{ fontFamily: "'Inter', sans-serif" }}
+    >
+      {/* ── TOP CTA ── */}
+      <div className="max-w-7xl mx-auto px-6 py-14 border-b border-[#1F2E4F]/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <h2 className="text-2xl md:text-3xl text-[#1F2E4F] text-center md:text-left tracking-tight">
-            Let’s build something{" "}
-            <span className="text-[#C9A45C]">great together</span>
-          </h2>
-
-          <button className="bg-[#C9A45C] text-white px-6 py-3 rounded-full font-medium tracking-wide hover:shadow-[0px_8px_25px_rgba(201,164,92,0.3)] transition">
+          <div>
+            <p
+              className="text-[#C9A45C] text-[10px] font-semibold tracking-[3px] uppercase mb-2"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Let's Work Together
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold text-[#1F2E4F]"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Let's build something{" "}
+              <span className="text-[#C9A45C]">great together</span>
+            </h2>
+          </div>
+          <button
+            className="flex-shrink-0 bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
             Get Started
           </button>
         </div>
       </div>
 
-      {/* 🔥 MAIN FOOTER */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-        {/* BRAND */}
-        <div>
-          <h2 className="text-xl text-[#1F2E4F] mb-4">Alph Knot</h2>
-          <p className="text-[#1F2E4F]/60 text-sm leading-relaxed">
-            Empowering enterprises with comprehensive services across design,
-            technology, and operations—built to scale, innovate, and lead.
-          </p>
-        </div>
+      {/* ── MAIN BODY ── */}
+      <div className="max-w-7xl mx-auto px-6 py-14">
 
-        {/* SERVICES */}
-        <div>
-          <h3 className="text-lg text-[#1F2E4F] mb-4">Services</h3>
-          <ul className="space-y-2 text-[#1F2E4F]/60 text-sm">
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              UI/UX Design
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              Web Development
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              App Development
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              Branding
-            </li>
-          </ul>
-        </div>
+        {/* ── ROW 1: Brand + Company + Social ── */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-[#1F2E4F]/8">
 
-        {/* COMPANY */}
-        <div>
-          <h3 className="text-lg text-[#1F2E4F] mb-4">Company</h3>
-          <ul className="space-y-2 text-[#1F2E4F]/60 text-sm">
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              About Us
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              Careers
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              Blog
-            </li>
-            <li className="hover:text-[#C9A45C] cursor-pointer transition">
-              Contact
-            </li>
-          </ul>
-        </div>
-
-        {/* SOCIAL */}
-        <div>
-          <h3 className="text-lg text-[#1F2E4F] mb-4">Follow Us</h3>
-
-          <div className="flex gap-4">
-            {socialIcons.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <a
-                  key={i}
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-3 bg-[#1F2E4F]/5 rounded-full hover:bg-[#C9A45C] transition"
-                >
-                  <Icon
-                    size={18}
-                    className="text-[#1F2E4F] group-hover:text-white transition"
-                  />
-                </a>
-              );
-            })}
+          {/* Brand */}
+          <div>
+            <h2
+              className="text-xl font-bold text-[#1F2E4F] mb-3"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Alph<span className="text-[#C9A45C]">Knot</span>
+            </h2>
+            <p className="text-[#1F2E4F]/55 text-[13.5px] leading-relaxed max-w-xs">
+              Empowering startups, SMBs, and enterprises with world-class outsourced talent — built to scale, operate, and lead.
+            </p>
           </div>
+
+          {/* Company */}
+          <div>
+            <h3
+              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-5"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Company
+            </h3>
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2.5">
+              {company.map((c, i) => (
+                <li key={i}>
+                  <NavLink
+                    to={c.path}
+                    className={({ isActive }) =>
+                      `text-[13px] transition-colors duration-150 ${
+                        isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                      }`
+                    }
+                  >
+                    {c.title}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Follow Us */}
+          <div>
+            <h3
+              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-5"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Follow Us
+            </h3>
+            <div className="flex gap-3 mb-6">
+              {socialIcons.map((item, i) => {
+                const Icon = item.icon;
+                return (
+                  
+                  <a   key={i}
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group w-9 h-9 rounded-full border border-[#1F2E4F]/15 flex items-center justify-center hover:bg-[#C9A45C] hover:border-[#C9A45C] transition-all duration-200"
+                  >
+                    <Icon
+                      size={15}
+                      className="text-[#1F2E4F]/50 group-hover:text-white transition"
+                    />
+                  </a>
+                );
+              })}
+            </div>
+            <p className="text-[12px] text-[#1F2E4F]/40 leading-relaxed max-w-[200px]">
+              Follow us for updates on outsourcing, ops, and remote teams.
+            </p>
+          </div>
+        </div>
+
+        {/* ── ROW 2: Services (full width) ── */}
+        <div className="pt-12">
+          <h3
+            className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-6"
+            style={{ fontFamily: "'Poppins', sans-serif" }}
+          >
+            Our Services
+          </h3>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3">
+            {services.map((s, i) => (
+              <li key={i}>
+                <NavLink
+                  to={s.path}
+                  className={({ isActive }) =>
+                    `text-[13px] transition-colors duration-150 flex items-center gap-2 group ${
+                      isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                    }`
+                  }
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A45C]/40 group-hover:bg-[#C9A45C] flex-shrink-0 transition-colors" />
+                  {s.title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 
-      {/* 🔥 BOTTOM */}
-      <div className="text-center text-[#1F2E4F]/50 text-sm py-6 border-t border-[#1F2E4F]/10">
-        © {new Date().getFullYear()} Alph Knot. All rights reserved.
+      {/* ── BOTTOM BAR ── */}
+      <div className="border-t border-[#1F2E4F]/10">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-[#1F2E4F]/40 text-[12px]">
+            © {new Date().getFullYear()} Alph Knot. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            {[
+              { label: "Privacy Policy", path: "/privacy-policy" },
+              { label: "Terms of Service", path: "/terms-of-service" },
+              { label: "Cookie Policy", path: "/cookie-policy" },
+            ].map((l, i) => (
+              <NavLink
+                key={i}
+                to={l.path}
+                className={({ isActive }) =>
+                  `text-[12px] transition-colors ${
+                    isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/40 hover:text-[#C9A45C]"
+                  }`
+                }
+              >
+                {l.label}
+              </NavLink>
+            ))}
+          </div>
+        </div>
       </div>
     </footer>
   );
