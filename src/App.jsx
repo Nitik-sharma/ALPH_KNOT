@@ -16,6 +16,8 @@ import HumanResources from "./services/HumanResources"
 import Knowledge from "./services/Knowledge"
 import TechDevelopment from "./services/TechDevelopment"
 import Bank from './services/Bank'
+import IndustrySolutions from "./services/IndustrySolutions";
+import TeamPods from "./services/TeamPods";
 
 function App() {
   return (
@@ -39,8 +41,12 @@ function App() {
         <Route path="/services/hr" element={<HumanResources />} />
         <Route path="/services/tech" element={<TechDevelopment />} />
         <Route path="/services/kpo" element={<Knowledge />} />
-        <Route path="/services/iss" element={<Knowledge />} />
-        <Route path="/services/custom" element={ <CustomWorkFlow/>} />
+        <Route
+          path="/services/industry-solutions"
+          element={<IndustrySolutions />}
+        />
+        <Route path="/services/custom" element={<CustomWorkFlow />} />
+        <Route path="/services/team-pods" element={ <TeamPods/>} />
       </Routes>
 
       <Footer />

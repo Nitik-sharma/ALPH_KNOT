@@ -81,6 +81,19 @@ const Navbar = () => {
                   )}
                 </Link>
                 <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#C9A45C] group-hover:w-full transition-all duration-300" />
+
+                {/* ✅ Dropdown renders HERE — inside the relative div */}
+                <AnimatePresence>
+                  {activeMenu === link.type && link.type && (
+                    <div
+                      onMouseEnter={() => setActiveMenu(link.type)}
+                      onMouseLeave={() => setActiveMenu(null)}
+                      className="absolute top-[calc(100%+11px)] left-0 z-50"
+                    >
+                      <MegaMenu type={link.type} />
+                    </div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
           </nav>
@@ -112,26 +125,12 @@ const Navbar = () => {
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
-
-        {/* Desktop Mega Menu */}
-        <AnimatePresence>
-          {activeMenu && (
-            <div
-              onMouseEnter={() => setActiveMenu(activeMenu)}
-              onMouseLeave={() => setActiveMenu(null)}
-              className="absolute top-[60px] left-0 w-full z-50"
-            >
-              <MegaMenu type={activeMenu} />
-            </div>
-          )}
-        </AnimatePresence>
       </header>
 
-      {/* ── Mobile Drawer — rendered OUTSIDE header so it doesn't affect layout ── */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -141,7 +140,6 @@ const Navbar = () => {
               style={{ top: "60px" }}
             />
 
-            {/* Drawer */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -150,7 +148,6 @@ const Navbar = () => {
               className="fixed right-0 bottom-0 z-50 w-[78vw] max-w-[300px] bg-white lg:hidden flex flex-col overflow-y-auto"
               style={{ top: "60px" }}
             >
-              {/* Links */}
               <nav className="flex flex-col px-4 pt-5 pb-2 gap-0.5 flex-1">
                 {navLinks.map((link, index) => (
                   <div key={index}>
@@ -203,7 +200,6 @@ const Navbar = () => {
                 ))}
               </nav>
 
-              {/* Bottom CTAs */}
               <div className="px-4 py-5 border-t border-gray-100 flex flex-col gap-2.5">
                 <Link
                   to="/book-call"

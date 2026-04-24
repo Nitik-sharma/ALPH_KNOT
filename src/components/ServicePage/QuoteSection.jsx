@@ -1,6 +1,6 @@
 import React from "react";
 
-function QuoteSection({ quote, author, sub }) {
+function  QuoteSection({ quote, author, sub }) {
   return (
     <section
       className="w-full bg-[#EEF4FB] py-16 px-6 sm:px-10 lg:px-16"

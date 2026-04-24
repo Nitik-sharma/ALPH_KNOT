@@ -12,6 +12,7 @@ import {
   HelpCircle,
   Radio,
   Building2,
+  User,
 } from "lucide-react";
 
 const services = [
@@ -49,12 +50,10 @@ const services = [
     path: "/services/industry-solutions",
   },
   { title: "Custom Workforce", icon: Radio, path: "/services/custom" },
+  { title: "Team Pods", icon: User, path: "/services/team-pods" },
 ];
 
 const about = [
-  { title: "Our People", icon: Users, path: "/about/people" },
-  { title: "Our Advantage", icon: TrendingUp, path: "/about/advantage" },
-  { title: "Awards", icon: HelpCircle, path: "/about/awards" },
   { title: "About Us", icon: Briefcase, path: "/about" },
 ];
 
@@ -101,58 +100,36 @@ const MegaMenu = ({ type, mobile = false }) => {
   }
 
   // ── DESKTOP: 3-column grid ──
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -10 }}
-      transition={{ duration: 0.18, ease: "easeOut" }}
-      className="w-full bg-white border border-t-0 border-[#e2eaf4] rounded-b-2xl px-8 pt-7 pb-6 shadow-xl"
-      style={{ fontFamily: "'Inter', sans-serif" }}
-    >
-      {/* Label */}
-      <p
-        className="text-[9px] font-semibold tracking-[2px] text-[#C9A45C] uppercase mb-5"
-        style={{ fontFamily: "'Poppins', sans-serif" }}
+ 
+// ── DESKTOP: clean dropdown list ──
+return (
+  <motion.div
+    initial={{ opacity: 0, y: -6 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -6 }}
+    transition={{ duration: 0.15, ease: "easeOut" }}
+    className="bg-white border border-[#e8e8e8] rounded-xl shadow-lg py-2"
+    style={{ 
+      fontFamily: "'Inter', sans-serif", 
+      width: "250px",
+      position: "absolute",
+      top: "100%",
+      left: 0,
+      zIndex: 50,
+    }}
+  >
+    {items.map((s, i) => (
+      <Link
+        key={i}
+        to={s.path}
+        className="block px-4 py-2.5 text-[13px] text-[#1a1a1a] hover:bg-[#f7f3ee] hover:text-[#C9A45C] transition-colors duration-150"
+        style={{ fontFamily: "'Inter', sans-serif" }}
       >
-        Browse by {type === "services" ? "service" : "section"}
-      </p>
+        {s.title}
+      </Link>
+    ))}
+  </motion.div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-3 gap-x-2 gap-y-0.5">
-        {items.map((s, i) => {
-          const Icon = s.icon;
-          return (
-            <Link
-              key={i}
-              to={s.path}
-              className="flex items-center gap-3 px-2.5 py-2.5 rounded-lg group"
-            >
-              <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ background: "rgba(201,164,92,0.09)" }}
-              >
-                <Icon size={15} color="#C9A45C" strokeWidth={1.8} />
-              </div>
-              <span className="text-[13px] text-[#0b1c35] font-normal group-hover:text-[#C9A45C] transition-colors duration-150">
-                {s.title}
-              </span>
-            </Link>
-          );
-        })}
-      </div>
-
-      {/* Footer */}
-      <div className="border-t border-[#edf2f8] mt-5 pt-4 flex items-center justify-end">
-        <button
-          onClick={() => navigate(type === "services" ? "/services" : "/about")}
-          className="text-[11px] font-semibold text-white bg-[#C9A45C] rounded-full px-5 py-[7px] hover:opacity-90 transition-opacity"
-          style={{ fontFamily: "'Poppins', sans-serif" }}
-        >
-          View All {type === "services" ? "Services" : ""}
-        </button>
-      </div>
-    </motion.div>
   );
 };
 

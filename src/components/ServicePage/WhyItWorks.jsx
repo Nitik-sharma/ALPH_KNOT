@@ -11,7 +11,7 @@ function WhyItWorks({ heading, subtext, points, stats }) {
         <div className="flex items-center justify-center gap-3 mb-5">
           <span className="w-8 h-px bg-[#C9A45C]" />
           <span
-            className="text-[10px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
+            className="text-[16px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Why It Works

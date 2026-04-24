@@ -29,7 +29,7 @@ function HeroSection({ eyebrow, image, heading, body, stats }) {
           <div className="flex items-center gap-3 m-7">
             <span className="w-6 h-px bg-[#C9A45C]" />
             <span
-              className="text-[10px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
+              className="text-[16px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {eyebrow}

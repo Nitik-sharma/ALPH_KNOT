@@ -11,7 +11,7 @@ function WhatWeProvide({ heading, subtext, services }) {
         <div className="flex items-center justify-center gap-3 mb-4">
           <span className="w-6 h-px bg-[#C9A45C]" />
           <span
-            className="text-[10px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
+            className="text-[16px] font-semibold text-[#C9A45C] tracking-[3px] uppercase"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             What We Provide
