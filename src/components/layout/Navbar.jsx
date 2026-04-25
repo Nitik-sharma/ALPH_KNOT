@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Services", type: "services", path: "/services" },
   { name: "How it works", type: null, path: "/how-it-works" },
   { name: "Our philosophy", type: null, path: "/philosophy" },
-  { name: "Who We Are", type: "about", path: "/about" },
+  { name: "Who We Are", type: null, path: "/about" },
 ];
 
 const Navbar = () => {
@@ -88,7 +88,7 @@ const Navbar = () => {
                     <div
                       onMouseEnter={() => setActiveMenu(link.type)}
                       onMouseLeave={() => setActiveMenu(null)}
-                      className="absolute top-[calc(100%+11px)] left-0 z-50"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
                     >
                       <MegaMenu type={link.type} />
                     </div>

@@ -18,6 +18,7 @@ import TechDevelopment from "./services/TechDevelopment"
 import Bank from './services/Bank'
 import IndustrySolutions from "./services/IndustrySolutions";
 import TeamPods from "./services/TeamPods";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/how-it-works" element={<HowWeWork />} />
         <Route path={"/services"} element={<Services />} />
         <Route path={"/who-we-help"} element={<WhoWeHelp />} />
+        <Route path={"/about"} element={<About/> } />
         <Route path="/services/executive-support" element={<Excecutive />} />
         <Route path="/services/customer-operations" element={<Customer />} />
 
@@ -46,7 +48,7 @@ function App() {
           element={<IndustrySolutions />}
         />
         <Route path="/services/custom" element={<CustomWorkFlow />} />
-        <Route path="/services/team-pods" element={ <TeamPods/>} />
+        <Route path="/services/team-pods" element={<TeamPods />} />
       </Routes>
 
       <Footer />

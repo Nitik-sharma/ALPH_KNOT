@@ -53,9 +53,7 @@ const services = [
   { title: "Team Pods", icon: User, path: "/services/team-pods" },
 ];
 
-const about = [
-  { title: "About Us", icon: Briefcase, path: "/about" },
-];
+
 
 const MegaMenu = ({ type, mobile = false }) => {
   const navigate = useNavigate();
@@ -89,7 +87,7 @@ const MegaMenu = ({ type, mobile = false }) => {
 
         {/* Mobile view all */}
         <button
-          onClick={() => navigate(type === "services" ? "/services" : "/about")}
+          onClick={() => navigate(type === "services" ? "/services" : "")}
           className="mx-3 mt-2 mb-1 py-2 rounded-full bg-[#C9A45C] text-white text-[12px] font-semibold hover:opacity-90 transition-opacity"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
@@ -109,13 +107,9 @@ return (
     exit={{ opacity: 0, y: -6 }}
     transition={{ duration: 0.15, ease: "easeOut" }}
     className="bg-white border border-[#e8e8e8] rounded-xl shadow-lg py-2"
-    style={{ 
-      fontFamily: "'Inter', sans-serif", 
+    style={{
+      fontFamily: "'Inter', sans-serif",
       width: "250px",
-      position: "absolute",
-      top: "100%",
-      left: 0,
-      zIndex: 50,
     }}
   >
     {items.map((s, i) => (
@@ -129,8 +123,7 @@ return (
       </Link>
     ))}
   </motion.div>
-
-  );
+);
 };
 
 export default MegaMenu;
