@@ -19,6 +19,9 @@ import Bank from './services/Bank'
 import IndustrySolutions from "./services/IndustrySolutions";
 import TeamPods from "./services/TeamPods";
 import About from "./pages/About";
+import AlphKnotContact from "./pages/Alphknotcontact";
+import HireTalentForm from "./pages/Hiretalentform";
+import ApplyForm from "./pages/Applyform";
 
 function App() {
   return (
@@ -33,9 +36,12 @@ function App() {
         <Route path="/how-it-works" element={<HowWeWork />} />
         <Route path={"/services"} element={<Services />} />
         <Route path={"/who-we-help"} element={<WhoWeHelp />} />
-        <Route path={"/about"} element={<About/> } />
+        <Route path={"/about"} element={<About />} />
+        <Route path="/contact-us" element={<AlphKnotContact/> } />
         <Route path="/services/executive-support" element={<Excecutive />} />
         <Route path="/services/customer-operations" element={<Customer />} />
+        <Route path="/hire-bussiness" element={<HireTalentForm />} />
+        <Route path="/apply-job" element={ <ApplyForm/>} />
 
         <Route path="/services/back-office" element={<Bank />} />
         <Route path="/services/finance" element={<Finance />} />

@@ -88,7 +88,7 @@ const Navbar = () => {
                     <div
                       onMouseEnter={() => setActiveMenu(link.type)}
                       onMouseLeave={() => setActiveMenu(null)}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-2 z-50"
+                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 z-[60]"
                     >
                       <MegaMenu type={link.type} />
                     </div>

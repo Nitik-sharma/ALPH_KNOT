@@ -57,21 +57,21 @@ const Footer = () => {
               <span className="text-[#C9A45C]">great together</span>
             </h2>
           </div>
-          <button
-            className="flex-shrink-0 bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Get Started
-          </button>
+          <NavLink to={"/contact-us"}>
+            <button
+              className="flex-shrink-0 bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
+            >
+              Get Started
+            </button>
+          </NavLink>
         </div>
       </div>
 
       {/* ── MAIN BODY ── */}
       <div className="max-w-7xl mx-auto px-6 py-14">
-
         {/* ── ROW 1: Brand + Company + Social ── */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-[#1F2E4F]/8">
-
           {/* Brand */}
           <div>
             <h2
@@ -81,7 +81,8 @@ const Footer = () => {
               Alph<span className="text-[#C9A45C]">Knot</span>
             </h2>
             <p className="text-[#1F2E4F]/55 text-[13.5px] leading-relaxed max-w-xs">
-              Empowering startups, SMBs, and enterprises with world-class outsourced talent — built to scale, operate, and lead.
+              Empowering startups, SMBs, and enterprises with world-class
+              outsourced talent — built to scale, operate, and lead.
             </p>
           </div>
 
@@ -100,7 +101,9 @@ const Footer = () => {
                     to={c.path}
                     className={({ isActive }) =>
                       `text-[13px] transition-colors duration-150 ${
-                        isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                        isActive
+                          ? "text-[#C9A45C]"
+                          : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
                       }`
                     }
                   >
@@ -123,8 +126,8 @@ const Footer = () => {
               {socialIcons.map((item, i) => {
                 const Icon = item.icon;
                 return (
-                  
-                  <a   key={i}
+                  <a
+                    key={i}
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -159,7 +162,9 @@ const Footer = () => {
                   to={s.path}
                   className={({ isActive }) =>
                     `text-[13px] transition-colors duration-150 flex items-center gap-2 group ${
-                      isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                      isActive
+                        ? "text-[#C9A45C]"
+                        : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
                     }`
                   }
                 >
@@ -189,7 +194,9 @@ const Footer = () => {
                 to={l.path}
                 className={({ isActive }) =>
                   `text-[12px] transition-colors ${
-                    isActive ? "text-[#C9A45C]" : "text-[#1F2E4F]/40 hover:text-[#C9A45C]"
+                    isActive
+                      ? "text-[#C9A45C]"
+                      : "text-[#1F2E4F]/40 hover:text-[#C9A45C]"
                   }`
                 }
               >

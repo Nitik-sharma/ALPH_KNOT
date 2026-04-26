@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 const HireTalent = () => {
   const [step, setStep] = useState(1);
@@ -62,13 +63,13 @@ const HireTalent = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* FIRST NAME */}
             <div>
-              <label className="text-[#1F2E4F]/70 text-sm">First Name</label>
+              <label className="text-gray-900 text-sm">First Name</label>
               <input
                 type="text"
                 name="firstName"
                 value={data.firstName}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                className="w-full mt-2 border text-gray-900 border-gray-300 rounded-lg px-3 py-2 
                 focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
                 outline-none transition"
               />
@@ -76,13 +77,13 @@ const HireTalent = () => {
 
             {/* LAST NAME */}
             <div>
-              <label className="text-[#1F2E4F]/70 text-sm">Last Name</label>
+              <label className="text-gray-900 text-sm">Last Name</label>
               <input
                 type="text"
                 name="lastName"
                 value={data.lastName}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                className="w-full mt-2 text-gray-900 border border-gray-300 rounded-lg px-3 py-2 
                 focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
                 outline-none transition"
               />
@@ -90,13 +91,13 @@ const HireTalent = () => {
 
             {/* EMAIL */}
             <div>
-              <label className="text-[#1F2E4F]/70 text-sm">Email Address</label>
+              <label className="text-gray-900 text-sm">Email Address</label>
               <input
                 type="email"
                 name="email"
                 value={data.email}
                 onChange={handleChange}
-                className="w-full mt-2 border border-gray-300 rounded-lg px-3 py-2 
+                className="w-full mt-2 border text-gray-900 border-gray-300 rounded-lg px-3 py-2 
                 focus:border-[#C9A45C] focus:ring-1 focus:ring-[#C9A45C]/30 
                 outline-none transition"
               />
@@ -120,27 +121,36 @@ const HireTalent = () => {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="text-center space-y-6"
+            className="text-center space-y-6 font-inter"
           >
-            <h2 className="text-xl md:text-2xl font-semibold text-[#1F2E4F] tracking-tight">
+            {/* Heading */}
+            <h2 className="text-xl md:text-2xl font-poppins font-semibold text-[#1F2E4F] tracking-tight leading-snug">
               Before we get started,
               <br /> we just need to know what brings you here
             </h2>
 
+            {/* Card */}
             <div className="border border-[#C9A45C]/40 rounded-xl p-6 space-y-4">
+              {/* Button 1 */}
               <motion.button
                 whileHover={{ scale: 1.03 }}
-                className="w-full bg-[#C9A45C] text-white py-3 rounded-lg font-medium tracking-wide"
+                className="w-full bg-[#C9A45C] text-white py-3 rounded-lg font-medium tracking-wide font-inter"
               >
-                I WANT TO HIRE Alph Knot
+                <NavLink to={"/hire-bussiness"}>
+                  I WANT TO HIRE Alph Knot
+                </NavLink>
               </motion.button>
 
+              {/* Button 2 */}
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 className="w-full border border-[#1F2E4F]/20 text-[#1F2E4F] py-3 rounded-lg font-medium 
-                hover:border-[#C9A45C] hover:text-[#C9A45C] transition"
+      hover:border-[#C9A45C] hover:text-[#C9A45C] transition font-inter"
               >
-                I WANT Alph Knot TO HIRE ME
+                <NavLink to={"/apply-job"}>
+                  {" "}
+                  I WANT Alph Knot TO HIRE ME
+                </NavLink>
               </motion.button>
             </div>
           </motion.div>

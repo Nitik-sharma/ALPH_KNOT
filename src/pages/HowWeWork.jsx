@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
 const steps = [
@@ -275,7 +275,7 @@ const HowWeWork = () => {
               className="bg-[#C9A45C] text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Book a Free Call
+              <NavLink to={"/book-call"}> Book a Free Call</NavLink>
             </button>
             <button
               onClick={() => navigate("/services")}

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function HeroSection({ eyebrow, image, heading, body, stats }) {
   return (
@@ -66,13 +67,13 @@ function HeroSection({ eyebrow, image, heading, body, stats }) {
               className="text-[12.5px] font-semibold bg-[#C9A45C] text-white rounded-full px-7 py-3 hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Book a Free Call
+              <NavLink to={"/book-call"}> Book a Free Call</NavLink>
             </button>
             <button
               className="text-[12.5px] font-medium text-white/65 border border-white/20 rounded-full px-7 py-3 hover:border-[#C9A45C] hover:text-[#C9A45C] transition-colors duration-200"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Explore Services →
+              <NavLink to={"/services"}> Explore Services →</NavLink>
             </button>
           </div>
         </div>

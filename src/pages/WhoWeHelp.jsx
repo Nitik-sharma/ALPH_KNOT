@@ -159,7 +159,7 @@ const WhoWeHelp = () => {
             className="flex flex-wrap justify-center gap-3"
           >
             <button
-              onClick={() => navigate("/hire-talent")}
+              onClick={() => navigate("/contact-us")}
               className="bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >

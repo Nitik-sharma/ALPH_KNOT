@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 
 /* ─────────────────────────────
    DESIGN TOKENS
@@ -356,10 +357,7 @@ function Hero() {
         <div className="ak-grid-2" style={{ alignItems: "center" }}>
           {/* LEFT — copy */}
           <div>
-            <Fade delay={0}>
-              <SectionLabel text="Global Workforce Partner" />
-            </Fade>
-
+           
             <Fade delay={0.07}>
               <h1 className="ak-h1">
                 Global Talent.{" "}
@@ -379,19 +377,7 @@ function Hero() {
               </p>
             </Fade>
 
-            <Fade delay={0.2}>
-              <div
-                style={{
-                  display: "flex",
-                  gap: 12,
-                  flexWrap: "wrap",
-                  marginBottom: 36,
-                }}
-              >
-                <button className="ak-btn-primary">Get Started</button>
-                <button className="ak-btn-outline">Book a Call</button>
-              </div>
-            </Fade>
+         
 
             <Fade delay={0.26}>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -1343,18 +1329,22 @@ function FinalCTA() {
                 flexWrap: "wrap",
               }}
             >
-              <button
-                className="ak-btn-primary"
-                style={{ padding: "13px 30px", fontSize: 14 }}
-              >
-                Get Started →
-              </button>
-              <button
-                className="ak-btn-outline"
-                style={{ padding: "13px 30px", fontSize: 14 }}
-              >
-                Book a Call
-              </button>
+              <NavLink to={"/contact-us"}>
+                <button
+                  className="ak-btn-primary"
+                  style={{ padding: "13px 30px", fontSize: 14 }}
+                >
+                  Get Started →
+                </button>
+              </NavLink>
+              <NavLink to={"/book-call"}>
+                <button
+                  className="ak-btn-outline"
+                  style={{ padding: "13px 30px", fontSize: 14 }}
+                >
+                  Book a Call
+                </button>
+              </NavLink>
             </div>
           </div>
         </Fade>
@@ -1372,11 +1362,12 @@ export default function AlphKnotAbout() {
       <style>{GLOBAL_CSS}</style>
       <Hero />
       <Mission />
-      <FounderQuote />
+      <Team />
+
       <BuiltToSolve />
       <WhyDifferent />
       <GlobalHuman />
-      <Team />
+      <FounderQuote />
       <CultureStats />
       <Results />
       <FinalCTA />
