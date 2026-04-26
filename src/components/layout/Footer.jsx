@@ -10,7 +10,10 @@ const socialIcons = [
 ];
 
 const services = [
-  { title: "Executive & Business Support", path: "/services/executive-support" },
+  {
+    title: "Executive & Business Support",
+    path: "/services/executive-support",
+  },
   { title: "Customer Operations", path: "/services/customer-operations" },
   { title: "Back Office & Operations", path: "/services/back-office" },
   { title: "Finance & Accounting", path: "/services/finance" },
@@ -18,7 +21,10 @@ const services = [
   { title: "Digital Growth", path: "/services/digital-growth" },
   { title: "Tech & Development", path: "/services/tech" },
   { title: "Knowledge Process", path: "/services/kpo" },
-  { title: "Industry Specific Solutions", path: "/services/industry-solutions" },
+  {
+    title: "Industry Specific Solutions",
+    path: "/services/industry-solutions",
+  },
   { title: "Custom Workforce", path: "/services/custom" },
   { title: "Team Pods", path: "/services/team-pods" },
 ];
@@ -30,7 +36,7 @@ const company = [
   { title: "Our Philosophy", path: "/philosophy" },
   { title: "Careers", path: "/careers" },
   { title: "Case Studies", path: "/case-studies" },
-  { title: "Contact", path: "/contact" },
+  { title: "Contact", path: "/contact-us" },
 ];
 
 const Footer = () => {

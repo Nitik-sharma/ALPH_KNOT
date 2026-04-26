@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FinalHero from "../assets/videos/Final Hero.mp4";
+import { NavLink } from "react-router-dom";
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
 const line2 = "Ambitious CEOs and Scaling Businesses".split(" ");
@@ -101,14 +102,14 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="bg-[#C9A45C] text-white px-7 py-3 rounded-full font-medium tracking-wide"
             >
-              Book a Call
+              <NavLink to={"/book-call"}> Book a Call</NavLink>
             </motion.button>
 
             <motion.button
               whileHover={{ x: 5 }}
               className="border border-[#1F2E4F]/20 text-[#1F2E4F] px-7 py-3 rounded-full font-medium hover:border-[#3FA7B3] hover:text-[#3FA7B3] transition"
             >
-              Explore Services
+              <NavLink to={"/services"}>Explore Services</NavLink>
             </motion.button>
           </motion.div>
         </div>
