@@ -22,6 +22,8 @@ import About from "./pages/About";
 import AlphKnotContact from "./pages/Alphknotcontact";
 import HireTalentForm from "./pages/Hiretalentform";
 import ApplyForm from "./pages/Applyform";
+import Philosophy from "./pages/Philosophy";
+import Careers from "./pages/Careers";
 
 function App() {
   return (
@@ -37,11 +39,13 @@ function App() {
         <Route path={"/services"} element={<Services />} />
         <Route path={"/who-we-help"} element={<WhoWeHelp />} />
         <Route path={"/about"} element={<About />} />
-        <Route path="/contact-us" element={<AlphKnotContact/> } />
+        <Route path="/contact-us" element={<AlphKnotContact />} />
         <Route path="/services/executive-support" element={<Excecutive />} />
         <Route path="/services/customer-operations" element={<Customer />} />
         <Route path="/hire-bussiness" element={<HireTalentForm />} />
-        <Route path="/apply-job" element={ <ApplyForm/>} />
+        <Route path="/apply-job" element={<ApplyForm />} />
+        <Route path="/philosophy" element={<Philosophy />} />
+        <Route path="/careers" element={<Careers/> } />
 
         <Route path="/services/back-office" element={<Bank />} />
         <Route path="/services/finance" element={<Finance />} />

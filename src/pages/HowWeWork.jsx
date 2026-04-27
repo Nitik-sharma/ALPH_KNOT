@@ -2,6 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
+import img1 from "../assets/images/work/discovery.avif";
+import img2 from "../assets/images/work/planing.avif";
+import img3 from "../assets/images/work/Talent.avif";
+import img4 from "../assets/images/work/onboarding.avif";
+import img5 from "../assets/images/work/Scale.avif";
+import bg1 from "../assets/images/work/bg1.avif";
+import bg2 from "../assets/images/work/bg2.avif";
 
 const steps = [
   {
@@ -14,7 +21,7 @@ const steps = [
       "Identify operational bottlenecks",
       "Define the right talent profile",
     ],
-    img: "https://images.unsplash.com/photo-1556745757-8d76bdb6984b?w=900&q=80",
+    img: img1,
   },
   {
     step: "02",
@@ -26,7 +33,7 @@ const steps = [
       "Clear KPIs & deliverables",
       "Transparent pricing structure",
     ],
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=80",
+    img: img2,
   },
   {
     step: "03",
@@ -38,7 +45,7 @@ const steps = [
       "Culture & timezone fit",
       "Roles across 11 service categories",
     ],
-    img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&q=80",
+    img: img3,
   },
   {
     step: "04",
@@ -50,19 +57,19 @@ const steps = [
       "Dedicated account manager",
       "Weekly performance check-ins",
     ],
-    img: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&q=80",
+    img: img4,
   },
   {
     step: "05",
     title: "Scale on Demand",
     subtitle: "Grow without friction",
-    desc: "As your business grows, your team grows with it. Add new roles, expand to new service areas, or restructure your pod  all without long-term lock-ins or hiring overhead.",
+    desc: "As your business grows, your team grows with it. Add new roles, expand to new service areas, or restructure your pod all without long-term lock-ins or hiring overhead.",
     bullets: [
       "No long-term contracts",
       "Add or swap roles anytime",
       "Access to 11 service verticals",
     ],
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80",
+    img: img5,
   },
 ];
 
@@ -70,12 +77,15 @@ const HowWeWork = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif" }} className="bg-[#F7F4EF]">
+    <div
+      style={{ fontFamily: "'Inter', sans-serif" }}
+      className="bg-[#F7F4EF] w-full overflow-x-hidden"
+    >
       {/* ── HERO ── */}
       <section
         className="relative pt-40 pb-32 text-center overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80')`,
+          backgroundImage: `url(${bg1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -121,11 +131,14 @@ const HowWeWork = () => {
       </section>
 
       {/* ── STEPS ── */}
-      <div className="flex flex-col">
+      <div className="flex flex-col overflow-hidden">
         {steps.map((step, index) => {
           const isEven = index % 2 === 0;
           return (
-            <div key={index} className="grid md:grid-cols-2 items-stretch">
+            <div
+              key={index}
+              className="grid md:grid-cols-2 items-stretch overflow-hidden"
+            >
               {/* Image */}
               <motion.div
                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
@@ -142,16 +155,12 @@ const HowWeWork = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E4F]/50 to-transparent" />
-
-                {/* Step number watermark */}
                 <div
                   className="absolute bottom-6 left-6 text-[80px] font-bold leading-none text-white/10 select-none"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   {step.step}
                 </div>
-
-                {/* Step pill */}
                 <div
                   className="absolute top-6 left-6 bg-[#C9A45C] text-white text-[11px] font-semibold px-3 py-1.5 rounded-full"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -166,7 +175,7 @@ const HowWeWork = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.65, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className={`flex items-center justify-center bg-white px-8 md:px-16 py-14 ${
+                className={`flex items-center justify-center bg-white px-8 md:px-16 py-14 overflow-hidden ${
                   !isEven ? "md:order-1" : ""
                 }`}
               >
@@ -177,21 +186,16 @@ const HowWeWork = () => {
                   >
                     {step.subtitle}
                   </p>
-
                   <h3
                     className="text-2xl md:text-3xl font-bold text-[#1F2E4F] mb-4 leading-snug"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {step.title}
                   </h3>
-
                   <div className="w-10 h-[2px] bg-[#C9A45C] mb-5" />
-
                   <p className="text-[#1F2E4F]/60 leading-relaxed text-[14.5px] mb-6">
                     {step.desc}
                   </p>
-
-                  {/* Bullets */}
                   <div className="flex flex-col gap-2.5">
                     {step.bullets.map((b, i) => (
                       <div key={i} className="flex items-center gap-2.5">
@@ -213,7 +217,7 @@ const HowWeWork = () => {
       </div>
 
       {/* ── TRUST STRIP ── */}
-      <section className="bg-white border-y border-[#e8e2d8] py-14">
+      <section className="bg-white border-y border-[#e8e2d8] py-14 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
@@ -246,7 +250,7 @@ const HowWeWork = () => {
       <section
         className="relative py-28 text-center overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80')`,
+          backgroundImage: `url(${bg2})`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -275,7 +279,7 @@ const HowWeWork = () => {
               className="bg-[#C9A45C] text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              <NavLink to={"/book-call"}> Book a Free Call</NavLink>
+              <NavLink to={"/book-call"}>Book a Free Call</NavLink>
             </button>
             <button
               onClick={() => navigate("/services")}
