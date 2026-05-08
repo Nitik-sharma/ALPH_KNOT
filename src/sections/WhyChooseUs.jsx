@@ -16,12 +16,12 @@ const data = [
   {
     icon: Globe,
     title: "Agile Global Talent",
-    desc: "We connect you with high-performing professionals who integrate seamlessly into your workflow — without delays of traditional hiring.",
+    desc: "We connect you with high-performing professionals who integrate seamlessly into your workflow without delays of traditional hiring.",
   },
   {
     icon: Settings,
     title: "Flexible Digital Support",
-    desc: "From operations to specialized roles, we provide support exactly when and how you need — no long-term commitments.",
+    desc: "From operations to specialized roles, we provide support exactly when and how you need  no long-term commitments.",
   },
   {
     icon: TrendingUp,
@@ -106,7 +106,7 @@ const WhyChooseUs = () => {
                 tag: "Execution",
                 num: "01 — Timing",
                 title: "Time-Zone Synced Execution",
-                desc: "Operate seamlessly with talent aligned to U.S. business hours — no delays, no gaps.",
+                desc: "Operate seamlessly with talent aligned to U.S. business hours no delays, no gaps.",
                 side: "left",
               },
               {
@@ -124,7 +124,7 @@ const WhyChooseUs = () => {
                 tag: "Growth",
                 num: "03 — Scale",
                 title: "Built for Scale",
-                desc: "From 1 hire to full execution teams — scale instantly based on your needs.",
+                desc: "From 1 hire to full execution teams scale instantly based on your needs.",
                 side: "left",
               },
               {

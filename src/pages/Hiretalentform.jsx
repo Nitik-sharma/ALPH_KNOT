@@ -202,7 +202,7 @@ export default function HireTalentForm() {
               {
                 icon: "⚡",
                 title: "Fast Response",
-                body: "Hear back within 4 business hours — guaranteed.",
+                body: "Hear back within 4 business hours  guaranteed.",
               },
               {
                 icon: "🎯",

@@ -73,7 +73,7 @@ const Hero = () => {
             className="mt-4 text-gray-200 text-lg leading-relaxed"
           >
             We help ambitious companies scale faster by providing global talent,
-            AI operations, and strategic business support — without the
+            AI operations, and strategic business support  without the
             complexity of hiring.
           </motion.p>
 

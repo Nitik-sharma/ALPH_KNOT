@@ -148,7 +148,7 @@ const WhoWeHelp = () => {
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             We partner with startups, SaaS companies, and growing businesses to
-            deliver reliable outsourcing and operational support — helping you
+            deliver reliable outsourcing and operational support  helping you
             scale faster with less friction.
           </motion.p>
 

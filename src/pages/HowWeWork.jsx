@@ -125,7 +125,7 @@ const HowWeWork = () => {
             className="text-white/60 text-lg max-w-2xl mx-auto"
           >
             A transparent, repeatable process built for busy founders, ops
-            leaders, and scaling teams who need results — not more overhead.
+            leaders, and scaling teams who need results  not more overhead.
           </motion.p>
         </div>
       </section>

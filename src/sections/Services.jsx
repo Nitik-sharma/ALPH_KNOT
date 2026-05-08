@@ -117,7 +117,7 @@ function ServiceCard({ service, navigate }) {
       {/* Body */}
       <div className="p-5 flex flex-col flex-1">
         <p className="text-[#C9A45C] text-[9px] font-black tracking-[1.5px] uppercase mb-2">
-          {service.num} — {service.tag}
+          {service.num}  {service.tag}
         </p>
         <h3 className="text-white font-bold text-[14px] leading-snug mb-2 group-hover:text-[#C9A45C] transition-colors duration-300">
           {service.title}

@@ -24,12 +24,13 @@ import HireTalentForm from "./pages/Hiretalentform";
 import ApplyForm from "./pages/Applyform";
 import Philosophy from "./pages/Philosophy";
 import Careers from "./pages/Careers";
+import ScrollToTop from "./components/common/ScrollToTop";
 
 function App() {
   return (
     <div className="min-h-screen bg-[#0B0B0F] text-white">
       <Navbar />
-
+<ScrollToTop/>
       {/* 🔥 ROUTES INSIDE LAYOUT */}
       <Routes>
         <Route path="/" element={<Home />} />

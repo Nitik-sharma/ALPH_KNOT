@@ -998,7 +998,7 @@ export default function ApplyForm() {
                   </div>
                   {/* Optional badge */}
                   <p className="font-inter text-[10.5px] text-[#B5BEC9]">
-                    Optional — but helps us understand your work better.
+                    Optional  but helps us understand your work better.
                   </p>
                 </div>
 

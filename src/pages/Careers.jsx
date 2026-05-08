@@ -28,7 +28,7 @@ const benefits = [
   },
   {
     title: "Flexible Work Environment",
-    desc: "Remote, hybrid, or onsite — work in a way that fits your productivity.",
+    desc: "Remote, hybrid, or onsite  work in a way that fits your productivity.",
   },
   {
     title: "Global Exposure",
@@ -40,7 +40,7 @@ const benefits = [
   },
   {
     title: "Balanced Performance Culture",
-    desc: "High standards without burnout — we value sustainable performance.",
+    desc: "High standards without burnout  we value sustainable performance.",
   },
 ];
 
@@ -232,7 +232,7 @@ const Careers = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white/60 text-base md:text-lg font-light leading-[1.8] max-w-2xl mx-auto mb-10"
           >
-            At Alph Knot, you don't just join a company — you step into real
+            At Alph Knot, you don't just join a company  you step into real
             impact. Work with global teams, solve meaningful problems, and grow
             faster than traditional career paths allow.
           </motion.p>
@@ -274,7 +274,7 @@ const Careers = () => {
             <div className="w-10 h-[2px] bg-[#C9A45C] mx-auto mb-5" />
             <p className="text-[#1F2E4F]/55 text-[15px] leading-[1.85] max-w-xl mx-auto font-light">
               Don't wait for the perfect job posting. Tell us who you are and
-              what you're great at — we'll match you to the right opportunity.
+              what you're great at  we'll match you to the right opportunity.
             </p>
           </motion.div>
 

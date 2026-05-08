@@ -217,7 +217,7 @@ const Services = () => {
             className="text-white/60 text-lg max-w-2xl mx-auto"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            From executive support to AI-driven operations — we help you scale
+            From executive support to AI-driven operations  we help you scale
             faster, reduce costs, and operate with precision.
           </motion.p>
         </div>

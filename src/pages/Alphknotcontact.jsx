@@ -382,7 +382,7 @@ function Hero() {
               }}
             >
               Tell us about your business and goals. Our team typically responds
-              within 4 business hours — no fluff, just a genuine conversation
+              within 4 business hours  no fluff, just a genuine conversation
               about how Alph Knot can help you scale.
             </p>
 
@@ -399,7 +399,7 @@ function Hero() {
                 { icon: "⚡", text: "Response within 4 business hours" },
                 {
                   icon: "🎯",
-                  text: "No sales pressure — just a real conversation",
+                  text: "No sales pressure  just a real conversation",
                 },
                 { icon: "🔒", text: "Your information stays private" },
               ].map((item) => (
@@ -1055,7 +1055,7 @@ const STEPS = [
     num: "04",
     icon: "🚀",
     title: "Launch & Scale",
-    body: "Your team is onboarded, briefed, and executing within days — not months.",
+    body: "Your team is onboarded, briefed, and executing within days  not months.",
   },
 ];
 
@@ -1539,7 +1539,7 @@ function FinalCTA() {
             >
               Stop searching, start scaling. Fill out the form above and our
               team will put together a tailored execution plan for your business
-              — no commitment required.
+               no commitment required.
             </p>
 
             <div

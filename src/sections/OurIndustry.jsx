@@ -7,68 +7,68 @@ const industries = [
   {
     id: 1,
     tag: "Technology",
-    label: "01 — Tech & SaaS",
+    label: "01  Tech & SaaS",
     title: "Technology & Software",
     desc: "Scale your tech ops with elite virtual assistants, SDRs, and developer support built for fast-moving SaaS companies.",
     image:
       "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=600&auto=format&fit=crop&q=80",
     services: ["Virtual Assistants", "Tech Support", "Sales Dev"],
-    slug: "/industries/technology",
+   
   },
   {
     id: 2,
     tag: "Healthcare",
-    label: "02 — Health & Wellness",
+    label: "02  Health & Wellness",
     title: "Healthcare & Medical",
     desc: "HIPAA-aligned remote staff handling patient coordination, admin operations, and billing support.",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&auto=format&fit=crop&q=80",
     services: ["Admin Support", "Bookkeeping", "Customer Care"],
-    slug: "/industries/healthcare",
+   
   },
   {
     id: 3,
     tag: "Finance",
-    label: "03 — Finance & Banking",
+    label: "03  Finance & Banking",
     title: "Finance & Fintech",
     desc: "Precision bookkeepers, accountants, and ops specialists who keep your financial workflows clean and compliant.",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=80",
     services: ["Bookkeeping", "Accounting", "Operations"],
-    slug: "/industries/finance",
+   
   },
   {
     id: 4,
     tag: "E-Commerce",
-    label: "04 — Retail & D2C",
+    label: "04  Retail & D2C",
     title: "E-Commerce & Retail",
-    desc: "Customer support teams, social media managers, and SDRs purpose-built for DTC and e-commerce brands.",
+    desc: "Customer support teams, social media managers, and SDRs purpose built for DTC and e-commerce brands.",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&auto=format&fit=crop&q=80",
     services: ["Customer Support", "Social Media", "Sales Dev"],
-    slug: "/industries/ecommerce",
+   
   },
   {
     id: 5,
     tag: "Agencies",
-    label: "05 — Marketing & Creative",
+    label: "05 Marketing & Creative",
     title: "Agencies & Consultancies",
-    desc: "White-label execution talent for agencies — from project managers to content creators — so you scale client work seamlessly.",
+    desc: "White-label execution talent for agencies — from project managers to content creators so you scale client work seamlessly.",
     image:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop&q=80",
     services: ["Project Mgmt", "Social Media", "VA Support"],
-    slug: "/industries/agencies",
+   
   },
   {
     id: 6,
     tag: "Real Estate",
-    label: "06 — Property & Realty",
+    label: "06  Property & Realty",
     title: "Real Estate & Property",
     desc: "Transaction coordinators, lead follow-up specialists, and admin support designed for high-volume real estate operations.",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&auto=format&fit=crop&q=80",
     services: ["Admin Support", "Customer Care", "Bookkeeping"],
-    slug: "/industries/real-estate",
+   
   },
 ];
 
@@ -86,7 +86,7 @@ function IndustryCard({ industry, index, navigate }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      onClick={() => navigate(industry.slug)}
+     
       className="bg-[#132035] border border-[#C9A45C]/15 rounded-2xl overflow-hidden cursor-pointer group transition-all duration-300 hover:-translate-y-2 hover:border-[#C9A45C]/50 flex flex-col"
     >
       {/* Image */}
@@ -133,17 +133,8 @@ function IndustryCard({ industry, index, navigate }) {
         </div>
 
         {/* Footer */}
-        <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/[0.06]">
-          <span className="text-[#C9A45C] text-[10px] font-black uppercase tracking-widest">
-            Explore
-          </span>
-          <div className="w-7 h-7 rounded-full border border-[#C9A45C]/30 flex items-center justify-center text-[#C9A45C] group-hover:bg-[#C9A45C] group-hover:border-[#C9A45C] transition-all duration-300">
-            <ArrowRight
-              size={12}
-              className="group-hover:text-[#0d1b2e] transition-colors duration-300"
-            />
-          </div>
-        </div>
+       
+       
       </div>
     </motion.div>
   );
@@ -174,7 +165,7 @@ function OurIndustry() {
             <span className="text-[#C9A45C]">Every Industry</span>
           </h2>
           <p className="text-white/45 text-base max-w-xl mx-auto leading-relaxed">
-            From fast-moving startups to Fortune 500 enterprises — our talent
+            From fast-moving startups to Fortune 500 enterprises  our talent
             solutions are built to scale with every sector that demands
             excellence.
           </p>
@@ -228,7 +219,7 @@ function OurIndustry() {
               Don't see your industry?
             </p>
             <h3 className="text-[#0d1b2e] text-xl font-black">
-              We work across all sectors — let's talk.
+              We work across all sectors  let's talk.
             </h3>
             <p className="text-[#0d1b2e]/60 text-sm mt-1">
               Our talent solutions adapt to any business model, anywhere.

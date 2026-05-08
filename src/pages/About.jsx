@@ -372,7 +372,7 @@ function Hero() {
                 style={{ maxWidth: 460, marginBottom: 32 }}
               >
                 Alph Knot helps businesses scale with global teams across
-                operations, finance, tech, and growth — so you can focus on what
+                operations, finance, tech, and growth  so you can focus on what
                 matters most.
               </p>
             </Fade>
@@ -488,7 +488,7 @@ function Mission() {
             <GoldBar center />
             <h2 className="ak-h2">Our Mission</h2>
             <p className="ak-body">
-              Most companies struggle not because of bad strategy — but
+              Most companies struggle not because of bad strategy  but
               execution gaps. The right talent in the wrong structure, or no
               structure at all. Alph Knot was built to close that gap:
               connecting businesses with pre-vetted global professionals
@@ -514,7 +514,7 @@ function Mission() {
             {
               icon: "📈",
               title: "Scalable Growth",
-              body: "Expand your team as fast as you grow — no friction, no delays.",
+              body: "Expand your team as fast as you grow  no friction, no delays.",
             },
           ].map((p, i) => (
             <Fade key={p.title} delay={i * 0.09}>
@@ -579,7 +579,7 @@ function FounderQuote() {
             >
               "Behind every successful business is a team that executes with
               clarity and consistency. Alph Knot gives companies more than
-              talent —
+              talent 
               <span style={{ color: C.gold }}> we deliver execution.</span>"
             </blockquote>
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
@@ -749,7 +749,7 @@ function BuiltToSolve() {
               misaligned teams cost companies more than they realize.
             </p>
             <p className="ak-body" style={{ marginBottom: 26 }}>
-              Alph Knot was designed to collapse that gap — connecting you with
+              Alph Knot was designed to collapse that gap  connecting you with
               professionals who don't just fill a seat, but integrate into your
               goals from day one.
             </p>
@@ -787,7 +787,7 @@ function BuiltToSolve() {
 const DIFFS = [
   {
     label: "Execution-first approach",
-    desc: "We don't just place talent — we build systems around them.",
+    desc: "We don't just place talent  we build systems around them.",
   },
   {
     label: "Pre-vetted talent",
@@ -799,7 +799,7 @@ const DIFFS = [
   },
   {
     label: "Flexible engagement",
-    desc: "Part-time, full-time, or project-based — you decide the model.",
+    desc: "Part-time, full-time, or project-based  you decide the model.",
   },
   {
     label: "Dedicated support",
@@ -825,7 +825,7 @@ function WhyDifferent() {
                 className="ak-body"
                 style={{ maxWidth: 380, marginBottom: 28 }}
               >
-                We've reimagined what a global staffing partner should be — less
+                We've reimagined what a global staffing partner should be  less
                 transactional, more transformational.
               </p>
               <div
@@ -908,11 +908,11 @@ function GlobalHuman() {
             <p className="ak-body" style={{ marginBottom: 14 }}>
               We operate across continents, but our relationships are built one
               person at a time. Every professional in our network is more than a
-              resume — they're a trusted collaborator.
+              resume  they're a trusted collaborator.
             </p>
             <p className="ak-body" style={{ marginBottom: 36 }}>
               Our account managers, talent leads, and operations team stay close
-              to both sides — ensuring the human thread never gets lost in the
+              to both sides  ensuring the human thread never gets lost in the
               scale.
             </p>
             {/* Stats row */}
@@ -1318,7 +1318,7 @@ function FinalCTA() {
               style={{ maxWidth: 440, margin: "0 auto 36px" }}
             >
               Join hundreds of companies that trust Alph Knot to power their
-              operations, growth, and execution — from day one.
+              operations, growth, and execution  from day one.
             </p>
 
             <div
