@@ -190,7 +190,7 @@ function Services() {
         <div
           className="flex gap-5 w-max"
           style={{
-            animation: "marquee-scroll 30s linear infinite",
+            animation: "marquee-scroll 260s linear infinite",
           }}
           onMouseEnter={(e) =>
             (e.currentTarget.style.animationPlayState = "paused")

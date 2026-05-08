@@ -1,260 +1,6 @@
-import { useRef, useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useRef, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
-/* ─────────────────────────────
-   DESIGN TOKENS
-───────────────────────────── */
-const C = {
-  dark: "#1F2E4F",
-  gold: "#C9A45C",
-  white: "#FFFFFF",
-  soft: "#F7F3EE",
-  border: "#E8E8E8",
-  muted: "#6B7280",
-};
-
-/* ─────────────────────────────
-   GLOBAL STYLES (injected once)
-───────────────────────────── */
-const GLOBAL_CSS = `
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap');
-
-  .ak-root *, .ak-root *::before, .ak-root *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  .ak-root {
-    font-family: 'Inter', sans-serif;
-    background: #fff;
-    color: #1A1A1A;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  /* ── layout helpers ── */
-  .ak-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ── section spacing ── */
-  .ak-section {
-    padding: 96px 0;
-  }
-  .ak-section-soft {
-    background: #F7F3EE;
-    padding: 96px 0;
-  }
-
-  /* ── typography ── */
-  .ak-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(201,164,92,0.12);
-    color: #C9A45C;
-    border: 1px solid rgba(201,164,92,0.28);
-    border-radius: 999px;
-    padding: 5px 14px;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    margin-bottom: 20px;
-  }
-  .ak-label-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #C9A45C;
-    display: inline-block;
-    flex-shrink: 0;
-  }
-
-  .ak-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.4rem);
-    font-weight: 600;
-    color: #1F2E4F;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    margin-bottom: 18px;
-  }
-
-  .ak-h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-    font-weight: 600;
-    color: #1F2E4F;
-    line-height: 1.3;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
-  }
-
-  .ak-body {
-    font-family: 'Inter', sans-serif;
-    font-size: 1rem;
-    color: #6B7280;
-    line-height: 1.8;
-  }
-
-  .ak-gold-bar {
-    width: 40px;
-    height: 3px;
-    background: #C9A45C;
-    border-radius: 99px;
-    margin-bottom: 14px;
-  }
-
-  /* ── buttons ── */
-  .ak-btn-primary {
-    background: #C9A45C;
-    color: #fff;
-    padding: 12px 26px;
-    border-radius: 10px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    white-space: nowrap;
-  }
-  .ak-btn-primary:hover {
-    background: #C9A45C;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(201,164,92,0.4);
-  }
-
-  .ak-btn-outline {
-    background: transparent;
-    color: #1F2E4F;
-    padding: 12px 26px;
-    border-radius: 10px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    border: 1.5px solid #E8E8E8;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
-  .ak-btn-outline:hover {
-    border-color: #C9A45C;
-    color: #C9A45C;
-  }
-
-  /* ── cards ── */
-  .ak-card {
-    background: #fff;
-    border: 1px solid #E8E8E8;
-    border-radius: 18px;
-    padding: 28px 24px;
-    transition: border-color 0.22s, box-shadow 0.22s, transform 0.22s;
-    cursor: default;
-  }
-  .ak-card:hover {
-    border-color: rgba(201,164,92,0.45);
-    box-shadow: 0 10px 32px rgba(31,46,79,0.08);
-    transform: translateY(-3px);
-  }
-
-  .ak-card-soft {
-    background: #F7F3EE;
-    border: 1px solid #E8E8E8;
-    border-radius: 16px;
-    padding: 20px 20px;
-    transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
-    cursor: default;
-  }
-  .ak-card-soft:hover {
-    border-color: rgba(201,164,92,0.45);
-    background: #fff;
-    box-shadow: 0 4px 18px rgba(201,164,92,0.09);
-  }
-
-  /* ── image wrapper ── */
-  .ak-img {
-    border-radius: 20px;
-    overflow: hidden;
-    width: 100%;
-  }
-  .ak-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* ── trust pills ── */
-  .ak-pill {
-    display: inline-block;
-    background: #F7F3EE;
-    border: 1px solid #E8E8E8;
-    border-radius: 999px;
-    padding: 5px 14px;
-    font-size: 12px;
-    font-family: 'Inter', sans-serif;
-    color: #6B7280;
-    font-weight: 500;
-    white-space: nowrap;
-  }
-
-  /* ── grid helpers ── */
-  .ak-grid-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 56px;
-    align-items: center;
-  }
-
-  .ak-grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .ak-grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-  }
-
-  /* ── responsive breakpoints ── */
-  @media (max-width: 1024px) {
-    .ak-grid-2 {
-      grid-template-columns: 1fr;
-      gap: 40px;
-    }
-    .ak-grid-4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .ak-section, .ak-section-soft { padding: 64px 0; }
-    .ak-grid-3 { grid-template-columns: 1fr; gap: 16px; }
-    .ak-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .ak-container { padding: 0 20px; }
-    .ak-h1 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
-    .ak-h2 { font-size: clamp(1.4rem, 5vw, 1.8rem); }
-    .ak-hide-mobile { display: none !important; }
-  }
-
-  @media (max-width: 480px) {
-    .ak-grid-4 { grid-template-columns: 1fr 1fr; gap: 12px; }
-    .ak-section, .ak-section-soft { padding: 52px 0; }
-  }
-
-  /* ── fade-in animation ── */
-  .ak-fade { opacity: 0; transform: translateY(20px); }
-  .ak-fade.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
-`;
-
-/* ─────────────────────────────
-   FADE-IN HOOK
-───────────────────────────── */
 function useFade() {
   const ref = useRef(null);
   useEffect(() => {
@@ -263,11 +9,12 @@ function useFade() {
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add("visible");
+          el.classList.add("opacity-100", "translate-y-0");
+          el.classList.remove("opacity-0", "translate-y-5");
           obs.disconnect();
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -275,36 +22,30 @@ function useFade() {
   return ref;
 }
 
-function Fade({ children, delay = 0, style = {} }) {
+function Fade({ children, delay = 0, className = "" }) {
   const ref = useFade();
   return (
     <div
       ref={ref}
-      className="ak-fade"
-      style={{ transitionDelay: `${delay}s`, ...style }}
+      className={"opacity-0 translate-y-5 transition-all duration-700 ease-out " + className}
+      style={{ transitionDelay: delay + "s" }}
     >
       {children}
     </div>
   );
 }
 
-/* ─────────────────────────────
-   SMALL SHARED COMPONENTS
-───────────────────────────── */
 function GoldBar({ center = false }) {
   return (
-    <div
-      className="ak-gold-bar"
-      style={center ? { margin: "0 auto 14px" } : {}}
-    />
+    <div className={"w-10 h-1 bg-[#C9A45C] rounded-full mb-3 " + (center ? "mx-auto" : "")} />
   );
 }
 
 function SectionLabel({ text, center = false }) {
   return (
-    <div style={center ? { display: "flex", justifyContent: "center" } : {}}>
-      <span className="ak-label">
-        <span className="ak-label-dot" />
+    <div className={center ? "flex justify-center" : ""}>
+      <span className="inline-flex items-center gap-2 bg-[#C9A45C]/10 text-[#C9A45C] border border-[#C9A45C]/30 rounded-full px-4 py-1.5 text-xs font-medium mb-5">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#C9A45C] flex-shrink-0" />
         {text}
       </span>
     </div>
@@ -313,21 +54,9 @@ function SectionLabel({ text, center = false }) {
 
 function CheckIcon() {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      style={{ flexShrink: 0, marginTop: 1 }}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="flex-shrink-0 mt-0.5">
       <circle cx="10" cy="10" r="10" fill="#C9A45C" fillOpacity="0.15" />
-      <path
-        d="M6 10.5l2.5 2.5 5.5-5.5"
-        stroke="#C9A45C"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M6 10.5l2.5 2.5 5.5-5.5" stroke="#C9A45C" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -344,50 +73,46 @@ function QuoteSVG() {
   );
 }
 
-/* ─────────────────────────────
-   1. HERO
-───────────────────────────── */
+function LinkedInIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
 function Hero() {
   return (
-    <section
-      className="ak-section"
-      style={{ background: C.white, paddingTop: 72, paddingBottom: 72 }}
-    >
-      <div className="ak-container">
-        <div className="ak-grid-2" style={{ alignItems: "center" }}>
-          {/* LEFT — copy */}
+    <section className="bg-white py-20">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <div>
-           
             <Fade delay={0.07}>
-              <h1 className="ak-h1">
+              <h1 className="font-sans text-5xl font-semibold text-[#1F2E4F] leading-tight tracking-tight mb-5">
                 Global Talent.{" "}
-                <span style={{ color: C.gold }}>Structured Execution.</span>{" "}
+                <span className="text-[#C9A45C]">Structured Execution.</span>{" "}
                 Real Results.
               </h1>
             </Fade>
-
             <Fade delay={0.14}>
-              <p
-                className="ak-body"
-                style={{ maxWidth: 460, marginBottom: 32 }}
-              >
+              <p className="text-[#6B7280] text-base leading-relaxed max-w-lg mb-8">
                 Alph Knot helps businesses scale with global teams across
-                operations, finance, tech, and growth  so you can focus on what
+                operations, finance, tech, and growth so you can focus on what
                 matters most.
               </p>
             </Fade>
-
-         
-
             <Fade delay={0.26}>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              <div className="flex flex-wrap gap-2">
                 {[
-                  "3× Faster Execution",
+                  "3x Faster Execution",
                   "60% Cost Reduction",
                   "90%+ Satisfaction",
                   "24/7 Support",
                 ].map((s) => (
-                  <span key={s} className="ak-pill">
+                  <span
+                    key={s}
+                    className="inline-block bg-[#F7F3EE] border border-[#E8E8E8] rounded-full px-4 py-1.5 text-xs text-[#6B7280] font-medium whitespace-nowrap"
+                  >
                     {s}
                   </span>
                 ))}
@@ -395,72 +120,19 @@ function Hero() {
             </Fade>
           </div>
 
-          {/* RIGHT — image */}
-          <Fade delay={0.15} style={{ position: "relative" }}>
-            <div className="ak-hide-mobile" style={{ position: "relative" }}>
-              <div
-                className="ak-img"
-                style={{
-                  height: 520,
-                  boxShadow: "0 20px 56px rgba(31,46,79,0.11)",
-                }}
-              >
+          <Fade delay={0.15}>
+            <div className="relative hidden lg:block">
+              <div className="rounded-2xl overflow-hidden h-[520px] shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=85"
                   alt="Team at work"
+                  className="w-full h-full object-cover"
                 />
               </div>
-
-              {/* floating badge */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 28,
-                  left: -20,
-                  background: C.white,
-                  borderRadius: 14,
-                  padding: "14px 20px",
-                  boxShadow: "0 8px 28px rgba(0,0,0,0.1)",
-                  border: `1px solid ${C.border}`,
-                  zIndex: 2,
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 11,
-                    color: C.muted,
-                    fontFamily: "Inter, sans-serif",
-                    marginBottom: 3,
-                  }}
-                >
-                  Teams active in
-                </p>
-                <p
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 600,
-                    fontFamily: "Poppins, sans-serif",
-                    color: C.dark,
-                  }}
-                >
-                  12+ Countries
-                </p>
+              <div className="absolute bottom-7 -left-5 bg-white rounded-2xl px-5 py-4 shadow-xl border border-[#E8E8E8] z-10">
+                <p className="text-xs text-[#6B7280] mb-1">Teams active in</p>
+                <p className="text-xl font-semibold text-[#1F2E4F]">12+ Countries</p>
               </div>
-
-              {/* gold ring */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: -14,
-                  right: -14,
-                  width: 72,
-                  height: 72,
-                  borderRadius: "50%",
-                  background: `${C.gold}15`,
-                  border: `2px solid ${C.gold}28`,
-                  zIndex: 0,
-                }}
-              />
             </div>
           </Fade>
         </div>
@@ -469,82 +141,35 @@ function Hero() {
   );
 }
 
-/* ─────────────────────────────
-   2. MISSION
-───────────────────────────── */
 function Mission() {
+  const pillars = [
+    { icon: "🌍", title: "Global Reach", body: "Access top talent across time zones, cultures, and disciplines." },
+    { icon: "⚙️", title: "Structured Process", body: "Onboarding, SOPs, and workflows built for clarity from day one." },
+    { icon: "📈", title: "Scalable Growth", body: "Expand your team as fast as you grow — no friction, no delays." },
+  ];
+
   return (
-    <section className="ak-section-soft">
-      <div className="ak-container">
-        {/* Centered intro */}
+    <section className="bg-[#F7F3EE] py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <div
-            style={{
-              textAlign: "center",
-              maxWidth: 660,
-              margin: "0 auto 56px",
-            }}
-          >
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <GoldBar center />
-            <h2 className="ak-h2">Our Mission</h2>
-            <p className="ak-body">
-              Most companies struggle not because of bad strategy  but
-              execution gaps. The right talent in the wrong structure, or no
-              structure at all. Alph Knot was built to close that gap:
-              connecting businesses with pre-vetted global professionals
-              embedded into your workflows, making execution your competitive
-              advantage.
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-4">Our Mission</h2>
+            <p className="text-[#6B7280] text-base leading-relaxed">
+              Most companies struggle not because of bad strategy but execution gaps.
+              Alph Knot was built to close that gap: connecting businesses with
+              pre-vetted global professionals embedded into your workflows.
             </p>
           </div>
         </Fade>
 
-        {/* 3 pillar cards */}
-        <div className="ak-grid-3">
-          {[
-            {
-              icon: "🌍",
-              title: "Global Reach",
-              body: "Access top talent across time zones, cultures, and disciplines.",
-            },
-            {
-              icon: "⚙️",
-              title: "Structured Process",
-              body: "Onboarding, SOPs, and workflows built for clarity from day one.",
-            },
-            {
-              icon: "📈",
-              title: "Scalable Growth",
-              body: "Expand your team as fast as you grow  no friction, no delays.",
-            },
-          ].map((p, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {pillars.map((p, i) => (
             <Fade key={p.title} delay={i * 0.09}>
-              <div className="ak-card" style={{ background: C.white }}>
-                <span
-                  style={{ fontSize: 30, display: "block", marginBottom: 14 }}
-                >
-                  {p.icon}
-                </span>
-                <h3
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    color: C.dark,
-                    fontSize: "0.95rem",
-                    marginBottom: 8,
-                  }}
-                >
-                  {p.title}
-                </h3>
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "0.85rem",
-                    color: C.muted,
-                    lineHeight: 1.7,
-                  }}
-                >
-                  {p.body}
-                </p>
+              <div className="bg-white border border-[#E8E8E8] rounded-2xl p-7 transition-all duration-300 hover:border-[#C9A45C]/40 hover:shadow-lg hover:-translate-y-1">
+                <span className="text-3xl block mb-4">{p.icon}</span>
+                <h3 className="font-semibold text-[#1F2E4F] text-sm mb-2">{p.title}</h3>
+                <p className="text-[#6B7280] text-sm leading-relaxed">{p.body}</p>
               </div>
             </Fade>
           ))}
@@ -554,125 +179,42 @@ function Mission() {
   );
 }
 
-/* ─────────────────────────────
-   3. FOUNDER QUOTE
-───────────────────────────── */
 function FounderQuote() {
   return (
-    <section className="ak-section" style={{ background: C.white }}>
-      <div className="ak-container">
-        <div className="ak-grid-2">
-          {/* Quote side */}
+    <section className="bg-white py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Fade delay={0}>
             <QuoteSVG />
-            <blockquote
-              style={{
-                fontFamily: "Poppins, sans-serif",
-                fontSize: "clamp(1.05rem, 1.8vw, 1.3rem)",
-                fontWeight: 500,
-                color: C.dark,
-                lineHeight: 1.72,
-                letterSpacing: "-0.01em",
-                marginTop: 18,
-                marginBottom: 28,
-              }}
-            >
-              "Behind every successful business is a team that executes with
+            <blockquote className="text-xl font-medium text-[#1F2E4F] leading-relaxed mt-5 mb-7">
+              Behind every successful business is a team that executes with
               clarity and consistency. Alph Knot gives companies more than
-              talent 
-              <span style={{ color: C.gold }}> we deliver execution.</span>"
+              talent{" "}
+              <span className="text-[#C9A45C]">we deliver execution.</span>
             </blockquote>
-            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-              <div
-                style={{
-                  width: 46,
-                  height: 46,
-                  borderRadius: "50%",
-                  background: C.dark,
-                  flexShrink: 0,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "#fff",
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 600,
-                  fontSize: 13,
-                }}
-              >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-[#1F2E4F] flex-shrink-0 flex items-center justify-center text-white font-semibold text-sm">
                 AK
               </div>
               <div>
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    color: C.dark,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Founder, Alph Knot
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    color: C.muted,
-                    fontSize: "0.8rem",
-                    marginTop: 2,
-                  }}
-                >
-                  Visionary · Builder · Operator
-                </p>
+                <p className="font-semibold text-[#1F2E4F] text-sm">Founder, Alph Knot</p>
+                <p className="text-[#6B7280] text-xs mt-0.5">Visionary · Builder · Operator</p>
               </div>
             </div>
           </Fade>
 
-          {/* Image side */}
           <Fade delay={0.12}>
-            <div style={{ position: "relative" }}>
-              <div
-                className="ak-img"
-                style={{
-                  height: 440,
-                  boxShadow: "0 14px 44px rgba(31,46,79,0.1)",
-                }}
-              >
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden h-[440px] shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=700&q=85"
                   alt="Founder"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: -18,
-                  left: 18,
-                  background: C.soft,
-                  border: `1px solid ${C.border}`,
-                  borderRadius: 12,
-                  padding: "12px 18px",
-                  boxShadow: "0 4px 16px rgba(0,0,0,0.07)",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: 11,
-                    color: C.muted,
-                  }}
-                >
-                  Est. 2020 · Global Partner
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    color: C.dark,
-                    fontSize: 13,
-                    marginTop: 2,
-                  }}
-                >
-                  Execution-First Company
-                </p>
+              <div className="absolute -bottom-5 left-5 bg-[#F7F3EE] border border-[#E8E8E8] rounded-xl px-5 py-3 shadow-md">
+                <p className="text-xs text-[#6B7280]">Est. 2020 · Global Partner</p>
+                <p className="font-semibold text-[#1F2E4F] text-sm mt-0.5">Execution-First Company</p>
               </div>
             </div>
           </Fade>
@@ -682,96 +224,44 @@ function FounderQuote() {
   );
 }
 
-/* ─────────────────────────────
-   4. BUILT TO SOLVE
-───────────────────────────── */
 function BuiltToSolve() {
   return (
-    <section className="ak-section-soft">
-      <div className="ak-container">
-        <div className="ak-grid-2">
-          {/* Image */}
+    <section className="bg-[#F7F3EE] py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Fade delay={0}>
-            <div style={{ position: "relative" }}>
-              <div
-                className="ak-img"
-                style={{
-                  height: 420,
-                  boxShadow: "0 14px 44px rgba(31,46,79,0.09)",
-                }}
-              >
+            <div className="relative">
+              <div className="rounded-2xl overflow-hidden h-[420px] shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=85"
                   alt="Team collaboration"
+                  className="w-full h-full object-cover"
                 />
               </div>
-              <div
-                style={{
-                  position: "absolute",
-                  top: 18,
-                  right: -16,
-                  background: C.gold,
-                  borderRadius: 12,
-                  padding: "10px 18px",
-                  color: "#fff",
-                  boxShadow: `0 6px 24px ${C.gold}44`,
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: 10,
-                    opacity: 0.85,
-                  }}
-                >
-                  Teams across
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    fontSize: 17,
-                  }}
-                >
-                  12+ Countries
-                </p>
+              <div className="absolute top-5 -right-4 bg-[#C9A45C] rounded-xl px-5 py-3 text-white shadow-lg">
+                <p className="text-xs opacity-90">Teams across</p>
+                <p className="font-semibold text-lg">12+ Countries</p>
               </div>
             </div>
           </Fade>
 
-          {/* Text */}
           <Fade delay={0.12}>
             <GoldBar />
-            <h2 className="ak-h2">Built to Solve a Real Problem</h2>
-            <p className="ak-body" style={{ marginBottom: 14 }}>
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-4">
+              Built to Solve a Real Problem
+            </h2>
+            <p className="text-[#6B7280] text-base leading-relaxed mb-4">
               Modern businesses face a paradox: talent is everywhere, but great
               execution is rare. Hiring takes months, onboarding takes more, and
               misaligned teams cost companies more than they realize.
             </p>
-            <p className="ak-body" style={{ marginBottom: 26 }}>
-              Alph Knot was designed to collapse that gap  connecting you with
-              professionals who don't just fill a seat, but integrate into your
-              goals from day one.
+            <p className="text-[#6B7280] text-base leading-relaxed mb-7">
+              Alph Knot was designed to collapse that gap, connecting you with
+              professionals who integrate into your goals from day one.
             </p>
-            <div
-              style={{
-                background: C.white,
-                borderLeft: `4px solid ${C.gold}`,
-                borderRadius: "0 12px 12px 0",
-                padding: "14px 18px",
-                boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontWeight: 500,
-                  color: C.dark,
-                  fontStyle: "italic",
-                  fontSize: "0.95rem",
-                }}
-              >
-                "Talent is global. Execution should be seamless."
+            <div className="bg-white border-l-4 border-[#C9A45C] rounded-r-xl px-5 py-4 shadow-sm">
+              <p className="font-medium text-[#1F2E4F] italic text-base">
+                Talent is global. Execution should be seamless.
               </p>
             </div>
           </Fade>
@@ -781,103 +271,49 @@ function BuiltToSolve() {
   );
 }
 
-/* ─────────────────────────────
-   5. WHY DIFFERENT
-───────────────────────────── */
 const DIFFS = [
-  {
-    label: "Execution-first approach",
-    desc: "We don't just place talent  we build systems around them.",
-  },
-  {
-    label: "Pre-vetted talent",
-    desc: "Rigorous vetting ensures every hire is ready to perform.",
-  },
-  {
-    label: "Global scalability",
-    desc: "Scale teams up or down across continents without friction.",
-  },
-  {
-    label: "Flexible engagement",
-    desc: "Part-time, full-time, or project-based  you decide the model.",
-  },
-  {
-    label: "Dedicated support",
-    desc: "A success manager with you from kickoff to long-term growth.",
-  },
-  {
-    label: "Cost-efficient operations",
-    desc: "Premium talent without the overhead of traditional hiring.",
-  },
+  { label: "Execution-first approach", desc: "We don't just place talent, we build systems around them." },
+  { label: "Pre-vetted talent", desc: "Rigorous vetting ensures every hire is ready to perform." },
+  { label: "Global scalability", desc: "Scale teams up or down across continents without friction." },
+  { label: "Flexible engagement", desc: "Part-time, full-time, or project-based, you decide the model." },
+  { label: "Dedicated support", desc: "A success manager with you from kickoff to long-term growth." },
+  { label: "Cost-efficient operations", desc: "Premium talent without the overhead of traditional hiring." },
 ];
 
 function WhyDifferent() {
   return (
-    <section className="ak-section" style={{ background: C.white }}>
-      <div className="ak-container">
-        <div className="ak-grid-2" style={{ alignItems: "start", gap: 48 }}>
-          {/* Left: sticky heading + image */}
+    <section className="bg-white py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <Fade delay={0}>
-            <div style={{ position: "sticky", top: 100 }}>
+            <div className="lg:sticky lg:top-24">
               <GoldBar />
-              <h2 className="ak-h2">Why Alph Knot Is Different</h2>
-              <p
-                className="ak-body"
-                style={{ maxWidth: 380, marginBottom: 28 }}
-              >
-                We've reimagined what a global staffing partner should be  less
+              <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-4">
+                Why Alph Knot Is Different
+              </h2>
+              <p className="text-[#6B7280] text-base leading-relaxed max-w-sm mb-7">
+                We have reimagined what a global staffing partner should be, less
                 transactional, more transformational.
               </p>
-              <div
-                className="ak-img"
-                style={{
-                  height: 260,
-                  boxShadow: "0 8px 28px rgba(31,46,79,0.08)",
-                }}
-              >
+              <div className="rounded-2xl overflow-hidden h-64 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=85"
                   alt="Global team"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
           </Fade>
 
-          {/* Right: checklist */}
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div className="flex flex-col gap-3">
             {DIFFS.map((d, i) => (
               <Fade key={d.label} delay={0.04 * i}>
-                <div className="ak-card-soft">
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 12,
-                    }}
-                  >
+                <div className="bg-[#F7F3EE] border border-[#E8E8E8] rounded-2xl p-5 transition-all duration-300 hover:border-[#C9A45C]/40 hover:bg-white hover:shadow-md">
+                  <div className="flex items-start gap-3">
                     <CheckIcon />
                     <div>
-                      <p
-                        style={{
-                          fontFamily: "Poppins, sans-serif",
-                          fontWeight: 600,
-                          color: C.dark,
-                          fontSize: "0.875rem",
-                          marginBottom: 3,
-                        }}
-                      >
-                        {d.label}
-                      </p>
-                      <p
-                        style={{
-                          fontFamily: "Inter, sans-serif",
-                          fontSize: "0.8rem",
-                          color: C.muted,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {d.desc}
-                      </p>
+                      <p className="font-semibold text-[#1F2E4F] text-sm mb-1">{d.label}</p>
+                      <p className="text-[#6B7280] text-xs leading-relaxed">{d.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -890,76 +326,44 @@ function WhyDifferent() {
   );
 }
 
-/* ─────────────────────────────
-   6. GLOBAL BUT HUMAN
-───────────────────────────── */
 function GlobalHuman() {
   return (
-    <section className="ak-section-soft">
-      <div className="ak-container">
-        <div className="ak-grid-2">
-          {/* Text */}
+    <section className="bg-[#F7F3EE] py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
           <Fade delay={0}>
             <GoldBar />
-            <h2 className="ak-h2">
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-4">
               Global by Design.{" "}
-              <span style={{ color: C.gold }}>Human by Nature.</span>
+              <span className="text-[#C9A45C]">Human by Nature.</span>
             </h2>
-            <p className="ak-body" style={{ marginBottom: 14 }}>
+            <p className="text-[#6B7280] text-base leading-relaxed mb-4">
               We operate across continents, but our relationships are built one
               person at a time. Every professional in our network is more than a
-              resume  they're a trusted collaborator.
+              resume, they are a trusted collaborator.
             </p>
-            <p className="ak-body" style={{ marginBottom: 36 }}>
+            <p className="text-[#6B7280] text-base leading-relaxed mb-10">
               Our account managers, talent leads, and operations team stay close
-              to both sides  ensuring the human thread never gets lost in the
-              scale.
+              to both sides ensuring the human thread never gets lost in the scale.
             </p>
-            {/* Stats row */}
-            <div style={{ display: "flex", gap: 36 }}>
-              {[
-                ["12+", "Countries"],
-                ["200+", "Professionals"],
-                ["98%", "Retention"],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <p
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 600,
-                      fontSize: "1.7rem",
-                      color: C.gold,
-                    }}
-                  >
-                    {n}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "Inter, sans-serif",
-                      fontSize: "0.78rem",
-                      color: C.muted,
-                      marginTop: 2,
-                    }}
-                  >
-                    {l}
-                  </p>
-                </div>
-              ))}
+            <div className="flex gap-10">
+              {[["12+", "Countries"], ["200+", "Professionals"], ["98%", "Retention"]].map(
+                ([n, l]) => (
+                  <div key={l}>
+                    <p className="font-semibold text-[#C9A45C] text-3xl">{n}</p>
+                    <p className="text-[#6B7280] text-xs mt-1">{l}</p>
+                  </div>
+                )
+              )}
             </div>
           </Fade>
 
-          {/* Image */}
           <Fade delay={0.12}>
-            <div
-              className="ak-img"
-              style={{
-                height: 440,
-                boxShadow: "0 14px 44px rgba(31,46,79,0.08)",
-              }}
-            >
+            <div className="rounded-2xl overflow-hidden h-[440px] shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=85"
                 alt="Global collaboration"
+                className="w-full h-full object-cover"
               />
             </div>
           </Fade>
@@ -969,116 +373,143 @@ function GlobalHuman() {
   );
 }
 
-/* ─────────────────────────────
-   7. TEAM
-───────────────────────────── */
 const TEAM = [
   {
     name: "Aryan Kapoor",
     role: "CEO & Co-Founder",
+    bio: "Visionary leader with 15+ years building global operations. Passionate about connecting world-class talent with high-growth businesses.",
+    linkedin: "https://linkedin.com/in/aryan-kapoor",
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
   },
   {
     name: "Priya Mehta",
     role: "Chief Operations Officer",
+    bio: "Operations expert specializing in remote team management, process design, and scaling talent pipelines across time zones.",
+    linkedin: "https://linkedin.com/in/priya-mehta",
     img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80",
   },
   {
-    name: "James O'Brien",
+    name: "James OBrien",
     role: "Head of Talent",
+    bio: "10+ years matching world-class professionals to high-growth companies across the U.S., UK, and Asia-Pacific regions.",
+    linkedin: "https://linkedin.com/in/james-obrien",
     img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
   },
   {
     name: "Sara Lin",
     role: "Head of Client Success",
+    bio: "Client success champion ensuring every partnership delivers measurable ROI. Trusted advisor to 50+ enterprise accounts.",
+    linkedin: "https://linkedin.com/in/sara-lin",
     img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80",
   },
 ];
 
+function FlipCard({ member, index }) {
+  const cardRef = useRef(null);
+
+  function handleEnter() {
+    if (cardRef.current) {
+      cardRef.current.style.transform = "rotateY(180deg)";
+    }
+  }
+
+  function handleLeave() {
+    if (cardRef.current) {
+      cardRef.current.style.transform = "rotateY(0deg)";
+    }
+  }
+
+  return (
+    <Fade delay={index * 0.08}>
+      <div
+        className="h-80 cursor-pointer"
+        style={{ perspective: "1000px" }}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        <div
+          ref={cardRef}
+          className="relative w-full h-full"
+          style={{
+            transformStyle: "preserve-3d",
+            transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+        >
+          {/* FRONT */}
+          <div
+            className="absolute inset-0 rounded-2xl overflow-hidden border border-[#E8E8E8] bg-white"
+            style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+          >
+            <div className="h-56 overflow-hidden">
+              <img
+                src={member.img}
+                alt={member.name}
+                className="w-full h-full object-cover object-top"
+                style={{ filter: "grayscale(15%)" }}
+              />
+            </div>
+            <div className="bg-[#F7F3EE] px-4 py-4">
+              <p className="font-semibold text-[#1F2E4F] text-sm">{member.name}</p>
+              <p className="text-[#6B7280] text-xs mt-1">{member.role}</p>
+            </div>
+          </div>
+
+          {/* BACK */}
+          <div
+            className="absolute inset-0 rounded-2xl overflow-hidden bg-[#1F2E4F] border border-[#C9A45C]/30 flex flex-col items-center justify-center px-5 py-6 text-center"
+            style={{
+              backfaceVisibility: "hidden",
+              WebkitBackfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+            }}
+          >
+            <img
+              src={member.img}
+              alt={member.name}
+              className="w-14 h-14 rounded-full object-cover object-top border-2 border-[#C9A45C] mb-3"
+            />
+            <p className="font-bold text-white text-base leading-tight">{member.name}</p>
+            <p className="text-[#C9A45C] text-xs font-bold uppercase tracking-widest mt-1 mb-3">
+              {member.role}
+            </p>
+            <div className="w-8 h-px bg-[#C9A45C]/30 mb-3" />
+            <p className="text-white/50 text-xs leading-relaxed mb-4">{member.bio}</p>
+            
+           <Link  href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center gap-2 bg-[#C9A45C] text-[#1F2E4F] text-xs font-bold px-4 py-2 rounded-full hover:bg-[#d4b06a] transition-colors duration-200"
+            >
+              <LinkedInIcon />
+              Connect on LinkedIn
+            </Link>
+          </div>
+        </div>
+      </div>
+    </Fade>
+  );
+}
+
 function Team() {
   return (
-    <section className="ak-section" style={{ background: C.white }}>
-      <div className="ak-container">
+    <section className="bg-white py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
+          <div className="text-center mb-14">
             <GoldBar center />
-            <h2 className="ak-h2">The People Behind the Platform</h2>
-            <p className="ak-body">
-              Operators. Builders. People who've been in your shoes.
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-3">
+              The People Behind the Platform
+            </h2>
+            <p className="text-[#6B7280] text-base">
+              Operators. Builders. People who have been in your shoes.
             </p>
           </div>
         </Fade>
 
-        <div className="ak-grid-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {TEAM.map((m, i) => (
-            <Fade key={m.name} delay={i * 0.07}>
-              <div
-                style={{
-                  borderRadius: 18,
-                  overflow: "hidden",
-                  border: `1px solid ${C.border}`,
-                  transition:
-                    "transform 0.25s, box-shadow 0.25s, border-color 0.25s",
-                  cursor: "default",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-5px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 12px 36px rgba(31,46,79,0.1)";
-                  e.currentTarget.style.borderColor = `${C.gold}44`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.borderColor = C.border;
-                }}
-              >
-                <div style={{ height: 210, overflow: "hidden" }}>
-                  <img
-                    src={m.img}
-                    alt={m.name}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                      filter: "grayscale(15%)",
-                      transition: "filter 0.3s, transform 0.4s",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.filter = "grayscale(0%)";
-                      e.currentTarget.style.transform = "scale(1.04)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.filter = "grayscale(15%)";
-                      e.currentTarget.style.transform = "scale(1)";
-                    }}
-                  />
-                </div>
-                <div style={{ background: C.soft, padding: "14px 16px" }}>
-                  <p
-                    style={{
-                      fontFamily: "Poppins, sans-serif",
-                      fontWeight: 600,
-                      color: C.dark,
-                      fontSize: "0.85rem",
-                    }}
-                  >
-                    {m.name}
-                  </p>
-                  <p
-                    style={{
-                      fontFamily: "Inter, sans-serif",
-                      color: C.muted,
-                      fontSize: "0.75rem",
-                      marginTop: 3,
-                    }}
-                  >
-                    {m.role}
-                  </p>
-                </div>
-              </div>
-            </Fade>
+            <FlipCard key={m.name} member={m} index={i} />
           ))}
         </div>
       </div>
@@ -1086,9 +517,6 @@ function Team() {
   );
 }
 
-/* ─────────────────────────────
-   8. CULTURE / STATS
-───────────────────────────── */
 const CULTURE = [
   { v: "200+", l: "Global Team", s: "Professionals worldwide" },
   { v: "98%", l: "High Retention", s: "Year-over-year retention" },
@@ -1098,53 +526,25 @@ const CULTURE = [
 
 function CultureStats() {
   return (
-    <section className="ak-section-soft">
-      <div className="ak-container">
+    <section className="bg-[#F7F3EE] py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
+          <div className="text-center mb-14">
             <GoldBar center />
-            <h2 className="ak-h2">Culture of Excellence</h2>
-            <p className="ak-body">The numbers behind the mission.</p>
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-3">
+              Culture of Excellence
+            </h2>
+            <p className="text-[#6B7280] text-base">The numbers behind the mission.</p>
           </div>
         </Fade>
-        <div className="ak-grid-4">
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {CULTURE.map((s, i) => (
             <Fade key={s.l} delay={i * 0.07}>
-              <div
-                className="ak-card"
-                style={{ textAlign: "center", padding: "30px 20px" }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "1.9rem",
-                    color: C.gold,
-                  }}
-                >
-                  {s.v}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    color: C.dark,
-                    fontSize: "0.875rem",
-                    marginTop: 6,
-                  }}
-                >
-                  {s.l}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    color: C.muted,
-                    fontSize: "0.76rem",
-                    marginTop: 4,
-                  }}
-                >
-                  {s.s}
-                </p>
+              <div className="bg-white border border-[#E8E8E8] rounded-2xl p-8 text-center transition-all duration-300 hover:border-[#C9A45C]/40 hover:shadow-lg hover:-translate-y-1">
+                <p className="font-semibold text-[#C9A45C] text-4xl">{s.v}</p>
+                <p className="font-semibold text-[#1F2E4F] text-sm mt-2">{s.l}</p>
+                <p className="text-[#6B7280] text-xs mt-1">{s.s}</p>
               </div>
             </Fade>
           ))}
@@ -1154,97 +554,36 @@ function CultureStats() {
   );
 }
 
-/* ─────────────────────────────
-   9. RESULTS
-───────────────────────────── */
 const RESULTS = [
-  {
-    m: "3×",
-    l: "Faster Execution",
-    d: "Companies onboard and deploy teams 3× faster with Alph Knot.",
-  },
-  {
-    m: "60%",
-    l: "Cost Reduction",
-    d: "Average savings vs. traditional full-time hiring models.",
-  },
-  {
-    m: "24/7",
-    l: "Support Coverage",
-    d: "Round-the-clock support across all major time zones.",
-  },
-  {
-    m: "90%+",
-    l: "Satisfaction Rate",
-    d: "Clients who consistently rate Alph Knot as their top partner.",
-  },
+  { m: "3x", l: "Faster Execution", d: "Companies onboard and deploy teams 3x faster with Alph Knot." },
+  { m: "60%", l: "Cost Reduction", d: "Average savings vs. traditional full-time hiring models." },
+  { m: "24/7", l: "Support Coverage", d: "Round-the-clock support across all major time zones." },
+  { m: "90%+", l: "Satisfaction Rate", d: "Clients who consistently rate Alph Knot as their top partner." },
 ];
 
 function Results() {
   return (
-    <section className="ak-section" style={{ background: C.white }}>
-      <div className="ak-container">
+    <section className="bg-white py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <div style={{ textAlign: "center", marginBottom: 52 }}>
+          <div className="text-center mb-14">
             <GoldBar center />
-            <h2 className="ak-h2">Numbers That Speak</h2>
-            <p className="ak-body">
+            <h2 className="text-3xl font-semibold text-[#1F2E4F] tracking-tight mb-3">
+              Numbers That Speak
+            </h2>
+            <p className="text-[#6B7280] text-base">
               Measurable impact for every company we partner with.
             </p>
           </div>
         </Fade>
-        <div className="ak-grid-4">
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {RESULTS.map((r, i) => (
             <Fade key={r.l} delay={i * 0.07}>
-              <div
-                className="ak-card-soft"
-                style={{ padding: "28px 22px" }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = `${C.gold}50`;
-                  e.currentTarget.style.background = C.white;
-                  e.currentTarget.style.boxShadow = `0 8px 28px rgba(201,164,92,0.11)`;
-                  e.currentTarget.style.transform = "translateY(-4px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = C.border;
-                  e.currentTarget.style.background = C.soft;
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    fontSize: "2.1rem",
-                    color: C.gold,
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  {r.m}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Poppins, sans-serif",
-                    fontWeight: 600,
-                    color: C.dark,
-                    fontSize: "0.875rem",
-                    marginTop: 8,
-                  }}
-                >
-                  {r.l}
-                </p>
-                <p
-                  style={{
-                    fontFamily: "Inter, sans-serif",
-                    fontSize: "0.8rem",
-                    color: C.muted,
-                    lineHeight: 1.65,
-                    marginTop: 6,
-                  }}
-                >
-                  {r.d}
-                </p>
+              <div className="bg-[#F7F3EE] border border-[#E8E8E8] rounded-2xl p-7 transition-all duration-300 hover:border-[#C9A45C]/40 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                <p className="font-semibold text-[#C9A45C] text-4xl tracking-tight">{r.m}</p>
+                <p className="font-semibold text-[#1F2E4F] text-sm mt-3">{r.l}</p>
+                <p className="text-[#6B7280] text-xs leading-relaxed mt-2">{r.d}</p>
               </div>
             </Fade>
           ))}
@@ -1254,94 +593,35 @@ function Results() {
   );
 }
 
-/* ─────────────────────────────
-   10. FINAL CTA
-───────────────────────────── */
 function FinalCTA() {
   return (
-    <section className="ak-section-soft" style={{ paddingBottom: 96 }}>
-      <div className="ak-container">
+    <section className="bg-[#F7F3EE] py-24">
+      <div className="max-w-6xl mx-auto px-6">
         <Fade>
-          <div
-            style={{
-              background: C.white,
-              border: `1px solid ${C.border}`,
-              borderRadius: 24,
-              padding: "64px 48px",
-              textAlign: "center",
-              boxShadow: "0 6px 40px rgba(31,46,79,0.07)",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            {/* decorative rings */}
-            <div
-              style={{
-                position: "absolute",
-                top: -50,
-                right: -50,
-                width: 200,
-                height: 200,
-                borderRadius: "50%",
-                border: `1px solid ${C.gold}15`,
-                pointerEvents: "none",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: -36,
-                left: -36,
-                width: 140,
-                height: 140,
-                borderRadius: "50%",
-                border: `1px solid ${C.gold}12`,
-                pointerEvents: "none",
-              }}
-            />
+          <div className="bg-white border border-[#E8E8E8] rounded-3xl px-12 py-16 text-center shadow-xl relative overflow-hidden">
+            <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full border border-[#C9A45C]/15 pointer-events-none" />
+            <div className="absolute -bottom-9 -left-9 w-36 h-36 rounded-full border border-[#C9A45C]/10 pointer-events-none" />
 
-            <SectionLabel text="Let's Build Together" center />
+            <SectionLabel text="Lets Build Together" center />
 
-            <h2
-              className="ak-h2"
-              style={{
-                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-                marginBottom: 14,
-              }}
-            >
+            <h2 className="text-4xl font-semibold text-[#1F2E4F] tracking-tight mb-4">
               Ready to scale with a{" "}
-              <span style={{ color: C.gold }}>global team?</span>
+              <span className="text-[#C9A45C]">global team?</span>
             </h2>
 
-            <p
-              className="ak-body"
-              style={{ maxWidth: 440, margin: "0 auto 36px" }}
-            >
+            <p className="text-[#6B7280] text-base max-w-md mx-auto leading-relaxed mb-10">
               Join hundreds of companies that trust Alph Knot to power their
-              operations, growth, and execution  from day one.
+              operations, growth, and execution from day one.
             </p>
 
-            <div
-              style={{
-                display: "flex",
-                gap: 12,
-                justifyContent: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <NavLink to={"/contact-us"}>
-                <button
-                  className="ak-btn-primary"
-                  style={{ padding: "13px 30px", fontSize: 14 }}
-                >
-                  Get Started →
+            <div className="flex gap-3 justify-center flex-wrap">
+              <NavLink to="/contact-us">
+                <button className="bg-[#C9A45C] text-white px-8 py-3.5 rounded-xl font-medium text-sm cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap">
+                  Get Started
                 </button>
               </NavLink>
-              <NavLink to={"/book-call"}>
-                <button
-                  className="ak-btn-outline"
-                  style={{ padding: "13px 30px", fontSize: 14 }}
-                >
+              <NavLink to="/book-call">
+                <button className="bg-transparent text-[#1F2E4F] px-8 py-3.5 rounded-xl font-medium text-sm border border-[#E8E8E8] cursor-pointer transition-all duration-200 hover:border-[#C9A45C] hover:text-[#C9A45C] whitespace-nowrap">
                   Book a Call
                 </button>
               </NavLink>
@@ -1353,17 +633,12 @@ function FinalCTA() {
   );
 }
 
-/* ─────────────────────────────
-   ROOT EXPORT
-───────────────────────────── */
 export default function AlphKnotAbout() {
   return (
-    <div className="ak-root">
-      <style>{GLOBAL_CSS}</style>
+    <div className="bg-white text-[#1A1A1A] antialiased">
       <Hero />
       <Mission />
       <Team />
-
       <BuiltToSolve />
       <WhyDifferent />
       <GlobalHuman />
