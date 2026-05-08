@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import book from "../assets/images/Book/book.avif";
 
 const BookCall = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [selectedDate, setSelectedDate] = useState("");
   const [timeSlots, setTimeSlots] = useState([]);
   const [selectedTime, setSelectedTime] = useState(null);
@@ -51,6 +53,12 @@ const BookCall = () => {
       setSelectedTime(null);
     }
   }, [selectedDate]);
+
+  // Conform booking function
+
+  const confirmBooking = () => {
+    console.log(name, email, selectedDate, selectedTime);
+  };
 
   return (
     <section className="relative min-h-screen bg-white flex items-center justify-center px-6 py-20 overflow-x-hidden">
@@ -182,12 +190,16 @@ const BookCall = () => {
           {/* FORM */}
           <input
             type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Your Name"
             className="w-full mb-3 p-3 text-black rounded-lg border border-[#1F2E4F]/20
             focus:border-[#C9A45C] outline-none transition"
           />
           <input
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Your Email"
             className="w-full mb-4 p-3 text-black rounded-lg border border-[#1F2E4F]/20
             focus:border-[#C9A45C] outline-none transition"
@@ -200,6 +212,7 @@ const BookCall = () => {
             className="w-full bg-[#C9A45C] text-white font-semibold tracking-wide py-3 rounded-lg
             hover:shadow-[0px_8px_25px_rgba(201,164,92,0.3)] transition"
             style={{ fontFamily: "'Poppins', sans-serif" }}
+            onClick={confirmBooking}
           >
             Confirm Booking
           </motion.button>

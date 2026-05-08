@@ -13,7 +13,7 @@ const sections = [
     tag: "The Problem We Solve",
     badge: "The Problem",
     num: "02",
-    hero: `"Skilled support should never be out of reach."`,
+    hero: `Skilled support should never be out of reach.`,
     sub: `The gap between who you need and who you can afford shouldn't exist. For too long, access to skilled, reliable professionals has been gated behind expensive salaries, benefits packages, and lengthy contracts that only enterprise companies could absorb.`,
     core: `Opportunity should never be a function of budget. We built Alph Knot to prove it.`,
     img: img1,
@@ -24,9 +24,9 @@ const sections = [
     tag: "Our Core Belief",
     badge: "Core Belief",
     num: "03",
-    hero: `"We don't believe in one-size-fits-all. We believe in right-sized."`,
+    hero: `We don't believe in one-size-fits-all. We believe in right-sized.`,
     sub: `Every business is at a different stage, moving at a different pace, with different gaps to fill. A structure that works for a 200-person company shouldn't be forced onto a 12-person startup. Right-sized talent matched to your exact moment is what we deliver.`,
-    core: `"A bespoke suit and a borrowed one both cover you. Only one was made for you."`,
+    core: `A bespoke suit and a borrowed one both cover you. Only one was made for you.`,
     img: img2,
     flip: true,
     bg: "bg-[#F7F4EF]",
@@ -35,7 +35,7 @@ const sections = [
     tag: "How We Think About People",
     badge: "Our People",
     num: "04",
-    hero: `"Our reputation walks in the door with them."`,
+    hero: `Our reputation walks in the door with them.`,
     sub: `We treat every professional we place like they represent us — because they do. Our reputation lives in the quality of the people we put in front of you. Every candidate has been vetted not just for skills, but for reliability, communication, and the character that makes a team better. We don't place people we wouldn't hire ourselves.`,
     core: `The right person doesn't just fill a role. They quietly raise the standard of everyone around them.`,
     img: img3,
@@ -46,7 +46,7 @@ const sections = [
     tag: "Cost as a Strategic Tool",
     badge: "Cost Strategy",
     num: "05",
-    hero: `"Every dollar should earn its place here."`,
+    hero: `Every dollar should earn its place here.`,
     sub: `We help you spend like the company you're becoming, not the one you were. Early-stage companies move fast and stay lean. Mid-growth companies often bloat before they scale cleanly. We help businesses at every stage keep their team structure intentional — so their spending always reflects where they're going, not where they've been.`,
     core: `Every dollar freed from overhead is a dollar that gets to chase something worth chasing.`,
     img: img4,
@@ -57,7 +57,7 @@ const sections = [
     tag: "Our Promise",
     badge: "Our Promise",
     num: "06",
-    hero: `"Straightforward by design. Reliable by commitment."`,
+    hero: `Straightforward by design. Reliable by commitment.`,
     sub: `No hidden markups. No confusing tier structures. No fine print that changes the deal. We believe working with a talent partner should feel like working with someone who's genuinely in your corner — because that's exactly what we intend to be.`,
     core: `Promises are easy. Showing up month after month, role after role — that's the real one.`,
     img: img6,
@@ -292,7 +292,7 @@ const Philosophy = () => {
           className="text-[#C9A45C] text-[13px] tracking-widest"
           style={{ fontFamily: "'Poppins', sans-serif" }}
         >
-          ~ A Founder to A Founder.
+          ~ A Founder to A Alph-Knot.
         </p>
       </motion.section>
 

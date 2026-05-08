@@ -24,19 +24,18 @@ const Features = () => {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        {/* 🔥 HEADING */}
+        {/* HEADING */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl text-[#1F2E4F] tracking-tight">
             Why Choose <span className="text-[#C9A45C]">Alph Knot</span>
           </h2>
-
           <p className="text-[#1F2E4F]/60 mt-4 max-w-xl mx-auto text-lg leading-relaxed">
             Built for ambitious businesses that need speed, quality, and
             reliability.
           </p>
         </div>
 
-        {/* 🔥 CARDS */}
+        {/* CARDS */}
         <div className="grid md:grid-cols-3 gap-8">
           {data.map((item, i) => (
             <motion.div
@@ -45,20 +44,20 @@ const Features = () => {
               initial={{ opacity: 0, y: 30 }}
               transition={{ delay: i * 0.2 }}
               whileHover={{ y: -6 }}
-              className="group p-8 rounded-2xl bg-white border border-[#1F2E4F]/10 shadow-sm hover:shadow-xl hover:border-[#C9A45C] transition-all duration-300  hover:shadow-[0px_10px_30px_rgba(201,164,92,0.25)]"
+              className="group p-8 rounded-2xl bg-[#1F2E4F] border border-[#C9A45C]/20 hover:border-[#C9A45C]/60 hover:shadow-[0px_10px_30px_rgba(201,164,92,0.2)] transition-all duration-300"
             >
               {/* ICON */}
-              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#C9A45C]/10 mb-5">
+              <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#C9A45C]/10 border border-[#C9A45C]/25 group-hover:bg-[#C9A45C]/20 group-hover:border-[#C9A45C]/50 transition-all duration-300 mb-5">
                 <item.icon className="text-[#C9A45C]" size={22} />
               </div>
 
               {/* TITLE */}
-              <h3 className="text-[#1F2E4F] text-xl font-semibold mb-2">
+              <h3 className="text-white text-xl font-semibold mb-2">
                 {item.title}
               </h3>
 
               {/* DESC */}
-              <p className="text-[#1F2E4F]/60 leading-relaxed">{item.desc}</p>
+              <p className="text-white/50 leading-relaxed">{item.desc}</p>
             </motion.div>
           ))}
         </div>
