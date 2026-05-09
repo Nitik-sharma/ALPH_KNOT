@@ -41,7 +41,7 @@ const data = {
       line2: "that drives better",
       line3: "decisions.",
     },
-    body: "Our knowledge process professionals translate raw information into actionable intelligence — giving your leadership team the clarity to move with confidence.",
+    body: "Our knowledge process professionals translate raw information into actionable intelligence  giving your leadership team the clarity to move with confidence.",
 
     stats: [
       {
@@ -173,7 +173,7 @@ const data = {
     heading: {
       normal: "From raw data to",
       line2: "actionable",
-      gold: "insights — fast.",
+      gold: "insights  fast.",
     },
     subtext:
       "A structured process to collect, analyze, and deliver intelligence that drives better decisions.",

@@ -32,7 +32,7 @@ const data = {
       line2: "smarter, and with less friction.",
       line3: "",
     },
-    body: "From sourcing to onboarding, our HR professionals support every stage of the talent lifecycle — helping you grow your team without growing your overhead.",
+    body: "From sourcing to onboarding, our HR professionals support every stage of the talent lifecycle  helping you grow your team without growing your overhead.",
     stats: [
       {
         num: "40",
@@ -57,7 +57,7 @@ const data = {
       gold: "precision and growth.",
     },
     subtext:
-      "We manage hiring, onboarding, and HR operations with structure and consistency — so you can focus on building a high-performing organization.",
+      "We manage hiring, onboarding, and HR operations with structure and consistency  so you can focus on building a high-performing organization.",
     services: [
       {
         icon: Users,
@@ -134,7 +134,7 @@ const data = {
         iconColor: "#22a06b",
         tagStyle: "bg-[#edfaf3] text-[#15794d]",
         title: "Compliance handled end-to-end",
-        desc: "Stay compliant with policies, documentation, and regulations — without risk.",
+        desc: "Stay compliant with policies, documentation, and regulations  without risk.",
         tag: "🛡 Risk-free HR",
       },
     ],

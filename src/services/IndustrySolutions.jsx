@@ -48,7 +48,7 @@ const data = {
       line2: "your industry's",
       line3: "language.",
     },
-    body: "We go beyond general staffing — providing professionals trained in the workflows, compliance requirements, and customer expectations of your specific industry.",
+    body: "We go beyond general staffing  providing professionals trained in the workflows, compliance requirements, and customer expectations of your specific industry.",
 
     stats: [
       {
@@ -181,7 +181,7 @@ const data = {
     heading: {
       normal: "From industry needs to",
       line2: "fully aligned",
-      gold: "operations — fast.",
+      gold: "operations  fast.",
     },
     subtext:
       "A structured process to deploy domain-trained teams that integrate seamlessly into your workflows.",
@@ -216,7 +216,7 @@ const data = {
 
   quote: {
     quote:
-      "What impressed us most was how quickly the team understood our industry. There was no learning curve — they delivered value from day one.",
+      "What impressed us most was how quickly the team understood our industry. There was no learning curve  they delivered value from day one.",
     author: "Operations Director",
     sub: "Enterprise Team · AlphKnot",
   },

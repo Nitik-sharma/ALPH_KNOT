@@ -146,7 +146,7 @@ const data = {
     heading: {
       normal: "From strategy to",
       line2: "fully optimized",
-      gold: "growth — fast.",
+      gold: "growth  fast.",
     },
     subtext:
       "A structured, data-driven approach to launch, scale, and continuously improve your digital performance.",
@@ -173,7 +173,7 @@ const data = {
       {
         num: "04",
         title: "Tracking & Scaling",
-        desc: "We monitor key metrics like traffic, leads, and ROAS — scaling what works for sustained growth.",
+        desc: "We monitor key metrics like traffic, leads, and ROAS  scaling what works for sustained growth.",
         done: false,
       },
     ],

@@ -17,7 +17,7 @@ const data = {
       line2: "without expanding",
       line3: "your internal team.",
     },
-    body: "Our developers design, build, and automate systems that power your business — from websites to custom software and AI-driven workflows.",
+    body: "Our developers design, build, and automate systems that power your business  from websites to custom software and AI-driven workflows.",
 
     stats: [
       {
@@ -137,7 +137,7 @@ const data = {
         iconColor: "#C9A45C",
         tagStyle: "bg-[#fdf6e9] text-[#a87b2a]",
         title: "No-gap technical delivery",
-        desc: "Developers are available exactly when you need them — ensuring continuous progress.",
+        desc: "Developers are available exactly when you need them  ensuring continuous progress.",
         tag: "⚡ Always available",
       },
       {
@@ -182,7 +182,7 @@ const data = {
     heading: {
       normal: "From idea to",
       line2: "fully deployed",
-      gold: "solutions — fast.",
+      gold: "solutions  fast.",
     },
     subtext:
       "A streamlined development process designed to build, launch, and scale your technology efficiently.",
@@ -217,7 +217,7 @@ const data = {
 
   quote: {
     quote:
-      "They didn’t just build our product — they created a scalable system that supports our growth. Everything runs faster, smoother, and far more efficiently now.",
+      "They didn’t just build our product  they created a scalable system that supports our growth. Everything runs faster, smoother, and far more efficiently now.",
     author: "CTO",
     sub: "Tech Team · AlphKnot",
   },

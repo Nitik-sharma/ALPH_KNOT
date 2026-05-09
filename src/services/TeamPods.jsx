@@ -57,7 +57,7 @@ const data= {
       line2: "ready to deploy",
       line3: "as one unit.",
     },
-    body: "Why hire role by role when you can activate a pre-coordinated team? Our Team Pods bundle complementary roles into a single, cost-efficient package — so your new team hits the ground running together.",
+    body: "Why hire role by role when you can activate a pre-coordinated team? Our Team Pods bundle complementary roles into a single, cost-efficient package  so your new team hits the ground running together.",
 
     stats: [
       {
@@ -84,7 +84,7 @@ const data= {
       gold: "results from day one.",
     },
     subtext:
-      "Each pod combines complementary roles into a cohesive unit — aligned, efficient, and ready to perform.",
+      "Each pod combines complementary roles into a cohesive unit  aligned, efficient, and ready to perform.",
 
     services: [
       {
@@ -133,7 +133,7 @@ const data= {
       gold: "collaboration.",
     },
     subtext:
-      "Pre-coordinated teams that work together from day one — eliminating friction and accelerating results.",
+      "Pre-coordinated teams that work together from day one  eliminating friction and accelerating results.",
 
     points: [
       {
@@ -202,7 +202,7 @@ const data= {
     heading: {
       normal: "From requirement to",
       line2: "fully operational",
-      gold: "team — fast.",
+      gold: "team  fast.",
     },
     subtext:
       "A streamlined process to deploy pre-coordinated teams aligned with your business needs.",
@@ -237,7 +237,7 @@ const data= {
 
   quote: {
     quote:
-      "Instead of hiring role by role, we deployed a full team instantly. Everything just worked — communication, execution, and results were seamless from day one.",
+      "Instead of hiring role by role, we deployed a full team instantly. Everything just worked —communication, execution, and results were seamless from day one.",
     author: "COO",
     sub: "Operations Team · AlphKnot",
   },

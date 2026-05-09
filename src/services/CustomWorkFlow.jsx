@@ -141,7 +141,7 @@ const data= {
         iconColor: "#3b7dd8",
         tagStyle: "bg-[#eef4ff] text-[#2563c0]",
         title: "Roles built around your workflows",
-        desc: "Custom roles aligned with your processes — not generic job descriptions.",
+        desc: "Custom roles aligned with your processes  not generic job descriptions.",
         tag: "🔧 Workflow aligned",
       },
       {
@@ -159,7 +159,7 @@ const data= {
         iconColor: "#22a06b",
         tagStyle: "bg-[#edfaf3] text-[#15794d]",
         title: "Scale at your pace",
-        desc: "Start small, scale fast — our model grows with your business.",
+        desc: "Start small, scale fast  our model grows with your business.",
         tag: "🚀 Scalable",
       },
     ],
@@ -192,7 +192,7 @@ const data= {
     heading: {
       normal: "From requirements to",
       line2: "fully deployed",
-      gold: "teams — fast.",
+      gold: "teams  fast.",
     },
     subtext:
       "A flexible approach to design, build, and manage teams that fit your business perfectly.",

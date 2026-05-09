@@ -56,13 +56,13 @@ const data = {
       gold: "needs to run smoothly",
     },
     subtext:
-      "From data management to operational execution — we handle the workflows that keep your business efficient and scalable.",
+      "From data management to operational execution  we handle the workflows that keep your business efficient and scalable.",
 
     services: [
       {
         icon: ClipboardType,
         title: "Data Entry & Processing",
-        desc: "Accurate data handling at scale — from cleaning to structured database management.",
+        desc: "Accurate data handling at scale  from cleaning to structured database management.",
         tags: ["Data Input", "Data Cleaning", "Formatting", "Bulk Processing"],
       },
       {
@@ -132,7 +132,7 @@ const data = {
       iconColor: "#7c3aed",
       tagStyle: "bg-[#f3effe] text-[#5b21b6]",
       title: "Scale operations instantly",
-      desc: "Adapt to peak demand without delays — scale capacity up or down as your business evolves.",
+      desc: "Adapt to peak demand without delays  scale capacity up or down as your business evolves.",
       tag: "↕ Flexible scaling",
     },
     {

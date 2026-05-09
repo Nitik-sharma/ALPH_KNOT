@@ -88,7 +88,7 @@ const Footer = () => {
             </h2>
             <p className="text-[#1F2E4F]/55 text-[13.5px] leading-relaxed max-w-xs">
               Empowering startups, SMBs, and enterprises with world-class
-              outsourced talent — built to scale, operate, and lead.
+              outsourced talent  built to scale, operate, and lead.
             </p>
           </div>
 

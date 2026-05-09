@@ -33,7 +33,7 @@ const data = {
       line2: "handled with care",
       line3: "and consistency.",
     },
-    body: "From first contact to final resolution, our trained agents become the voice of your brand — delivering responsive, empathetic support across chat, email, and phone.",
+    body: "From first contact to final resolution, our trained agents become the voice of your brand  delivering responsive, empathetic support across chat, email, and phone.",
     stats: [
       {
         num: "3",
@@ -50,7 +50,7 @@ const data = {
       gold: "operations need",
     },
     subtext:
-      "Deliver seamless, high-quality customer experiences across every touchpoint — with scalable support designed to grow with your business.",
+      "Deliver seamless, high-quality customer experiences across every touchpoint  with scalable support designed to grow with your business.",
 
     services: [
       {
@@ -122,7 +122,7 @@ const data = {
         iconColor: "#C9A45C",
         tagStyle: "bg-[#fdf6e9] text-[#a87b2a]",
         title: "Brand-trained support agents",
-        desc: "Every agent is trained to reflect your tone, values, and voice — delivering a seamless in-house experience.",
+        desc: "Every agent is trained to reflect your tone, values, and voice  delivering a seamless in-house experience.",
         tag: "🎯 Brand-aligned",
       },
       {
@@ -131,7 +131,7 @@ const data = {
         iconColor: "#3b7dd8",
         tagStyle: "bg-[#eef4ff] text-[#2563c0]",
         title: "Scale instantly, without friction",
-        desc: "Ramp teams up or down based on demand — without hiring delays or operational overhead.",
+        desc: "Ramp teams up or down based on demand  without hiring delays or operational overhead.",
         tag: "⚡ On-demand scaling",
       },
       {
@@ -140,7 +140,7 @@ const data = {
         iconColor: "#7c3aed",
         tagStyle: "bg-[#f3effe] text-[#5b21b6]",
         title: "24/7 global coverage",
-        desc: "Multi-timezone support ensures your customers are never waiting — day or night.",
+        desc: "Multi-timezone support ensures your customers are never waiting  day or night.",
         tag: "🌍 Always available",
       },
       {
@@ -166,7 +166,7 @@ const data = {
     heading: {
       normal: "From onboarding to",
       line2: "fully optimized",
-      gold: "support — fast.",
+      gold: "support  fast.",
     },
     subtext:
       "A streamlined process designed to launch and scale your customer operations without friction.",
@@ -193,7 +193,7 @@ const data = {
       {
         num: "04",
         title: "Live & Continuous Optimization",
-        desc: "We monitor CSAT, SLA, and performance weekly — continuously improving outcomes.",
+        desc: "We monitor CSAT, SLA, and performance weekly  continuously improving outcomes.",
         done: false,
       },
     ],

@@ -55,7 +55,7 @@ const data = {
       gold: "your numbers.",
     },
     subtext:
-      "From daily bookkeeping to strategic reporting — we ensure your finances are accurate, compliant, and always decision-ready.",
+      "From daily bookkeeping to strategic reporting  we ensure your finances are accurate, compliant, and always decision-ready.",
 
     services: [
       {
@@ -97,7 +97,7 @@ const data = {
       gold: "compromise.",
     },
     subtext:
-      "Reliable, compliant, and insight-driven finance operations — without the overhead of an in-house team.",
+      "Reliable, compliant, and insight-driven finance operations  without the overhead of an in-house team.",
 
     points: [
       {
@@ -154,7 +154,7 @@ const data = {
     heading: {
       normal: "From setup to",
       line2: "fully optimized",
-      gold: "support — in days.",
+      gold: "support  in days.",
     },
     subtext:
       "A proven, frictionless process to launch, scale, and continuously improve your customer operations.",
@@ -175,13 +175,13 @@ const data = {
       {
         num: "03",
         title: "Seamless System Integration",
-        desc: "Our agents plug directly into your helpdesk and workflows — ensuring zero disruption and immediate productivity.",
+        desc: "Our agents plug directly into your helpdesk and workflows  ensuring zero disruption and immediate productivity.",
         done: true,
       },
       {
         num: "04",
         title: "Live Operations & Optimization",
-        desc: "We continuously monitor CSAT, SLA, and performance metrics — optimizing workflows to deliver better outcomes over time.",
+        desc: "We continuously monitor CSAT, SLA, and performance metrics  optimizing workflows to deliver better outcomes over time.",
         done: false,
       },
     ],

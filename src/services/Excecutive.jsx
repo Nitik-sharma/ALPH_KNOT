@@ -26,7 +26,7 @@ const data = {
       line2: "without the executive",
       line3: "overhead.",
     },
-    body: "We place elite Executive and Virtual Assistants who operate as true partners — managing your time, communications, and business administration so you can focus on what only you can do.",
+    body: "We place elite Executive and Virtual Assistants who operate as true partners  managing your time, communications, and business administration so you can focus on what only you can do.",
     stats: [
       { num: "200", suffix: "+", label: "Businesses scaled" },
       { num: "0", suffix: "%", label: "Long-term contracts" },
@@ -36,7 +36,7 @@ const data = {
   whatWeProvide: {
     heading: { normal: "Everything your executive", gold: "operations need" },
     subtext:
-      "Senior-level support across every layer of your business — without the overhead of full-time hires.",
+      "Senior-level support across every layer of your business  without the overhead of full-time hires.",
     services: [
       {
         icon: CalendarDays,
@@ -95,7 +95,7 @@ const data = {
         iconColor: "#3b7dd8",
         tagStyle: "bg-[#eef4ff] text-[#2563c0]",
         title: "Consistent coverage, zero gaps",
-        desc: "No disruption when your EA takes leave — seamless continuity from day one.",
+        desc: "No disruption when your EA takes leave  seamless continuity from day one.",
         tag: "✓ Always covered",
       },
       {
@@ -113,7 +113,7 @@ const data = {
         iconColor: "#22a06b",
         tagStyle: "bg-[#edfaf3] text-[#15794d]",
         title: "Flexible on your terms",
-        desc: "Part-time, full-time, or on-demand surge — scale up or down instantly.",
+        desc: "Part-time, full-time, or on-demand surge  scale up or down instantly.",
         tag: "↕ Scale anytime",
       },
     ],
@@ -127,7 +127,7 @@ const data = {
   howItWorks: {
     heading: {
       normal: "From first call to fully",
-      line2: "operational — in",
+      line2: "operational  in",
       gold: "days.",
     },
     subtext: "No long onboarding. No guesswork. Just a clean, fast process.",
@@ -147,20 +147,20 @@ const data = {
       {
         num: "03",
         title: "Onboard & Go",
-        desc: "Your assistant is briefed and operational — often within the same week.",
+        desc: "Your assistant is briefed and operational  often within the same week.",
         done: true,
       },
       {
         num: "04",
         title: "Ongoing Support",
-        desc: "Monthly check-ins. Replace if the fit isn't right — no questions asked.",
+        desc: "Monthly check-ins. Replace if the fit isn't right  no questions asked.",
         done: false,
       },
     ],
   },
   quote: {
     quote:
-      "AlphKnot gave me back my mornings. My EA handles everything from board deck prep to travel coordination — I've reclaimed 3 hours every day.",
+      "AlphKnot gave me back my mornings. My EA handles everything from board deck prep to travel coordination  I've reclaimed 3 hours every day.",
     author: "CEO, AlphKnot",
     sub: "Series B SaaS Company · Seattle, WA",
   },
