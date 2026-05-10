@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import FinalHero from "../assets/videos/Final Hero.mp4";
+import FinalHero from "../assets/videos/Hero Section Slow.mp4";
 import { NavLink } from "react-router-dom";
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="relative w-full px-4">
         <div className="max-w-xl">
           {/* ✅ HEADING (Poppins auto from global CSS) */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl text-white leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-[#C9A45C] leading-tight">
             {/* LINE 1 */}
             <div>
               {line1.map((word, i) => (
@@ -47,7 +47,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
                   animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                   transition={{ delay: 0.3 + i * 0.05 }}
-                  className="inline-block mr-2"
+                  className="inline-block mr-2 text-[#C9A45C]"
                 >
                   {word}
                 </motion.span>
@@ -60,7 +60,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-6 text-white text-lg font-medium"
+            className="mt-6 text-[#C9A45C] text-lg font-medium"
           >
             Infinite Opportunities via Unbreakable Knots.
           </motion.p>
@@ -70,11 +70,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="mt-4 text-gray-200 text-lg leading-relaxed"
+            className="mt-4 text-[#C9A45C] text-lg leading-relaxed"
           >
             We help ambitious companies scale faster by providing global talent,
-            AI operations, and strategic business support  without the
-            complexity of hiring.
+            AI operations, and strategic business support without the complexity
+            of hiring.
           </motion.p>
 
           {/* ✅ TRUST LINE */}
@@ -87,7 +87,10 @@ const Hero = () => {
             <span className="text-[#C9A45C] font-medium">
               No long-term contracts.
             </span>{" "}
-            No delays. Just execution.
+            <span className="text-[#C9A45C] font-medium">
+              {" "}
+              No delays. Just execution.
+            </span>
           </motion.p>
 
           {/* ✅ BUTTONS */}
