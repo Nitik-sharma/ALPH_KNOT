@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import FinalHero from "../assets/videos/Hero Section Slow.mp4";
+import FinalHero from "../assets/videos/Hero_background.mp4";
 import { NavLink } from "react-router-dom";
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
@@ -110,7 +110,7 @@ const Hero = () => {
 
             <motion.button
               whileHover={{ x: 5 }}
-              className="border border-[#1F2E4F]/20 text-[#1F2E4F] px-7 py-3 rounded-full font-medium hover:border-[#3FA7B3] hover:text-[#3FA7B3] transition"
+              className="border border-[#3FA7B3] text-[#3FA7B3] px-7 py-3 rounded-full font-medium hover:border-[#3FA7B3] hover:text-[#3FA7B3] transition"
             >
               <NavLink to={"/services"}>Explore Services</NavLink>
             </motion.button>
