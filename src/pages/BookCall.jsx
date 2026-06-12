@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import book from "../assets/images/Book/book.avif";
+import axios from "axios"
 
 const BookCall = () => {
   const [name, setName] = useState("");
@@ -56,8 +57,34 @@ const BookCall = () => {
 
   // Conform booking function
 
-  const confirmBooking = () => {
-    console.log(name, email, selectedDate, selectedTime);
+  const confirmBooking = async () => {
+    try {
+      if (!name || !email || !selectedDate || !selectedTime) {
+        alert("Please fill all fields");
+        return;
+      }
+
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/book-call`,
+        {
+          name,
+          email,
+          date: selectedDate,
+          time: selectedTime,
+        },
+      );
+
+      console.log(response.data);
+
+      alert("Booking Confirmed Successfully!");
+
+      setName("");
+      setEmail("");
+      setSelectedTime(null);
+    } catch (error) {
+      console.error(error);
+      alert(error.response?.data?.message || "Failed to book call");
+    }
   };
 
   return (

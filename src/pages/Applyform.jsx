@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from "react";
-
+import axios from "axios"
 // ─────────────────────────────────────────────
 // CONSTANTS
 // ─────────────────────────────────────────────
@@ -711,26 +711,27 @@ export default function ApplyForm() {
         formData.append("resume", form.resume);
       }
 
-      const response = await fetch(
+      const response = await axios.post(
         `${import.meta.env.VITE_API_URL}/api/job-application`,
+        formData,
         {
-          method: "POST",
-          body: formData,
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
         },
       );
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || "Something went wrong");
-      }
-
-      console.log("Form subit ")
-
+      console.log(response.data);
       setStatus("success");
     } catch (error) {
       console.error(error);
-      alert(error.message);
+
+      alert(
+        error.response?.data?.message ||
+          error.message ||
+          "Something went wrong",
+      );
+
       setStatus("idle");
     }
   };
