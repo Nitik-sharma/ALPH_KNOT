@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import HireTalent from "./pages/HireTalent";
 import BookCall from "./pages/BookCall";
 import HowWeWork from "./pages/HowWeWork";
-import Services from "./sections/Services";
+import Services from "./pages/Services";
 import WhoWeHelp from "./pages/WhoWeHelp";
 import AlphKnotAbout from "./pages/About";
 import AlphKnotContact from "./pages/Alphknotcontact";
