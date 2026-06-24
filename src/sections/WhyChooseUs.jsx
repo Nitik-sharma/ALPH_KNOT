@@ -50,7 +50,7 @@ const WhyChooseUs = () => {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center text-3xl md:text-5xl text-[#04388b] tracking-tight mb-16"
+          className="text-center text-3xl md:text-5xl text-[#1F2E4F] tracking-tight mb-16"
         >
           Built for Scale. Designed for{" "}
           <span className="text-[#bb7f14]">Speed.</span>
@@ -65,7 +65,7 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ y: -8 }}
-              className="group relative rounded-2xl border border-[#bb7f14]/20 bg-[#04388b] shadow-lg shadow-[#04388b]/10 hover:border-[#bb7f14]/55 hover:shadow-xl hover:shadow-[#04388b]/20 transition-all duration-300 overflow-hidden"
+              className="group relative rounded-2xl border border-[#bb7f14]/20 bg-[#1F2E4F] shadow-lg shadow-[#1F2E4F]/10 hover:border-[#bb7f14]/55 hover:shadow-xl hover:shadow-[#1F2E4F]/20 transition-all duration-300 overflow-hidden"
             >
               {/* Top accent line — grows full-width on hover */}
               <span className="absolute top-0 left-0 h-[3px] w-10 bg-[#bb7f14]/70 group-hover:w-full transition-all duration-500 z-10" />
@@ -82,8 +82,8 @@ const WhyChooseUs = () => {
               {/* BODY */}
               <div className="relative px-7 pb-8">
                 {/* Floating icon badge — bridges image and text */}
-                <div className="-mt-7 mb-5 w-14 h-14 rounded-full bg-[#bb7f14] border-4 border-[#04388b] flex items-center justify-center shadow-md group-hover:bg-[#6db9d1] transition-colors duration-300">
-                  <item.icon size={22} className="text-[#04388b]" />
+                <div className="-mt-7 mb-5 w-14 h-14 rounded-full bg-[#bb7f14] border-4 border-[#1F2E4F] flex items-center justify-center shadow-md group-hover:bg-[#6db9d1] transition-colors duration-300">
+                  <item.icon size={22} className="text-[#1F2E4F]" />
                 </div>
 
                 {/* Watermark index */}
@@ -108,12 +108,12 @@ const WhyChooseUs = () => {
         {/* DARK SECTION */}
         <section className="w-full bg-[#f4f8fb] py-20 px-6">
           {/* Heading */}
-          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#04388b] mb-3 leading-tight tracking-tight">
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#1F2E4F] mb-3 leading-tight tracking-tight">
             Why Global Leaders Choose{" "}
             <span className="text-[#bb7f14]">Alph Knot</span>
           </h2>
 
-          <p className="text-center text-[#04388b]/55 text-base mb-16">
+          <p className="text-center text-[#1F2E4F]/55 text-base mb-16">
             Six reasons world-class teams trust us to deliver
           </p>
 
@@ -165,7 +165,7 @@ const WhyChooseUs = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-[#04388b] rounded-2xl overflow-hidden border border-[#bb7f14]/15 hover:-translate-y-1 hover:border-[#bb7f14]/50 transition-all duration-300 group cursor-pointer flex flex-col"
+                className="bg-[#1F2E4F] rounded-2xl overflow-hidden border border-[#bb7f14]/15 hover:-translate-y-1 hover:border-[#bb7f14]/50 transition-all duration-300 group cursor-pointer flex flex-col"
               >
                 {/* Image */}
                 <div className="relative w-full h-44 overflow-hidden">
@@ -174,10 +174,10 @@ const WhyChooseUs = () => {
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#04388b] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                  <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#1F2E4F] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                     {item.tag}
                   </span>
-                  <span className="absolute top-3 right-3 bg-[#04388b] text-white text-[11px] font-black leading-none select-none w-7 h-7 rounded-full flex items-center justify-center">
+                  <span className="absolute top-3 right-3 bg-[#1F2E4F] text-white text-[11px] font-black leading-none select-none w-7 h-7 rounded-full flex items-center justify-center">
                     {item.num}
                   </span>
                 </div>

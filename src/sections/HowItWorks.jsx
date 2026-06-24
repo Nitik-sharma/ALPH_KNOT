@@ -61,7 +61,7 @@ const HowItWorks = () => {
           <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight mb-4">
             How It <span className="text-[#bb7f14]">Works</span>
           </h2>
-          <p className="text-[#04388b]/55 text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#04388b] text-base max-w-xl mx-auto leading-relaxed">
             From your first call to a fully running team - we make it simple,
             fast, and completely friction-free.
           </p>
@@ -79,7 +79,7 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12, duration: 0.5 }}
-              className="bg-[#04388b] border border-[#bb7f14]/15 rounded-2xl p-7 group hover:-translate-y-2 hover:border-[#bb7f14]/55 transition-all duration-300 flex flex-col relative"
+              className="bg-[#1F2E4F] border border-[#bb7f14]/15 rounded-2xl p-7 group hover:-translate-y-2 hover:border-[#bb7f14]/55 transition-all duration-300 flex flex-col relative"
             >
               {/* Icon + big number */}
               <div className="flex items-center justify-between mb-5">
@@ -123,7 +123,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-12 bg-[#04388b] rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#bb7f14]/15"
+          className="mt-12 bg-[#1F2E4F] rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#bb7f14]/15"
         >
           <div>
             <p className="text-[#bb7f14] text-[10px] font-black uppercase tracking-[2px] mb-1">
@@ -140,7 +140,7 @@ const HowItWorks = () => {
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => navigate("/contact-us")}
-            className="flex items-center gap-2 bg-[#bb7f14] text-[#04388b] px-7 py-4 rounded-full font-black text-sm whitespace-nowrap hover:bg-[#bb7f14]/90 transition-colors duration-200"
+            className="flex items-center gap-2 bg-[#bb7f14] text-[#1F2E4F] px-7 py-4 rounded-full font-black text-sm whitespace-nowrap hover:bg-[#bb7f14]/90 transition-colors duration-200"
           >
             Book Your Strategy Call <ArrowRight size={15} />
           </motion.button>

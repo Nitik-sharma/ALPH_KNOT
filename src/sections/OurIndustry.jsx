@@ -86,7 +86,7 @@ function OurIndustry() {
   const current = industries[active];
 
   return (
-    <section className="w-full bg-[#04388b] py-24 px-6">
+    <section className="w-full bg-[#1F2E4F] py-24 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
@@ -117,7 +117,7 @@ function OurIndustry() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-200 whitespace-nowrap
                 ${
                   active === i
-                    ? "bg-[#bb7f14] text-[#04388b] border-[#bb7f14]"
+                    ? "bg-[#bb7f14] text-[#1F2E4F] border-[#bb7f14]"
                     : "bg-white/[0.04] text-white/60 border-white/10 hover:border-[#6db9d1]/50 hover:text-white"
                 }`}
             >
@@ -127,7 +127,7 @@ function OurIndustry() {
         </div>
 
         {/* Active Industry Display — split panel, crossfades on tab change */}
-        <div className="rounded-2xl overflow-hidden border border-[#bb7f14]/20 bg-[#04388b]">
+        <div className="rounded-2xl overflow-hidden border border-[#bb7f14]/20 bg-[#1F2E4F]">
           <AnimatePresence mode="wait">
             <motion.div
               key={current.id}
@@ -144,10 +144,10 @@ function OurIndustry() {
                   alt={current.title}
                   className="w-full h-full rounded-2xl"
                 />
-                <span className="absolute top-5 left-5 bg-[#bb7f14] text-[#04388b] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
+                <span className="absolute top-5 left-5 bg-[#bb7f14] text-[#1F2E4F] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
                   {current.tag}
                 </span>
-                <span className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#6db9d1] text-[#04388b] font-black text-sm flex items-center justify-center shadow-md">
+                <span className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#6db9d1] text-[#1F2E4F] font-black text-sm flex items-center justify-center shadow-md">
                   {String(current.id).padStart(2, "0")}
                 </span>
               </div>
@@ -178,7 +178,7 @@ function OurIndustry() {
 
                 <button
                   onClick={() => navigate("/contact-us")}
-                  className="flex items-center justify-center gap-2 bg-[#bb7f14] text-[#04388b] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#04388b] hover:text-white border border-transparent hover:border-[#bb7f14]/40 transition-all duration-300 w-fit"
+                  className="flex items-center justify-center gap-2 bg-[#bb7f14] text-[#1F2E4F] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#1F2E4F] hover:text-white border border-transparent hover:border-[#bb7f14]/40 transition-all duration-300 w-fit"
                 >
                   Get Started <ArrowRight size={14} />
                 </button>
@@ -223,19 +223,19 @@ function OurIndustry() {
         {/* Bottom CTA */}
         <div className="mt-10 bg-[#bb7f14] rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-[#04388b] text-[11px] font-black uppercase tracking-[2px] mb-1">
+            <p className="text-[#1F2E4F] text-[11px] font-black uppercase tracking-[2px] mb-1">
               Don't see your industry?
             </p>
-            <h3 className="text-[#04388b] text-xl font-black">
+            <h3 className="text-[#1F2E4F] text-xl font-black">
               We work across all sectors, let's talk.
             </h3>
-            <p className="text-[#04388b]/60 text-sm mt-1">
+            <p className="text-[#1F2E4F]/60 text-sm mt-1">
               Our talent solutions adapt to any business model, anywhere.
             </p>
           </div>
           <button
             onClick={() => navigate("/book-call")}
-            className="flex items-center gap-2 bg-[#04388b] text-white px-7 py-3.5 rounded-full font-bold text-sm whitespace-nowrap hover:bg-[#04388b]/80 transition-colors duration-200"
+            className="flex items-center gap-2 bg-[#1F2E4F] text-white px-7 py-3.5 rounded-full font-bold text-sm whitespace-nowrap hover:bg-[#1F2E4F]/80 transition-colors duration-200"
           >
             Talk to Our Team <ArrowRight size={14} />
           </button>

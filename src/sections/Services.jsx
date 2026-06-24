@@ -101,7 +101,7 @@ function ServiceCard({ service, navigate }) {
   return (
     <div
       onClick={() => navigate(service.slug)}
-      className="w-[260px] flex-shrink-0 bg-[#04388b] rounded-2xl overflow-hidden border border-[#bb7f14]/15 cursor-pointer group transition-all duration-300 hover:-translate-y-2 hover:border-[#bb7f14]/55 flex flex-col"
+      className="w-[260px] flex-shrink-0 bg-[#1F2E4F] rounded-2xl overflow-hidden border border-[#bb7f14]/15 cursor-pointer group transition-all duration-300 hover:-translate-y-2 hover:border-[#bb7f14]/55 flex flex-col"
     >
       {/* Image */}
       <div className="relative h-full overflow-hidden">
@@ -110,8 +110,8 @@ function ServiceCard({ service, navigate }) {
           alt={service.title}
           className="w-full h-full object-cover   group-hover:scale-105 transition-all duration-500"
         />
-        <div className="absolute inset-0 bg-[#04388b]/40" />
-        <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#04388b] text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
+        <div className="absolute inset-0 bg-[#1F2E4F]/40" />
+        <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#1F2E4F] text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
           {service.tag}
         </span>
         <span className="absolute top-2 right-3 text-[#6db9d1]/20 text-4xl font-black leading-none select-none">
@@ -140,7 +140,7 @@ function ServiceCard({ service, navigate }) {
           <div className="w-7 h-7 rounded-full border border-[#bb7f14]/35 flex items-center justify-center text-[#bb7f14] group-hover:bg-[#bb7f14] group-hover:border-[#bb7f14] transition-all duration-300">
             <ArrowRight
               size={12}
-              className="group-hover:text-[#04388b] transition-colors duration-300"
+              className="group-hover:text-[#1F2E4F] transition-colors duration-300"
             />
           </div>
         </div>
@@ -169,17 +169,17 @@ function Services() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-[#1F2E4F] leading-tight tracking-tight">
                 Our Core <span className="text-[#bb7f14]">Services</span>
               </h2>
-              <p className="text-[#04388b]/55 text-base mt-3 max-w-lg leading-relaxed">
+              <p className="text-[#1F2E4F]/55 text-base mt-3 max-w-lg leading-relaxed">
                 End-to-end talent solutions built for modern businesses that
                 demand excellence without the overhead.
               </p>
             </div>
             <button
               onClick={() => navigate("/services")}
-              className="flex items-center gap-2 bg-[#04388b] text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-[#bb7f14] hover:text-[#04388b] transition-all duration-300 whitespace-nowrap self-start"
+              className="flex items-center gap-2 bg-[#1F2E4F] text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-[#bb7f14] hover:text-[#1F2E4F] transition-all duration-300 whitespace-nowrap self-start"
             >
               View All Services <ArrowRight size={14} />
             </button>
@@ -227,7 +227,7 @@ function Services() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-[#04388b] rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#bb7f14]/15"
+          className="bg-[#1F2E4F] rounded-2xl px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-6 border border-[#bb7f14]/15"
         >
           <div>
             <p className="text-[#bb7f14] text-[11px] font-bold uppercase tracking-[2px] mb-1">
@@ -242,7 +242,7 @@ function Services() {
           </div>
           <button
             onClick={() => navigate("/book-call")}
-            className="flex items-center gap-2 bg-[#bb7f14] text-[#04388b] px-7 py-3.5 rounded-full font-bold text-sm whitespace-nowrap hover:bg-[#04388b] hover:text-white transition-colors duration-200"
+            className="flex items-center gap-2 bg-[#bb7f14] text-[#1F2E4F] px-7 py-3.5 rounded-full font-bold text-sm whitespace-nowrap hover:bg-[#1F2E4F] hover:text-white transition-colors duration-200"
           >
             Get a Free Consultation <ArrowRight size={14} />
           </button>
