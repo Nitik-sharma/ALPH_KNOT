@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link, Navigate } from "react-router-dom";
 
 /* ─────────────────────────
    DESIGN TOKENS
@@ -1539,7 +1540,7 @@ function FinalCTA() {
             >
               Stop searching, start scaling. Fill out the form above and our
               team will put together a tailored execution plan for your business
-               no commitment required.
+              no commitment required.
             </p>
 
             <div
@@ -1576,29 +1577,32 @@ function FinalCTA() {
               >
                 Fill Out the Form →
               </button>
-              <button
-                style={{
-                  background: "rgba(255,255,255,0.06)",
-                  color: "rgba(255,255,255,0.8)",
-                  padding: "14px 30px",
-                  borderRadius: 11,
-                  fontFamily: "'Inter', sans-serif",
-                  fontWeight: 500,
-                  fontSize: 14.5,
-                  border: "1px solid rgba(255,255,255,0.13)",
-                  cursor: "pointer",
-                  transition: "all 0.2s",
-                  backdropFilter: "blur(6px)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.1)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.06)";
-                }}
-              >
-                Book a Call Instead
-              </button>
+              <Link to={"/book-call"}>
+                <button
+                  
+                  style={{
+                    background: "rgba(255,255,255,0.06)",
+                    color: "rgba(255,255,255,0.8)",
+                    padding: "14px 30px",
+                    borderRadius: 11,
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: 500,
+                    fontSize: 14.5,
+                    border: "1px solid rgba(255,255,255,0.13)",
+                    cursor: "pointer",
+                    transition: "all 0.2s",
+                    backdropFilter: "blur(6px)",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.1)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255,255,255,0.06)";
+                  }}
+                >
+                  Book a Call Instead
+                </button>
+              </Link>
             </div>
 
             {/* bottom micro-copy */}

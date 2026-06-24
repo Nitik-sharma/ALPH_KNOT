@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import FinalHero from "../assets/videos/Hero_background.mp4";
+import FinalHero from "../assets/videos/3 HD.mp4";
 import { NavLink } from "react-router-dom";
 
 const line1 = "U.S.-Based Support Partner for".split(" ");
@@ -8,16 +8,25 @@ const line2 = "Ambitious CEOs and Scaling Businesses".split(" ");
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-start pt-28 overflow-hidden">
+    <section className="relative   min-h-screen flex items-start pt-28 overflow-hidden">
       {/* 🎬 BACKGROUND VIDEO */}
       <video
-        src={FinalHero}
         autoPlay
-        loop
         muted
+        loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover object-top overflow-hidden z-0 "
+      >
+        <source src={FinalHero} type="video/mp4" />
+      </video>
+
+      {/* <img
+        src={FinalHero}
+        alt="AlphknotHero"
+        srcset=""
+        className="absolute inset-0 w-full h-full object-contain lg:object-cover"
+      /> */}
 
       {/* 🔥 CONTENT */}
       <div className="relative w-full px-4">

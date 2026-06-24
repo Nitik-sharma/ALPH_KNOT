@@ -165,7 +165,7 @@ function OurIndustry() {
                   </span>
                 ))}
                 <button
-                  onClick={() => navigate("/contact")}
+                  onClick={() => navigate("/contact-us")}
                   className="ml-auto flex items-center gap-2 bg-[#C9A45C] text-[#0d1b2e] px-5 py-2.5 rounded-full font-bold text-sm hover:bg-[#d4b06a] transition-colors duration-200 whitespace-nowrap"
                 >
                   Get Started <ArrowRight size={14} />
