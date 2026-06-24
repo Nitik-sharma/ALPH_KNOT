@@ -82,7 +82,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-4 sm:mt-6 text-[#C9A45C] text-base sm:text-lg font-medium"
+            className="mt-4 sm:mt-6 text-[#bb7f14] text-base sm:text-lg font-medium"
           >
             Infinite Opportunities via Unbreakable Knots
           </motion.p>
@@ -106,10 +106,10 @@ const Hero = () => {
             transition={{ delay: 0.8 }}
             className="mt-3 sm:mt-4 text-[#1F2E4F]/80 text-sm sm:text-base"
           >
-            <span className="text-[#C9A45C] font-medium">
+            <span className="text-[#bb7f14] font-medium">
               No long-term contracts.
             </span>{" "}
-            <span className="text-[#C9A45C] font-medium">
+            <span className="text-[#bb7f14] font-medium">
               {" "}
               No delays. Just execution.
             </span>
@@ -125,14 +125,14 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#C9A45C] text-white px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-center"
+              className="bg-[#bb7f14] text-white px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-medium tracking-wide text-center"
             >
               <NavLink to={"/book-call"}> Book a Call</NavLink>
             </motion.button>
 
             <motion.button
               whileHover={{ x: 5 }}
-              className="border border-[#3FA7B3] text-[#3FA7B3] px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-medium hover:border-[#3FA7B3] hover:text-[#3FA7B3] transition text-center"
+              className="border border-[#04388b] text-[#04388b] px-5 sm:px-7 py-2.5 sm:py-3 rounded-full font-medium hover:border-[#04388b] hover:text-[#04388b] transition text-center"
             >
               <NavLink to={"/services"}>Explore Services</NavLink>
             </motion.button>

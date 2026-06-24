@@ -65,7 +65,7 @@ const Navbar = () => {
               >
                 <Link
                   to={link.path}
-                  className="text-sm text-[#1F2E4F]/80 hover:text-[#C9A45C] transition-colors flex items-center gap-1"
+                  className="text-sm text-[#1F2E4F]/80 hover:text-[#bb7f14] transition-colors flex items-center gap-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {link.name}
@@ -74,13 +74,13 @@ const Navbar = () => {
                       size={13}
                       className={`transition-transform duration-200 ${
                         activeMenu === link.type
-                          ? "rotate-180 text-[#C9A45C]"
+                          ? "rotate-180 text-[#bb7f14]"
                           : ""
                       }`}
                     />
                   )}
                 </Link>
-                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#C9A45C] group-hover:w-full transition-all duration-300" />
+                <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#bb7f14] group-hover:w-full transition-all duration-300" />
 
                 {/* ✅ Dropdown renders HERE — inside the relative div */}
                 <AnimatePresence>
@@ -102,14 +102,14 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-5">
             <Link
               to="/book-call"
-              className="text-sm text-[#1F2E4F]/70 hover:text-[#C9A45C] flex items-center gap-1 transition-colors"
+              className="text-sm text-[#1F2E4F]/70 hover:text-[#bb7f14] flex items-center gap-1 transition-colors"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Book a Call <ArrowUpRight size={13} />
             </Link>
             <button
               onClick={() => navigate("/hire-talent")}
-              className="bg-[#C9A45C] text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity"
+              className="bg-[#bb7f14] text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Hire Alph Knot
@@ -165,7 +165,7 @@ const Navbar = () => {
                           {link.name}
                           <ChevronDown
                             size={14}
-                            className={`text-[#C9A45C] transition-transform duration-200 ${
+                            className={`text-[#bb7f14] transition-transform duration-200 ${
                               mobileExpanded === link.type ? "rotate-180" : ""
                             }`}
                           />
@@ -189,7 +189,7 @@ const Navbar = () => {
                       <Link
                         to={link.path}
                         onClick={closeAll}
-                        className="flex items-center py-3 px-3 text-[13.5px] font-medium text-[#0b1c35] rounded-lg hover:bg-amber-50 hover:text-[#C9A45C] transition-colors"
+                        className="flex items-center py-3 px-3 text-[13.5px] font-medium text-[#0b1c35] rounded-lg hover:bg-amber-50 hover:text-[#bb7f14] transition-colors"
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       >
                         {link.name}
@@ -204,7 +204,7 @@ const Navbar = () => {
                 <Link
                   to="/book-call"
                   onClick={closeAll}
-                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-[#0b1c35]/15 text-[13px] font-medium text-[#0b1c35] hover:border-[#C9A45C] hover:text-[#C9A45C] transition-colors"
+                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-[#0b1c35]/15 text-[13px] font-medium text-[#0b1c35] hover:border-[##bb7f14] hover:text-[#bb7f14] transition-colors"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Book a Call <ArrowUpRight size={13} />

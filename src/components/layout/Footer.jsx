@@ -84,11 +84,12 @@ const Footer = () => {
               className="text-xl font-bold text-[#1F2E4F] mb-3"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
-              Alph<span className="text-[#C9A45C]">Knot</span>
+              <span className=" text-[#04388b]">Alph</span>{" "}
+              <span className="text-[#6db9d1]">Knot</span>
             </h2>
             <p className="text-[#1F2E4F]/55 text-[13.5px] leading-relaxed max-w-xs">
               Empowering startups, SMBs, and enterprises with world-class
-              outsourced talent  built to scale, operate, and lead.
+              outsourced talent built to scale, operate, and lead.
             </p>
           </div>
 
@@ -187,7 +188,9 @@ const Footer = () => {
       <div className="border-t border-[#1F2E4F]/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[#1F2E4F]/40 text-[12px]">
-            © {new Date().getFullYear()} Alph Knot. All rights reserved.
+            © {new Date().getFullYear()}{" "}
+            <span className=" text-[#04388b]">Alph</span>{" "}
+            <span className="text-[#6db9d1]">Knot</span>. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             {[
