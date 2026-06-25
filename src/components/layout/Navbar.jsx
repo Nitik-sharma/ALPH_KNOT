@@ -48,14 +48,32 @@ const Navbar = () => {
             : "bg-white border-b border-gray-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 flex items-center justify-between h-[60px]">
+        {/* 
+          ✅ KEY FIXES:
+          - max-w-[1920px] so it fills large screens properly
+          - px scales: px-8 (laptop) → px-16 (desktop) → px-24 (large)
+          - h scales: h-[68px] → h-[76px] → h-[84px]
+          - font scales: 14px → 15px → 16px
+          - logo scales: h-9 → h-10 → h-11
+          - gap scales: gap-7 → gap-9 → gap-12
+        */}
+        <div className="mx-auto w-full max-w-[1920px] px-8 lg:px-16 xl:px-24 2xl:px-32 flex items-center justify-between h-[68px] lg:h-[70px] xl:h-[70px] 2xl:h-[88px]">
           {/* Logo */}
-          <Link to="/" onClick={closeAll} aria-label="Alph Knot Home">
-            <img src={logo} alt="Alph Knot" className="h-8 w-auto" />
+          <Link
+            to="/"
+            onClick={closeAll}
+            aria-label="Alph Knot Home"
+            className="flex-shrink-0"
+          >
+            <img
+              src={logo}
+              alt="Alph Knot"
+              className="h-9 lg:h-10 xl:h-11 2xl:h-12 w-auto"
+            />
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-7 xl:gap-9 2xl:gap-12">
             {navLinks.map((link, index) => (
               <div
                 key={index}
@@ -65,7 +83,7 @@ const Navbar = () => {
               >
                 <Link
                   to={link.path}
-                  className="text-sm text-[#1F2E4F]/80 hover:text-[#bb7f14] transition-colors flex items-center gap-1"
+                  className="text-[14px] xl:text-[15px] 2xl:text-[16px] font-medium text-[#1F2E4F] hover:text-[#bb7f14] transition-colors flex items-center gap-1 whitespace-nowrap"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {link.name}
@@ -82,7 +100,6 @@ const Navbar = () => {
                 </Link>
                 <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#bb7f14] group-hover:w-full transition-all duration-300" />
 
-                {/* ✅ Dropdown renders HERE — inside the relative div */}
                 <AnimatePresence>
                   {activeMenu === link.type && link.type && (
                     <div
@@ -99,17 +116,17 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-5">
+          <div className="hidden lg:flex items-center gap-5 xl:gap-6 2xl:gap-8 flex-shrink-0">
             <Link
               to="/book-call"
-              className="text-sm text-[#1F2E4F]/70 hover:text-[#bb7f14] flex items-center gap-1 transition-colors"
+              className="text-[14px] xl:text-[15px] 2xl:text-[16px] font-medium text-[#1F2E4F] hover:text-[#bb7f14] flex items-center gap-1.5 transition-colors whitespace-nowrap"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Book a Call <ArrowUpRight size={13} />
+              Book a Call <ArrowUpRight size={14} />
             </Link>
             <button
               onClick={() => navigate("/hire-talent")}
-              className="bg-[#bb7f14] text-white text-sm font-semibold px-5 py-2 rounded-full hover:opacity-90 transition-opacity"
+              className="bg-[#bb7f14] text-white text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-6 xl:px-7 2xl:px-8 py-2.5 xl:py-3 rounded-full hover:opacity-90 transition-opacity whitespace-nowrap"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Hire Alph Knot
@@ -137,16 +154,15 @@ const Navbar = () => {
               exit={{ opacity: 0 }}
               onClick={closeAll}
               className="fixed inset-0 z-40 bg-black/25 lg:hidden"
-              style={{ top: "60px" }}
+              style={{ top: "68px" }}
             />
-
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.22 }}
               className="fixed right-0 bottom-0 z-50 w-[78vw] max-w-[300px] bg-white lg:hidden flex flex-col overflow-y-auto"
-              style={{ top: "60px" }}
+              style={{ top: "68px" }}
             >
               <nav className="flex flex-col px-4 pt-5 pb-2 gap-0.5 flex-1">
                 {navLinks.map((link, index) => (
@@ -170,7 +186,6 @@ const Navbar = () => {
                             }`}
                           />
                         </button>
-
                         <AnimatePresence>
                           {mobileExpanded === link.type && (
                             <motion.div
@@ -204,7 +219,7 @@ const Navbar = () => {
                 <Link
                   to="/book-call"
                   onClick={closeAll}
-                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-[#0b1c35]/15 text-[13px] font-medium text-[#0b1c35] hover:border-[##bb7f14] hover:text-[#bb7f14] transition-colors"
+                  className="flex items-center justify-center gap-1.5 py-2.5 rounded-full border border-[#0b1c35]/15 text-[13px] font-medium text-[#0b1c35] hover:text-[#bb7f14] transition-colors"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Book a Call <ArrowUpRight size={13} />
@@ -214,7 +229,7 @@ const Navbar = () => {
                     navigate("/hire-talent");
                     closeAll();
                   }}
-                  className="py-2.5 rounded-full bg-[#C9A45C] text-white text-[13px] font-semibold hover:opacity-90 transition-opacity"
+                  className="py-2.5 rounded-full bg-[#bb7f14] text-white text-[13px] font-semibold hover:opacity-90 transition-opacity"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   Hire Alph Knot

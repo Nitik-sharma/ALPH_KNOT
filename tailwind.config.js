@@ -1,4 +1,4 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -6,11 +6,21 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1920px",
+      },
+      maxWidth: {
+        container: "1440px",
+      },
+      colors: {
+        primary: "#04388b",
+        secondary: "#bb7f14",
+      },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Poppins', 'sans-serif'],
+        heading: ["Poppins", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
     },
   },
   plugins: [],
-}
+};

@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import FinalHero from "../assets/videos/4 HD.mp4";
+import mobileHero from "../assets/images/Home/Mobile.png"
 import { NavLink } from "react-router-dom";
 
-const line1 = "U.S.-Based Support Partner for".split(" ");
-const line2 = "Ambitious CEO's and Scaling Businesses".split(" ");
+const line1 = "U.S.-Based Support Partner ".split(" ");
+const line2 = `for Ambitious CEO's and ${" "} Scaling Businesses`.split(" ");
 
 const Hero = () => {
   return (
@@ -16,17 +17,17 @@ const Hero = () => {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-top overflow-hidden z-0 "
+        className="absolute inset-0 w-full h-full object-cover object-top overflow-hidden z-0 hidden md:block"
       >
         <source src={FinalHero} type="video/mp4" />
       </video>
 
-      {/* <img
-        src={FinalHero}
+      <img
+        src={mobileHero}
         alt="AlphknotHero"
         srcset=""
-        className="absolute inset-0 w-full h-full object-contain lg:object-cover"
-      /> */}
+       className="absolute inset-0 w-full h-full object-cover object-top z-0 block md:hidden"
+      />
 
       {/* 🔥 CONTENT */}
       <div className="relative w-full px-4 sm:px-6 md:px-10 lg:px-4">
