@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <p
-              className="text-[#C9A45C] text-[10px] font-semibold tracking-[3px] uppercase mb-2"
+              className="text-[#bb7f14] text-[10px] font-semibold tracking-[3px] uppercase mb-2"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Let's Work Together
@@ -60,12 +60,12 @@ const Footer = () => {
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Let's build something{" "}
-              <span className="text-[#C9A45C]">great together</span>
+              <span className="text-[#bb7f14]">great together</span>
             </h2>
           </div>
           <NavLink to={"/contact-us"}>
             <button
-              className="flex-shrink-0 bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="flex-shrink-0 bg-[#bb7f14] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get Started
@@ -96,7 +96,7 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h3
-              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-5"
+              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#bb7f14] mb-5"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Company
@@ -109,8 +109,8 @@ const Footer = () => {
                     className={({ isActive }) =>
                       `text-[13px] transition-colors duration-150 ${
                         isActive
-                          ? "text-[#C9A45C]"
-                          : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                          ? "text-[#bb7f14]"
+                          : "text-[#1F2E4F]/55 hover:text-[#bb7f14]"
                       }`
                     }
                   >
@@ -124,7 +124,7 @@ const Footer = () => {
           {/* Follow Us */}
           <div>
             <h3
-              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-5"
+              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#bb7f14] mb-5"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Follow Us
@@ -138,7 +138,7 @@ const Footer = () => {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-9 h-9 rounded-full border border-[#1F2E4F]/15 flex items-center justify-center hover:bg-[#C9A45C] hover:border-[#C9A45C] transition-all duration-200"
+                    className="group w-9 h-9 rounded-full border border-[#1F2E4F]/15 flex items-center justify-center hover:bg-[#bb7f14] hover:border-[#bb7f14] transition-all duration-200"
                   >
                     <Icon
                       size={15}
@@ -157,7 +157,7 @@ const Footer = () => {
         {/* ── ROW 2: Services (full width) ── */}
         <div className="pt-12">
           <h3
-            className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#C9A45C] mb-6"
+            className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#bb7f14] mb-6"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Our Services
@@ -170,12 +170,12 @@ const Footer = () => {
                   className={({ isActive }) =>
                     `text-[13px] transition-colors duration-150 flex items-center gap-2 group ${
                       isActive
-                        ? "text-[#C9A45C]"
-                        : "text-[#1F2E4F]/55 hover:text-[#C9A45C]"
+                        ? "text-[#bb7f14]"
+                        : "text-[#1F2E4F]/55 hover:text-[#bb7f14]"
                     }`
                   }
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A45C]/40 group-hover:bg-[#C9A45C] flex-shrink-0 transition-colors" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#bb7f14]/40 group-hover:bg-[#bb7f14] flex-shrink-0 transition-colors" />
                   {s.title}
                 </NavLink>
               </li>
@@ -204,8 +204,8 @@ const Footer = () => {
                 className={({ isActive }) =>
                   `text-[12px] transition-colors ${
                     isActive
-                      ? "text-[#C9A45C]"
-                      : "text-[#1F2E4F]/40 hover:text-[#C9A45C]"
+                      ? "text-[#bb7f14]"
+                      : "text-[#1F2E4F]/40 hover:text-[#bb7f14]"
                   }`
                 }
               >

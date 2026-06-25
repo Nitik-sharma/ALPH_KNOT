@@ -12,6 +12,14 @@ import {
   ArrowUpRight,
   CheckCircle2,
 } from "lucide-react";
+import who1 from "../assets/images/New folder/who1.jpeg"
+import who2 from "../assets/images/New folder/who2.jpeg";
+import who3 from "../assets/images/New folder/who3.jpeg";
+import who4 from "../assets/images/New folder/who4.jpeg";
+import who5 from "../assets/images/New folder/who5.jpeg";
+import who6 from "../assets/images/New folder/who6.jpeg";
+import whoHero from "../assets/images/New folder/whoHero.jpeg"
+import whoCta from "../assets/images/New folder/whoCta.jpeg"
 
 const clients = [
   {
@@ -19,7 +27,7 @@ const clients = [
     icon: Rocket,
     desc: "Outsource operations, admin, and execution so you can focus on scaling your startup.",
     image:
-      "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80",
+     who1,
     tags: ["Virtual Assistants", "Ops Support", "Admin"],
   },
   {
@@ -27,7 +35,7 @@ const clients = [
     icon: TrendingUp,
     desc: "Build offshore teams and streamline processes to grow faster without hiring delays.",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
+      who2,
     tags: ["Offshore Teams", "Process Ops", "Growth"],
   },
   {
@@ -35,7 +43,7 @@ const clients = [
     icon: ShoppingCart,
     desc: "Manage customer support, order processing, and backend operations efficiently.",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
+      who3,
     tags: ["Customer Support", "Order Ops", "Backend"],
   },
   {
@@ -43,7 +51,7 @@ const clients = [
     icon: Code,
     desc: "Support product, customer experience, and data operations with expert teams.",
     image:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&q=80",
+      who4,
     tags: ["Product Ops", "CX", "Data Teams"],
   },
   {
@@ -51,7 +59,7 @@ const clients = [
     icon: Briefcase,
     desc: "Delegate execution and focus on strategy, growth, and client relationships.",
     image:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&q=80",
+     who5,
     tags: ["Execution", "Strategy Support", "Client Ops"],
   },
   {
@@ -59,7 +67,7 @@ const clients = [
     icon: Building2,
     desc: "Optimize workflows, reduce costs, and improve operational efficiency globally.",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
+      who6,
     tags: ["Workflow Ops", "Cost Reduction", "Global Teams"],
   },
 ];
@@ -102,7 +110,7 @@ const WhoWeHelp = () => {
       <section
         className="relative pt-40 pb-32 overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80')`,
+          backgroundImage: `url(${whoHero})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -123,7 +131,7 @@ const WhoWeHelp = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-[#C9A45C] text-xs font-semibold tracking-[3px] uppercase mb-5"
+            className="text-[#bb7f14] text-xs font-semibold tracking-[3px] uppercase mb-5"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Who We Serve
@@ -137,7 +145,7 @@ const WhoWeHelp = () => {
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Built for Ambitious <br />
-            <span className="text-[#C9A45C]">CEOs & Scaling Teams</span>
+            <span className="text-[#bb7f14]">CEOs & Scaling Teams</span>
           </motion.h1>
 
           <motion.p
@@ -160,7 +168,7 @@ const WhoWeHelp = () => {
           >
             <button
               onClick={() => navigate("/contact-us")}
-              className="bg-[#C9A45C] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="bg-[#bb7f14] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get Started
@@ -189,7 +197,7 @@ const WhoWeHelp = () => {
                 className="bg-white/5 backdrop-blur-sm px-6 py-5 text-center"
               >
                 <p
-                  className="text-2xl font-bold text-[#C9A45C] mb-1"
+                  className="text-2xl font-bold text-[#bb7f14] mb-1"
                   style={{ fontFamily: "'Poppins', sans-serif" }}
                 >
                   {s.value}
@@ -210,7 +218,7 @@ const WhoWeHelp = () => {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="text-center mb-14">
           <p
-            className="text-[#C9A45C] text-xs font-semibold tracking-[3px] uppercase mb-3"
+            className="text-[#bb7f14] text-xs font-semibold tracking-[3px] uppercase mb-3"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Our Clients
@@ -237,7 +245,7 @@ const WhoWeHelp = () => {
                 key={index}
                 variants={cardAnim}
                 whileHover={{ y: -6 }}
-                className="group bg-white rounded-2xl overflow-hidden border border-[#e8e2d8] hover:shadow-2xl hover:border-[#C9A45C]/40 transition-all duration-300 cursor-pointer"
+                className="group bg-white rounded-2xl overflow-hidden border border-[#e8e2d8] hover:shadow-2xl hover:border-[#bb7f14]/40 transition-all duration-300 cursor-pointer"
               >
                 {/* Image */}
                 <div className="relative h-44 overflow-hidden">
@@ -247,7 +255,7 @@ const WhoWeHelp = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1F2E4F]/65 via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-4 w-9 h-9 rounded-xl bg-[#C9A45C] flex items-center justify-center shadow-lg">
+                  <div className="absolute bottom-3 left-4 w-9 h-9 rounded-xl bg-[#bb7f14] flex items-center justify-center shadow-lg">
                     <Icon size={16} color="white" strokeWidth={1.8} />
                   </div>
                 </div>
@@ -255,7 +263,7 @@ const WhoWeHelp = () => {
                 {/* Body */}
                 <div className="p-5">
                   <h3
-                    className="text-[#1F2E4F] font-semibold text-[15px] mb-2 group-hover:text-[#C9A45C] transition-colors duration-200"
+                    className="text-[#1F2E4F] font-semibold text-[15px] mb-2 group-hover:text-[#bb7f14] transition-colors duration-200"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     {client.title}
@@ -273,7 +281,7 @@ const WhoWeHelp = () => {
                     {client.tags.map((tag, t) => (
                       <span
                         key={t}
-                        className="text-[11px] px-2.5 py-1 rounded-full bg-[#C9A45C]/10 text-[#C9A45C] font-medium"
+                        className="text-[11px] px-2.5 py-1 rounded-full bg-[#bb7f14]/10 text-[#bb7f14] font-medium"
                         style={{ fontFamily: "'Poppins', sans-serif" }}
                       >
                         {tag}
@@ -282,7 +290,7 @@ const WhoWeHelp = () => {
                   </div>
 
                   <div
-                    className="flex items-center gap-1 text-[11px] font-semibold text-[#C9A45C] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    className="flex items-center gap-1 text-[11px] font-semibold text-[#bb7f14] opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                     style={{ fontFamily: "'Poppins', sans-serif" }}
                   >
                     Learn more <ArrowUpRight size={11} />
@@ -320,8 +328,8 @@ const WhoWeHelp = () => {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-8 h-8 rounded-full bg-[#C9A45C]/15 flex items-center justify-center mb-4">
-                  <CheckCircle2 size={16} className="text-[#C9A45C]" />
+                <div className="w-8 h-8 rounded-full bg-[#bb7f14]/15 flex items-center justify-center mb-4">
+                  <CheckCircle2 size={16} className="text-[#bb7f14]" />
                 </div>
                 <h3
                   className="text-[#1F2E4F] font-semibold text-[15px] mb-2"
@@ -345,7 +353,7 @@ const WhoWeHelp = () => {
       <section
         className="relative py-28 text-center overflow-hidden"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80')`,
+          backgroundImage: `url(${whoCta})`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -353,7 +361,7 @@ const WhoWeHelp = () => {
         <div className="absolute inset-0 bg-[#1F2E4F]/88" />
         <div className="relative z-10 max-w-2xl mx-auto px-6">
           <p
-            className="text-[#C9A45C] text-xs font-semibold tracking-[3px] uppercase mb-4"
+            className="text-[#bb7f14] text-xs font-semibold tracking-[3px] uppercase mb-4"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
             Let's Work Together
@@ -373,7 +381,7 @@ const WhoWeHelp = () => {
           <div className="flex flex-wrap justify-center gap-3">
             <button
               onClick={() => navigate("/book-call")}
-              className="bg-[#C9A45C] text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="bg-[#bb7f14] text-white px-8 py-3.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Book a Call
