@@ -169,7 +169,7 @@ function Services() {
           </div>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
-              <h2 className="text-4xl md:text-5xl font-black text-[#1F2E4F] leading-tight tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
                 Our Core <span className="text-[#bb7f14]">Services</span>
               </h2>
               <p className="text-[#1F2E4F]/55 text-base mt-3 max-w-lg leading-relaxed">

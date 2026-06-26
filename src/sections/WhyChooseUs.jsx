@@ -50,9 +50,9 @@ const WhyChooseUs = () => {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center text-3xl md:text-5xl text-[#1F2E4F] tracking-tight mb-16"
+          className="text-center text-3xl md:text-5xl text-[#04388b] tracking-tight mb-16"
         >
-          Built for Scale. Designed for{" "}
+          Built for Scale Designed for{" "}
           <span className="text-[#bb7f14]">Speed.</span>
         </motion.h2>
 
@@ -108,7 +108,7 @@ const WhyChooseUs = () => {
         {/* DARK SECTION */}
         <section className="w-full bg-[#f4f8fb] py-20 px-6">
           {/* Heading */}
-          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#1F2E4F] mb-3 leading-tight tracking-tight">
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#04388b] mb-3 leading-tight tracking-tight">
             Why Global Leaders Choose{" "}
             <span className="text-[#bb7f14]">Alph Knot</span>
           </h2>

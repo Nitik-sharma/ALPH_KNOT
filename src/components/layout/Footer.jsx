@@ -56,7 +56,7 @@ const Footer = () => {
               Let's Work Together
             </p>
             <h2
-              className="text-2xl md:text-3xl font-bold text-[#1F2E4F]"
+              className="text-2xl md:text-3xl font-bold text-[#04388b]"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Let's build something{" "}
