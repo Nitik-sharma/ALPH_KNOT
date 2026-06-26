@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import service1 from "../assets/images/Home/Service1.avif"
@@ -111,12 +111,7 @@ function ServiceCard({ service, navigate }) {
           className="w-full h-full object-cover   group-hover:scale-105 transition-all duration-500"
         />
         <div className="absolute inset-0 bg-[#1F2E4F]/40" />
-        <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#1F2E4F] text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full">
-          {service.tag}
-        </span>
-        <span className="absolute top-2 right-3 text-[#6db9d1]/20 text-4xl font-black leading-none select-none">
-          {service.num}
-        </span>
+        
       </div>
 
       {/* Divider */}
@@ -124,9 +119,7 @@ function ServiceCard({ service, navigate }) {
 
       {/* Body */}
       <div className="p-5 flex flex-col flex-1">
-        <p className="text-[#bb7f14] text-[9px] font-black tracking-[1.5px] uppercase mb-2">
-          {service.num} — {service.tag}
-        </p>
+       
         <h3 className="text-white font-bold text-[14px] leading-snug mb-2 group-hover:text-[#bb7f14] transition-colors duration-300">
           {service.title}
         </h3>
@@ -161,29 +154,26 @@ function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-0.5 bg-[#bb7f14]" />
-            <span className="text-[#bb7f14] text-[11px] font-bold uppercase tracking-[2px]">
-              What We Offer
-            </span>
+          <div className="flex flex-col items-center justify-center text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
+              Our Core{" "}
+              <span className="text-[#bb7f14]">
+                <NavLink to={"/services"}>Services</NavLink>{" "}
+              </span>
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-sm md:text-xl text-[#1F2E4F]/55 leading-relaxed">
+              End-to-end talent solutions built for modern businesses that
+              demand excellence without the overhead.
+            </p>
           </div>
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
-                Our Core <span className="text-[#bb7f14]">Services</span>
-              </h2>
-              <p className="text-[#1F2E4F]/55 text-base mt-3 max-w-lg leading-relaxed">
-                End-to-end talent solutions built for modern businesses that
-                demand excellence without the overhead.
-              </p>
-            </div>
-            <button
+
+          {/* <button
               onClick={() => navigate("/services")}
               className="flex items-center gap-2 bg-[#1F2E4F] text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-[#bb7f14] hover:text-[#1F2E4F] transition-all duration-300 whitespace-nowrap self-start"
             >
               View All Services <ArrowRight size={14} />
-            </button>
-          </div>
+            </button> */}
         </motion.div>
       </div>
 

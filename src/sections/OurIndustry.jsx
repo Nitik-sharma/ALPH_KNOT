@@ -2,75 +2,95 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import image1 from "../assets/images/Home/technology.png"
-import image2 from "../assets/images/Home/halthcare.png"
-import image3 from "../assets/images/Home/Finance.png"
-import image4 from "../assets/images/Home/Ecommarce.png"
-import image5 from "../assets/images/Home/Agency.png"
-import image6 from "../assets/images/Home/Realeastate.png"
+import startup from "../assets/images/Home/startup.png"
+import technology from "../assets/images/Home/technology.png"
+import ecommarce from "../assets/images/Home/ecommarceinds.png"
+import halthcare from "../assets/images/Home/Healthcare.png"
+import finance from "../assets/images/Home/finances.png"
+import professional from "../assets/images/Home/Professional.png"
+
 
 const industries = [
   {
     id: 1,
-    tag: "Technology",
-    label: "01  Tech & SaaS",
-    title: "Technology & Software",
-    desc: "Scale your tech ops with elite virtual assistants, SDRs, and developer support built for fast-moving SaaS companies.",
-    image:
-      image1,
-    services: ["Virtual Assistants", "Tech Support", "Sales Dev"],
+    tag: "Startups",
+    label: "Startup Growth",
+    title: "Startups & Scaleups",
+    desc: "Build and scale faster with dedicated teams that manage operations, customer support, technology, and business execution, allowing founders to focus on innovation and sustainable growth.",
+    image:startup,
+    services: [
+      "Executive Support",
+      "Customer Operations",
+      "Team Pods",
+    ],
   },
   {
     id: 2,
-    tag: "Healthcare",
-    label: "02  Health & Wellness",
-    title: "Healthcare & Medical",
-    desc: "HIPAA-aligned remote staff handling patient coordination, admin operations, and billing support.",
-    image:
-     image2,
-    services: ["Admin Support", "Bookkeeping", "Customer Care"],
+    tag: "Technology",
+    label: "Technology & SaaS",
+    title: "Technology & SaaS",
+    desc: "Accelerate product growth with scalable workforce solutions for software companies, including customer success, technical support, development, and business operations.",
+    image:technology,
+    services: [
+      "Tech & Development",
+      "Customer Operations",
+      "Digital Growth",
+    ],
   },
   {
     id: 3,
-    tag: "Finance",
-    label: "03  Finance & Banking",
-    title: "Finance & Fintech",
-    desc: "Precision bookkeepers, accountants, and ops specialists who keep your financial workflows clean and compliant.",
-    image:
-    image3,
-    services: ["Bookkeeping", "Accounting", "Operations"],
+    tag: "E-Commerce",
+    label: "Retail & Commerce",
+    title: "E-Commerce & Retail",
+    desc: "Deliver exceptional customer experiences with dedicated teams for customer support, back-office operations, finance, and digital marketing that help your business grow profitably.",
+    image: ecommarce,
+    services: [
+      "Customer Operations",
+      "Digital Growth",
+      "Finance & Accounting",
+    ],
   },
   {
     id: 4,
-    tag: "E-Commerce",
-    label: "04  Retail & D2C",
-    title: "E-Commerce & Retail",
-    desc: "Customer support teams, social media managers, and SDRs purpose-built for DTC and e-commerce brands.",
-    image:
-      image4,
-    services: ["Customer Support", "Social Media", "Sales Dev"],
+    tag: "Healthcare",
+    label: "Healthcare Services",
+    title: "Healthcare & Medical",
+    desc: "Improve operational efficiency with reliable professionals supporting patient services, administration, finance, HR, and healthcare business operations.",
+    image: halthcare,
+    services: [
+      "Executive Support",
+      "Back Office",
+      "Finance & Accounting",
+    ],
   },
   {
     id: 5,
-    tag: "Agencies",
-    label: "05  Marketing & Creative",
-    title: "Agencies & Consultancies",
-    desc: "White-label execution talent for agencies, from project managers to content creators so you scale client work seamlessly.",
-    image:
-     image5,
-    services: ["Project Mgmt", "Social Media", "VA Support"],
+    tag: "Finance",
+    label: "Banking & FinTech",
+    title: "Finance & FinTech",
+    desc: "Strengthen financial operations through expert accounting, customer support, knowledge process services, and dedicated teams focused on accuracy and compliance.",
+    image: finance,
+    services: [
+      "Finance & Accounting",
+      "Knowledge Process",
+      "Customer Operations",
+    ],
   },
   {
     id: 6,
-    tag: "Real Estate",
-    label: "06  Property & Realty",
-    title: "Real Estate & Property",
-    desc: "Transaction coordinators, lead follow-up specialists, and admin support designed for high-volume real estate operations.",
-    image:
-      image6,
-    services: ["Admin Support", "Customer Care", "Bookkeeping"],
+    tag: "Professional",
+    label: "Professional Services",
+    title: "Professional Services",
+    desc: "Empower consulting firms, agencies, legal practices, and business service providers with dedicated workforce solutions that improve productivity, client delivery, and operational excellence.",
+    image: professional,
+    services: [
+      "Executive Support",
+      "Custom Workforce",
+      "Team Pods",
+    ],
   },
 ];
+
 
 const stats = [
   { num: "12+", label: "Industries served globally" },
@@ -90,102 +110,91 @@ function OurIndustry() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-14">
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 h-0.5 bg-[#bb7f14]" />
-            <span className="text-[#bb7f14] text-[11px] font-bold uppercase tracking-[2px]">
-              Industries We Serve
-            </span>
-            <div className="w-8 h-0.5 bg-[#bb7f14]" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight mb-4">
-            Powering Growth Across{" "}
+          <h2 className="text-center text-3xl md:text-4xl font-bold text-white mb-3 leading-tight tracking-tight">
+            Built to Support Businesses Across{" "}
             <span className="text-[#bb7f14]">Every Industry</span>
           </h2>
-          <p className="text-white/45 text-base max-w-xl mx-auto leading-relaxed">
-            From fast-moving startups to Fortune 500 enterprises, our talent
-            solutions are built to scale with every sector that demands
-            excellence.
+
+          <p className="text-center text-sm md:text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
+            Every industry has unique operational challenges. Our dedicated
+            teams provide the expertise, execution, and flexibility businesses
+            need to streamline operations, improve productivity, and scale
+            sustainably.
           </p>
         </div>
 
         {/* Tab Buttons */}
+        {/* Tab buttons */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-8">
           {industries.map((ind, i) => (
             <button
               key={ind.id}
               onClick={() => setActive(i)}
               className={`px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-200 whitespace-nowrap
-                ${
-                  active === i
-                    ? "bg-[#bb7f14] text-[#1F2E4F] border-[#bb7f14]"
-                    : "bg-white/[0.04] text-white/60 border-white/10 hover:border-[#6db9d1]/50 hover:text-white"
-                }`}
+        ${
+          active === i
+            ? "bg-[#bb7f14] text-[#1F2E4F] border-[#bb7f14]"
+            : "bg-white/[0.04] text-white/60 border-white/10 hover:border-[#6db9d1]/50 hover:text-white"
+        }`}
             >
               {ind.tag}
             </button>
           ))}
         </div>
 
-        {/* Active Industry Display — split panel, crossfades on tab change */}
-        <div className="rounded-2xl overflow-hidden border border-[#bb7f14]/20 bg-[#1F2E4F]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={current.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="grid lg:grid-cols-2"
-            >
-              {/* Image panel */}
-              <div className="relative h-[280px] lg:h-[460px] overflow-hidden rounded-2xl">
-                <img
-                  src={current.image}
-                  alt={current.title}
-                  className="w-full h-full rounded-2xl"
-                />
-                <span className="absolute top-5 left-5 bg-[#bb7f14] text-[#1F2E4F] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
-                  {current.tag}
-                </span>
-                <span className="absolute top-4 right-4 w-12 h-12 rounded-full bg-[#6db9d1] text-[#1F2E4F] font-black text-sm flex items-center justify-center shadow-md">
-                  {String(current.id).padStart(2, "0")}
-                </span>
+        {/* Full-width panel */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current.id}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="rounded-2xl overflow-hidden  bg-[#1F2E4F]"
+          >
+            {/* Full-width image */}
+            <div className="relative w-full h-[320px] md:h-[420px] overflow-hidden">
+              <img
+                src={current.image}
+                alt={current.title}
+                className="w-full h-full object-cover rounded-md"
+              />
+              
+            </div>
+
+            {/* Text content below image */}
+            <div className="p-8 md:p-10  ">
+              <p className="text-[#bb7f14] text-[10px] font-black uppercase tracking-[1.5px] mb-3">
+                {current.label}
+              </p>
+              <h3 className="text-white text-2xl md:text-3xl font-black leading-tight mb-4">
+                {current.title}
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-2xl">
+                {current.desc}
+              </p>
+
+              {/* Service pills */}
+              <div className="flex flex-wrap gap-2.5 mb-7">
+                {current.services.map((s) => (
+                  <span
+                    key={s}
+                    className="bg-[#6db9d1]/10 border border-[#6db9d1]/30 text-[#6db9d1] text-[11px] font-semibold px-3 py-1.5 rounded-full"
+                  >
+                    {s}
+                  </span>
+                ))}
               </div>
 
-              {/* Content panel */}
-              <div className="p-8 md:p-10 lg:p-12 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-[#bb7f14]/15">
-                <p className="text-[#bb7f14] text-[10px] font-black uppercase tracking-[1.5px] mb-3">
-                  {current.label}
-                </p>
-                <h3 className="text-white text-2xl md:text-3xl font-black leading-tight mb-4">
-                  {current.title}
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed mb-6">
-                  {current.desc}
-                </p>
-
-                {/* Service pills */}
-                <div className="flex flex-wrap gap-2.5 mb-7">
-                  {current.services.map((s) => (
-                    <span
-                      key={s}
-                      className="bg-[#6db9d1]/10 border border-[#6db9d1]/30 text-[#6db9d1] text-[11px] font-semibold px-3 py-1.5 rounded-full"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => navigate("/contact-us")}
-                  className="flex items-center justify-center gap-2 bg-[#bb7f14] text-[#1F2E4F] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#1F2E4F] hover:text-white border border-transparent hover:border-[#bb7f14]/40 transition-all duration-300 w-fit"
-                >
-                  Get Started <ArrowRight size={14} />
-                </button>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
+              <button
+                onClick={() => navigate("/contact-us")}
+                className="flex items-center gap-2 bg-[#bb7f14] text-[#1F2E4F] px-6 py-3 rounded-full font-bold text-sm hover:bg-[#1F2E4F] hover:text-white border border-transparent hover:border-[#bb7f14]/40 transition-all duration-300"
+              >
+                Get Started <ArrowRight size={14} />
+              </button>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
         {/* Dot indicators */}
         <div className="flex justify-center gap-2 mt-6">

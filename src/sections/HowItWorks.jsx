@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { PhoneCall, Users, Rocket, TrendingUp, ArrowRight } from "lucide-react";
 
 const steps = [
@@ -51,18 +51,16 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           className="text-center mb-14 xl:mb-16 2xl:mb-20"
         >
-          <div className="flex items-center justify-center gap-3 mb-5">
-            <div className="w-8 xl:w-10 h-0.5 bg-[#bb7f14]" />
-            <span className="text-[#bb7f14] text-[11px] xl:text-[13px] font-bold uppercase tracking-[2px]">
-              The Process
+          <div className="flex items-center justify-center gap-3 mb-5"></div>
+          <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
+            How It{" "}
+            <span className="text-[#bb7f14]">
+              {" "}
+              <NavLink to={"/how-it-works"}>Works</NavLink>
             </span>
-            <div className="w-8 xl:w-10 h-0.5 bg-[#bb7f14]" />
-          </div>
-          <h2 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-black text-[#04388b] leading-tight tracking-tight mb-4">
-            How It <span className="text-[#bb7f14]">Works</span>
           </h2>
-          <p className="text-[#04388b] text-base xl:text-lg 2xl:text-xl max-w-xl xl:max-w-2xl mx-auto leading-relaxed">
-            From your first call to a fully running team - we make it simple,
+          <p className="text-[#04388b] text-sm md:text-xl max-w-xl xl:max-w-2xl mx-auto leading-relaxed">
+            From your first call to a fully running team  we make it simple,
             fast, and completely friction-free.
           </p>
         </motion.div>

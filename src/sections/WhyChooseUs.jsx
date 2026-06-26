@@ -20,25 +20,28 @@ import image6 from "../assets/images/Home/global-talent.png"
 import image7 from "../assets/images/Home/angile.png"
 import image8 from "../assets/images/Home/flexible.png"
 import image9 from "../assets/images/Home/Execution.png"
+import workforceImage from "../assets/images/Home/workforce.png"
+import executionImage from "../assets/images/Home/Excecution.png"
+import growthImage from "../assets/images/Home/Growth.png"
 
 const data = [
   {
     icon: Globe,
     image: image7,
-    title: "Agile Global Talent",
-    desc: "We connect you with high-performing professionals who integrate seamlessly into your workflow without delays of traditional hiring.",
+    title: "Dedicated Workforce That Works as Your Team",
+    desc: "AlphKnot provides dedicated professionals who become a seamless extension of your organization. From daily operations to specialized business functions, our workforce works alongside your internal teams with accountability, consistency, and long-term commitment.",
   },
   {
     icon: Settings,
     image: image8,
-    title: "Flexible Digital Support",
-    desc: "From operations to specialized roles, we provide support exactly when and how you need  no long-term commitments.",
+    title: "Operational Support That Drives Growth",
+    desc: "Our managed teams handle administrative, operational, customer, finance, marketing, technology, and back-office functions so your business can focus on innovation, customers, and strategic growth while we execute the work that keeps your company moving.",
   },
   {
     icon: TrendingUp,
     image: image9,
-    title: "Execution That Delivers",
-    desc: "We ensure outcomes. Our partners work as an extension of your team to drive measurable business results.",
+    title: "Fast Execution. Greater Efficiency. Lower Operating Costs.",
+    desc: "Speed matters in business. Our experienced teams deliver high-quality execution with streamlined processes, helping you reduce operational costs, improve productivity, and scale confidently without the expense and delays of traditional hiring.",
   },
 ];
 
@@ -50,11 +53,25 @@ const WhyChooseUs = () => {
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-center text-3xl md:text-5xl text-[#04388b] tracking-tight mb-16"
+          className="text-center text-3xl md:text-4xl text-[#04388b] tracking-tight mb-4"
         >
-          Built for Scale Designed for{" "}
-          <span className="text-[#bb7f14]">Speed.</span>
+          Built to Scale Your Business.{" "}
+          <span className="text-[#bb7f14]">
+            Designed for Cost Efficient Execution.
+          </span>
         </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center text-sm md:text-xl text-[#1F2E4F]/55 tracking-tight mb-16"
+        >
+          AlphKnot provides dedicated teams that become an extension of your
+          business. From business operations and customer support to finance,
+          technology, and back-office execution, we handle the work that powers
+          your growth so you can focus on strategy, innovation, and scaling with
+          confidence.
+        </motion.p>
 
         {/* CARDS */}
         <div className="grid md:grid-cols-3 gap-8 mb-28">
@@ -71,11 +88,11 @@ const WhyChooseUs = () => {
               <span className="absolute top-0 left-0 h-[3px] w-10 bg-[#bb7f14]/70 group-hover:w-full transition-all duration-500 z-10" />
 
               {/* IMAGE — no overlay, natural colors */}
-              <div className="w-full h-48 overflow-hidden">
+              <div className="relative w-full h-56 overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
@@ -87,9 +104,6 @@ const WhyChooseUs = () => {
                 </div>
 
                 {/* Watermark index */}
-                <span className="absolute top-3 right-6 text-[#6db9d1]/10 text-6xl font-black leading-none select-none">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
 
                 {/* TITLE */}
                 <h3 className="text-xl text-white font-semibold mb-3 tracking-tight">
@@ -108,59 +122,36 @@ const WhyChooseUs = () => {
         {/* DARK SECTION */}
         <section className="w-full bg-[#f4f8fb] py-20 px-6">
           {/* Heading */}
-          <h2 className="text-center text-4xl md:text-5xl font-bold text-[#04388b] mb-3 leading-tight tracking-tight">
-            Why Global Leaders Choose{" "}
-            <span className="text-[#bb7f14]">Alph Knot</span>
+          <h2 className="text-center text-3xl md:text-4xl font-bold text-[#04388b] mb-3 leading-tight tracking-tight">
+            Why Growing Companies Partner with{" "}
+            <span className="text-[#bb7f14]">AlphKnot ?</span>
           </h2>
 
-          <p className="text-center text-[#1F2E4F]/55 text-base mb-16">
-            Six reasons world-class teams trust us to deliver
+          <p className="text-center text-sm md:text-xl text-[#1F2E4F]/55  mb-16">
+            A dedicated execution partner built to help you scale faster,
+            operate smarter, and reduce operational costs.
           </p>
 
           {/* Grid */}
           <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                image: image1,
-                tag: "Execution",
-                num: "01",
-                title: "Time-Zone Synced Execution",
-                desc: "Operate seamlessly with talent aligned to U.S. business hours, no delays, no gaps.",
+                image: workforceImage,
+
+                title: "Dedicated Teams. Real Ownership.",
+                desc: "Our professionals become an extension of your business, taking ownership of operations and delivering consistent execution that drives long-term growth.",
               },
               {
-                image: image2,
-                tag: "Strategy",
-                num: "02",
-                title: "Strategic Talent, Not Just Support",
-                desc: "We deliver execution partners who think, act, and grow with your business.",
+                image: executionImage,
+
+                title: "Fast Execution Without Hiring Delays",
+                desc: "Skip recruitment, onboarding, and management overhead. We deploy experienced teams that integrate quickly and keep your business moving forward.",
               },
               {
-                image: image3,
-                tag: "Growth",
-                num: "03",
-                title: "Built for Scale",
-                desc: "From 1 hire to full execution teams, scale instantly based on your needs.",
-              },
-              {
-                image: image4,
-                tag: "Process",
-                num: "04",
-                title: "Zero Hiring Friction",
-                desc: "No job postings, no interviews, no onboarding headaches.",
-              },
-              {
-                image: image5,
-                tag: "Value",
-                num: "05",
-                title: "Cost-Efficient, High Impact",
-                desc: "Reduce operational costs without compromising quality or output.",
-              },
-              {
-                image: image6,
-                tag: "Global",
-                num: "06",
-                title: "Global Talent, Local Understanding",
-                desc: "Professionals trained to align with your business culture and expectations.",
+                image: growthImage,
+
+                title: "Scale Smarter. Operate More Efficiently.",
+                desc: "Expand your workforce as your business grows while reducing operational costs, improving productivity, and maintaining exceptional quality.",
               },
             ].map((item, i) => (
               <div
@@ -168,32 +159,22 @@ const WhyChooseUs = () => {
                 className="bg-[#1F2E4F] rounded-2xl overflow-hidden border border-[#bb7f14]/15 hover:-translate-y-1 hover:border-[#bb7f14]/50 transition-all duration-300 group cursor-pointer flex flex-col"
               >
                 {/* Image */}
-                <div className="relative w-full h-44 overflow-hidden">
+                <div className="relative w-full h-64 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                   />
-                  <span className="absolute top-3 left-3 bg-[#bb7f14] text-[#1F2E4F] text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
-                    {item.tag}
-                  </span>
-                  <span className="absolute top-3 right-3 bg-[#1F2E4F] text-white text-[11px] font-black leading-none select-none w-7 h-7 rounded-full flex items-center justify-center">
-                    {item.num}
-                  </span>
                 </div>
 
                 {/* Divider */}
-                <div className="h-px bg-[#bb7f14]/25" />
 
                 {/* Body */}
                 <div className="p-5 flex flex-col flex-1">
-                  <p className="text-[#bb7f14] text-[10px] font-bold tracking-[1.2px] uppercase mb-2">
-                    {item.num} — {item.tag}
-                  </p>
-                  <h4 className="text-white font-bold text-[15px] leading-snug mb-2 group-hover:text-[#bb7f14] transition-colors duration-300">
+                  <h4 className="text-white font-bold  text-xl leading-snug mb-2 group-hover:text-[#bb7f14] transition-colors duration-300">
                     {item.title}
                   </h4>
-                  <p className="text-white/50 text-[12.5px] leading-relaxed flex-1">
+                  <p className="text-white/50 text-sm leading-relaxed flex-1">
                     {item.desc}
                   </p>
                   <div className="flex items-center gap-1.5 mt-4 pt-4 border-t border-white/[0.06] text-[#bb7f14] text-[10px] font-bold uppercase tracking-widest">
