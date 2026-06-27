@@ -1,33 +1,47 @@
+import { path } from "framer-motion/client";
 import React from "react";
-import { FaInstagram, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+
 import { NavLink } from "react-router-dom";
+import { FaInstagram, FaFacebook, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 
 const socialIcons = [
-  { icon: FaInstagram, link: "https://www.instagram.com/alphknot" },
-  { icon: FaFacebook, link: "https://www.facebook.com/alphknot" },
-  { icon: FaTwitter, link: "https://www.x.com/alphknot" },
-  { icon: FaLinkedin, link: "https://www.linkedin.com/company/alph-knot" },
+  {
+    icon: FaInstagram,
+    link: "https://www.instagram.com/alphknot",
+    label: "Instagram",
+    background:
+      "linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FCAF45)",
+  },
+  {
+    icon: FaFacebook,
+    link: "https://www.facebook.com/alphknot",
+    label: "Facebook",
+    background: "#1877F2",
+  },
+  {
+    icon: FaXTwitter,
+    link: "https://x.com/alphknot",
+    label: "X (formerly Twitter)",
+    background: "#000000",
+  },
+  {
+    icon: FaLinkedin,
+    link: "https://www.linkedin.com/company/alph-knot",
+    label: "LinkedIn",
+    background: "#0A66C2",
+  },
 ];
 
-const services = [
-  {
-    title: "Executive & Business Support",
-    path: "/services/executive-support",
-  },
-  { title: "Customer Operations", path: "/services/customer-operations" },
-  { title: "Back Office & Operations", path: "/services/back-office" },
-  { title: "Finance & Accounting", path: "/services/finance" },
-  { title: "Human Resource Services", path: "/services/hr" },
-  { title: "Digital Growth", path: "/services/digital-growth" },
-  { title: "Tech & Development", path: "/services/tech" },
-  { title: "Knowledge Process", path: "/services/kpo" },
-  {
-    title: "Industry Specific Solutions",
-    path: "/services/industry-solutions",
-  },
-  { title: "Custom Workforce", path: "/services/custom" },
-  { title: "Team Pods", path: "/services/team-pods" },
-];
+
+
+// const socialIcons = [
+//   { icon: FaInstagram, link: "https://www.instagram.com/alphknot" },
+//   { icon: FaFacebook, link: "https://www.facebook.com/alphknot" },
+//   { icon: FaTwitter, link: "https://www.x.com/alphknot" },
+//   { icon: FaLinkedin, link: "https://www.linkedin.com/company/alph-knot" },
+// ];
+
+
 
 const company = [
   { title: "About Us", path: "/about" },
@@ -37,12 +51,16 @@ const company = [
   { title: "Careers", path: "/careers" },
   { title: "Case Studies", path: "/case-studies" },
   { title: "Contact", path: "/contact-us" },
+  {
+    title: "Our Services",
+    path: "/services",
+  },
 ];
 
 const Footer = () => {
   return (
     <footer
-      className="bg-white border-t border-[#1F2E4F]/10"
+      className="bg-[#bb7f14] border-t border-[#1F2E4F]/10"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* ── TOP CTA ── */}
@@ -50,7 +68,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <p
-              className="text-[#bb7f14] text-[10px] font-semibold tracking-[3px] uppercase mb-2"
+              className="text-white text-sm font-semibold tracking-[3px] uppercase mb-2"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Let's Work Together
@@ -60,12 +78,12 @@ const Footer = () => {
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Let's build something{" "}
-              <span className="text-[#bb7f14]">great together</span>
+              <span className="text-white">great together</span>
             </h2>
           </div>
           <NavLink to={"/contact-us"}>
             <button
-              className="flex-shrink-0 bg-[#bb7f14] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
+              className="flex-shrink-0 bg-[#04388b] text-white px-7 py-3 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Get Started
@@ -77,17 +95,17 @@ const Footer = () => {
       {/* ── MAIN BODY ── */}
       <div className="max-w-7xl mx-auto px-6 py-14">
         {/* ── ROW 1: Brand + Company + Social ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-[#1F2E4F]/8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12">
           {/* Brand */}
           <div>
             <h2
-              className="text-xl font-bold text-[#1F2E4F] mb-3"
+              className="text-xl font-bold  mb-3"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               <span className=" text-[#04388b]">Alph</span>{" "}
               <span className="text-[#6db9d1]">Knot</span>
             </h2>
-            <p className="text-[#1F2E4F]/55 text-[13.5px] leading-relaxed max-w-xs">
+            <p className="text-white text-[0.90rem] leading-relaxed max-w-xs">
               Empowering startups, SMBs, and enterprises with world-class
               outsourced talent built to scale, operate, and lead.
             </p>
@@ -96,7 +114,7 @@ const Footer = () => {
           {/* Company */}
           <div>
             <h3
-              className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#bb7f14] mb-5"
+              className="text-sm font-semibold tracking-[2.5px] uppercase text-white mb-5"
               style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Company
@@ -107,10 +125,10 @@ const Footer = () => {
                   <NavLink
                     to={c.path}
                     className={({ isActive }) =>
-                      `text-[13px] transition-colors duration-150 ${
+                      `text-[0.90rem] transition-colors duration-150 ${
                         isActive
-                          ? "text-[#bb7f14]"
-                          : "text-[#1F2E4F]/55 hover:text-[#bb7f14]"
+                          ? "text-[#04388b]"
+                          : "text-white hover:text-[#04388b]"
                       }`
                     }
                   >
@@ -130,32 +148,28 @@ const Footer = () => {
               Follow Us
             </h3>
             <div className="flex gap-3 mb-6">
-              {socialIcons.map((item, i) => {
-                const Icon = item.icon;
-                return (
-                  <a
-                    key={i}
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group w-9 h-9 rounded-full border border-[#1F2E4F]/15 flex items-center justify-center hover:bg-[#bb7f14] hover:border-[#bb7f14] transition-all duration-200"
-                  >
-                    <Icon
-                      size={15}
-                      className="text-[#1F2E4F]/50 group-hover:text-white transition"
-                    />
-                  </a>
-                );
-              })}
+              {socialIcons.map(({ icon: Icon, link, label, background }) => (
+                <a
+                  key={label}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-xl text-white transition-transform hover:scale-105"
+                  style={{ background }}
+                >
+                  <Icon size={20} />
+                </a>
+              ))}
             </div>
-            <p className="text-[12px] text-[#1F2E4F]/40 leading-relaxed max-w-[200px]">
+            <p className="text-sm text-[#04388b] leading-relaxed max-w-[200px]">
               Follow us for updates on outsourcing, ops, and remote teams.
             </p>
           </div>
         </div>
 
         {/* ── ROW 2: Services (full width) ── */}
-        <div className="pt-12">
+        {/* <div className="pt-12">
           <h3
             className="text-[10px] font-semibold tracking-[2.5px] uppercase text-[#bb7f14] mb-6"
             style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -181,16 +195,17 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
       </div>
 
       {/* ── BOTTOM BAR ── */}
       <div className="border-t border-[#1F2E4F]/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[#1F2E4F]/40 text-[12px]">
+          <p className="text-[#ffffff text-sm">
             © {new Date().getFullYear()}{" "}
-            <span className=" text-[#04388b]">Alph</span>{" "}
-            <span className="text-[#6db9d1]">Knot</span>. All rights reserved.
+            <span className=" text-sm text-[#04388b]">Alph</span>{" "}
+            <span className="text-sm text-[#6db9d1]">Knot</span>. All rights
+            reserved.
           </p>
           <div className="flex items-center gap-6">
             {[
@@ -202,10 +217,10 @@ const Footer = () => {
                 key={i}
                 to={l.path}
                 className={({ isActive }) =>
-                  `text-[12px] transition-colors ${
+                  `text-sm transition-colors ${
                     isActive
-                      ? "text-[#bb7f14]"
-                      : "text-[#1F2E4F]/40 hover:text-[#bb7f14]"
+                      ? "text-[#fffff]"
+                      : "text-[#FFFFFF] hover:text-[#04388b]"
                   }`
                 }
               >

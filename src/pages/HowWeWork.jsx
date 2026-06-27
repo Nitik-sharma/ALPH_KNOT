@@ -2,77 +2,80 @@ import React from "react";
 import { motion } from "framer-motion";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
-import img1 from "../assets/images/work/discovery.avif";
-import img2 from "../assets/images/work/planing.avif";
-import img3 from "../assets/images/work/Talent.avif";
-import img4 from "../assets/images/work/onboarding.avif";
-import img5 from "../assets/images/work/Scale.avif";
+import img1 from "../assets/images/work/discover.png";
+import img2 from "../assets/images/work/planing.png";
+import img3 from "../assets/images/work/Workforce.png";
+import img4 from "../assets/images/work/launch.png";
+import img5 from "../assets/images/Home/customWork.png";
 import bg1 from "../assets/images/work/bg1.avif";
 import bg2 from "../assets/images/work/bg2.avif";
 
 const steps = [
   {
     step: "01",
-    title: "Discovery Call",
-    subtitle: "We listen before we act",
-    desc: "We kick off with a focused 30-minute call to understand your business model, pain points, team gaps, and growth goals. No generic pitches just a real conversation about what you need.",
+    title: "Discovery & Business Consultation",
+    subtitle: "Understanding your business comes first",
+    desc: "Every successful partnership begins with understanding your business. We discuss your goals, operational challenges, team structure, and growth plans to identify the right workforce solution for your organization.",
     bullets: [
-      "Understand your business & goals",
-      "Identify operational bottlenecks",
-      "Define the right talent profile",
+      "Business & operational assessment",
+      "Growth goals and workforce planning",
+      "Identify key operational requirements",
     ],
     img: img1,
   },
+
   {
     step: "02",
-    title: "Strategy & Scoping",
-    subtitle: "Build the right plan together",
-    desc: "Our team designs a tailored engagement model whether you need a single VA, a full customer operations team, or a custom workforce pod. We define scope, KPIs, and timelines upfront.",
+    title: "Workforce Strategy & Solution Design",
+    subtitle: "A workforce plan built around your goals",
+    desc: "Based on your requirements, we design a tailored workforce strategy that defines the ideal team structure, responsibilities, workflows, timelines, and delivery framework to support your business objectives.",
     bullets: [
-      "Custom engagement model",
-      "Clear KPIs & deliverables",
-      "Transparent pricing structure",
+      "Custom workforce strategy",
+      "Defined roles & responsibilities",
+      "Transparent execution roadmap",
     ],
     img: img2,
   },
+
   {
     step: "03",
-    title: "Talent Matching",
-    subtitle: "Precision over speed",
-    desc: "We don't just fill seats. Our matching process evaluates skills, communication style, timezone compatibility, and culture fit so you get professionals who truly integrate with your team.",
+    title: "Build Your Dedicated Team",
+    subtitle: "Professionals aligned with your business",
+    desc: "We assemble experienced professionals who seamlessly integrate into your business. Every team is selected for its expertise, communication, cultural alignment, and ability to deliver measurable business outcomes.",
     bullets: [
-      "Vetted, trained professionals",
-      "Culture & timezone fit",
-      "Roles across 11 service categories",
+      "Experienced business professionals",
+      "Culture & workflow alignment",
+      "Dedicated team focused on your success",
     ],
     img: img3,
   },
+
   {
     step: "04",
-    title: "Onboarding & Launch",
-    subtitle: "Ready in 72 hours",
-    desc: "Your team is briefed, onboarded, and executing within 72 hours of kickoff. We handle all coordination you just show up and lead. Weekly check-ins keep everything aligned.",
+    title: "Launch, Execute & Optimize",
+    subtitle: "Fast onboarding with continuous support",
+    desc: "Your dedicated team is onboarded, trained, and ready to execute quickly. We oversee implementation, monitor performance, optimize workflows, and ensure consistent operational excellence from day one.",
     bullets: [
-      "72-hour onboarding guarantee",
-      "Dedicated account manager",
-      "Weekly performance check-ins",
+      "Fast onboarding process",
+      "Dedicated success manager",
+      "Performance monitoring & optimization",
     ],
     img: img4,
   },
+
   {
     step: "05",
-    title: "Scale on Demand",
-    subtitle: "Grow without friction",
-    desc: "As your business grows, your team grows with it. Add new roles, expand to new service areas, or restructure your pod all without long-term lock-ins or hiring overhead.",
+    title: "Custom Workforce Solutions",
+    subtitle: "Built around your unique business requirements",
+    desc: "Every organization is different. Share your processes, workflows, and business requirements, and we'll build, train, and manage a dedicated team tailored specifically to your operations, industry, and long-term growth goals.",
     bullets: [
-      "No long-term contracts",
-      "Add or swap roles anytime",
-      "Access to 11 service verticals",
+      "Share your custom requirements",
+      "Teams trained on your SOPs & workflows",
+      "Scalable workforce built for long-term growth",
     ],
     img: img5,
   },
 ];
-
 const HowWeWork = () => {
   const navigate = useNavigate();
 
@@ -99,15 +102,7 @@ const HowWeWork = () => {
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-[#C9A45C] text-xs font-semibold tracking-[3px] uppercase mb-5"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Our Process
-          </motion.p>
+         
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -115,8 +110,8 @@ const HowWeWork = () => {
             className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
             style={{ fontFamily: "'Poppins', sans-serif" }}
           >
-            How We Work <br />
-            <span className="text-[#C9A45C]">From Call to Scale</span>
+            A Smarter Way to <br />
+            <span className="text-[#C9A45C]">Build Your Dedicated Team</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -124,8 +119,9 @@ const HowWeWork = () => {
             transition={{ duration: 0.55, delay: 0.2 }}
             className="text-white/60 text-lg max-w-2xl mx-auto"
           >
-            A transparent, repeatable process built for busy founders, ops
-            leaders, and scaling teams who need results  not more overhead.
+            From understanding your business to launching a fully managed team,
+            every step is designed for speed, transparency, and long-term
+            success.
           </motion.p>
         </div>
       </section>
@@ -155,18 +151,8 @@ const HowWeWork = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E4F]/50 to-transparent" />
-                <div
-                  className="absolute bottom-6 left-6 text-[80px] font-bold leading-none text-white/10 select-none"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  {step.step}
-                </div>
-                <div
-                  className="absolute top-6 left-6 bg-[#C9A45C] text-white text-[11px] font-semibold px-3 py-1.5 rounded-full"
-                  style={{ fontFamily: "'Poppins', sans-serif" }}
-                >
-                  Step {step.step}
-                </div>
+              
+               
               </motion.div>
 
               {/* Text */}

@@ -215,16 +215,7 @@ const Philosophy = () => {
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-20">
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-[#C9A45C] text-[11px] font-semibold tracking-[0.22em] uppercase mb-6"
-            style={{ fontFamily: "'Poppins', sans-serif" }}
-          >
-            Our Philosophy
-          </motion.p>
-
+          
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
