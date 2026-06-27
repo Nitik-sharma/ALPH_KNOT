@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { motion } from "framer-motion";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
@@ -9,6 +9,60 @@ import img4 from "../assets/images/work/launch.png";
 import img5 from "../assets/images/Home/customWork.png";
 import bg1 from "../assets/images/work/bg1.avif";
 import bg2 from "../assets/images/work/bg2.avif";
+import { Plus, Minus } from "lucide-react";
+
+const faqs = [
+  {
+    question: "What does AlphKnot do?",
+    answer:
+      "AlphKnot is a business execution partner that provides dedicated workforce solutions for businesses. We build, manage, and support teams across operations, customer service, finance, HR, technology, digital growth, and other business functions, helping organizations scale efficiently without traditional hiring challenges.",
+  },
+  {
+    question: "How quickly can my dedicated team get started?",
+    answer:
+      "After understanding your requirements, we design the right workforce solution and begin onboarding your dedicated team as quickly as possible. Timelines vary based on your requirements, but our process is designed for speed without compromising quality.",
+  },
+  {
+    question: "Can you build a team based on my specific requirements?",
+    answer:
+      "Yes. Every business is different. We create custom workforce solutions based on your roles, workflows, SOPs, communication preferences, industry requirements, and long-term business goals.",
+  },
+  {
+    question: "What services can my dedicated team support?",
+    answer:
+      "Our teams support Executive & Business Support, Customer Operations, Back Office & Operations, Finance & Accounting, Human Resource Services, Digital Growth, Tech & Development, Knowledge Process, Industry-Specific Solutions, Custom Workforce, and Team Pods.",
+  },
+  {
+    question: "Do your teams work in my business hours and time zone?",
+    answer:
+      "Absolutely. Our professionals are aligned with your preferred working hours, communication tools, and operational processes, ensuring seamless collaboration with your internal team.",
+  },
+  {
+    question: "Can I scale my team as my business grows?",
+    answer:
+      "Yes. Our workforce solutions are designed for flexibility. Whether you need one additional specialist or an entire operational team, we help you scale efficiently as your business evolves.",
+  },
+  {
+    question: "How do you ensure quality and performance?",
+    answer:
+      "Every engagement includes structured onboarding, clearly defined responsibilities, ongoing performance monitoring, and dedicated account support to ensure consistent quality and continuous improvement.",
+  },
+  {
+    question: "Which industries do you serve?",
+    answer:
+      "We support businesses across Technology & SaaS, Startups & Scaleups, E-Commerce & Retail, Healthcare, Finance & FinTech, Professional Services, Real Estate, Logistics, Education, Manufacturing, Hospitality, and other industry-specific sectors.",
+  },
+  {
+    question: "Do I need to sign a long-term contract?",
+    answer:
+      "We offer flexible engagement models designed to match your business needs. During our consultation, we'll recommend the most suitable approach based on your operational goals and workforce requirements.",
+  },
+  {
+    question: "How do I get started with AlphKnot?",
+    answer:
+      "Simply schedule a strategy consultation with our team. We'll understand your business, recommend the right workforce solution, and create a tailored execution plan to help you achieve your goals.",
+  },
+];
 
 const steps = [
   {
@@ -79,6 +133,8 @@ const steps = [
 const HowWeWork = () => {
   const navigate = useNavigate();
 
+  const [openIndex, setOpenIndex] = useState(null);
+
   return (
     <div
       style={{ fontFamily: "'Inter', sans-serif" }}
@@ -102,7 +158,6 @@ const HowWeWork = () => {
           }}
         />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
-         
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -151,8 +206,6 @@ const HowWeWork = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1F2E4F]/50 to-transparent" />
-              
-               
               </motion.div>
 
               {/* Text */}
@@ -276,6 +329,82 @@ const HowWeWork = () => {
           </div>
         </div>
       </section>
+      <div className="px-6 max-w-6xl mx-auto mb-14">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col items-center justify-center text-center mt-12 mb-12">
+            <h2 className="text-4xl md:text-5xl font-black text-[#04388b] leading-tight tracking-tight">
+              Everything You Need to Know About Working{" "}
+              <span className="text-[#bb7f14]">
+                <NavLink to={"/services"}> with AlphKnot</NavLink>{" "}
+              </span>
+            </h2>
+
+            <p className="mt-4 max-w-2xl text-sm md:text-xl text-[#1F2E4F]/55 leading-relaxed">
+              Get answers to the most common questions about our dedicated
+              workforce solutions, onboarding process, pricing, scalability, and
+              how we help businesses execute and grow with confidence.
+            </p>
+          </div>
+
+          <div className="grid gap-5">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.05 }}
+                  className="bg-white border border-[#E8E2D8] rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+                >
+                  {/* Question */}
+                  <button
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  >
+                    <h3
+                      className="text-lg font-semibold text-[#1F2E4F] pr-4"
+                      style={{ fontFamily: "'Poppins', sans-serif" }}
+                    >
+                      {faq.question}
+                    </h3>
+
+                    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#F7F4EF] text-[#C9A45C] flex-shrink-0">
+                      {isOpen ? <Minus size={20} /> : <Plus size={20} />}
+                    </div>
+                  </button>
+
+                  {/* Answer */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isOpen ? "auto" : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease: "easeInOut",
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6">
+                      <p className="text-[#1F2E4F]/70 leading-8">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
