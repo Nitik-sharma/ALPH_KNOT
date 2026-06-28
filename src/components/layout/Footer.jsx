@@ -64,15 +64,10 @@ const Footer = () => {
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
       {/* ── TOP CTA ── */}
-      <div className="max-w-7xl mx-auto px-6 py-14 border-b border-[#1F2E4F]/10">
+      {/* <div className="max-w-7xl mx-auto px-6 py-14 border-b border-[#1F2E4F]/10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
-            <p
-              className="text-white text-sm font-semibold tracking-[3px] uppercase mb-2"
-              style={{ fontFamily: "'Poppins', sans-serif" }}
-            >
-              Let's Work Together
-            </p>
+            
             <h2
               className="text-2xl md:text-3xl font-bold text-[#04388b]"
               style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -90,7 +85,7 @@ const Footer = () => {
             </button>
           </NavLink>
         </div>
-      </div>
+      </div> */}
 
       {/* ── MAIN BODY ── */}
       <div className="max-w-7xl mx-auto px-6 py-14">
