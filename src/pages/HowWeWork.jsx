@@ -117,18 +117,7 @@ const steps = [
     img: img4,
   },
 
-  {
-    step: "05",
-    title: "Custom Workforce Solutions",
-    subtitle: "Built around your unique business requirements",
-    desc: "Every organization is different. Share your processes, workflows, and business requirements, and we'll build, train, and manage a dedicated team tailored specifically to your operations, industry, and long-term growth goals.",
-    bullets: [
-      "Share your custom requirements",
-      "Teams trained on your SOPs & workflows",
-      "Scalable workforce built for long-term growth",
-    ],
-    img: img5,
-  },
+  
 ];
 const HowWeWork = () => {
   const navigate = useNavigate();
@@ -254,6 +243,76 @@ const HowWeWork = () => {
           );
         })}
       </div>
+
+      <section className="w-full bg-white py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          {/* Top text */}
+          <div className="text-center mb-14">
+            
+            <h2 className="text-3xl md:text-4xl font-bold text-[#04388b] mb-4">
+              Custom Workforce Solutions
+            </h2>
+            <p className="text-[#bb7f14] font-medium text-base md:text-lg mb-4">
+              Built around your unique business requirements
+            </p>
+            <p className="text-[#1F2E4F]/60 text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
+              Every organization is different. Share your processes, workflows,
+              and business requirements, and we'll build, train, and manage a
+              dedicated team tailored specifically to your operations, industry,
+              and long-term growth goals.
+            </p>
+          </div>
+
+          {/* Image + List side by side */}
+          <div className="flex flex-col md:flex-row gap-8 items-stretch">
+            {/* Image */}
+            <div className="flex-1 rounded-2xl overflow-hidden min-h-[300px]">
+              <img
+                src={img5}
+                alt="Custom Workforce"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* List */}
+            <div className="flex-1 bg-[#1F2E4F] rounded-2xl p-8 flex flex-col justify-center gap-6">
+              <p className="text-xs uppercase tracking-widest text-[#bb7f14] font-semibold">
+                What You Get
+              </p>
+
+              {[
+                {
+                  title: "Share your custom requirements",
+                  desc: "Tell us your workflows, SOPs, and business goals — we handle the rest.",
+                },
+                {
+                  title: "Teams trained on your SOPs & workflows",
+                  desc: "Your dedicated team is onboarded and trained specifically for your operations.",
+                },
+                {
+                  title: "Scalable workforce built for long-term growth",
+                  desc: "Expand your team as your business grows — no friction, no delays.",
+                },
+              ].map((point, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  {/* Number badge */}
+                  <div className="w-8 h-8 rounded-full bg-[#bb7f14]/20 text-[#bb7f14] text-sm font-bold flex items-center justify-center shrink-0 mt-0.5">
+                    {i + 1}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-sm mb-1">
+                      {point.title}
+                    </p>
+                    <p className="text-white/50 text-xs leading-relaxed">
+                      {point.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── TRUST STRIP ── */}
       <section className="bg-white border-y border-[#e8e2d8] py-14 overflow-hidden">

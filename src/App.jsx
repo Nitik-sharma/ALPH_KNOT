@@ -1,5 +1,6 @@
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
+import "./index.css"
 
 import ScrollToTop from "./components/common/ScrollToTop";
 import AppRoutes from "./routes";
