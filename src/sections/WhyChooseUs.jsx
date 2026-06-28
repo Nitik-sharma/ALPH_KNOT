@@ -55,10 +55,8 @@ const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center text-3xl md:text-4xl text-[#04388b] tracking-tight mb-4"
         >
-          Built to Scale Your Business.{" "}
-          <span className="text-[#bb7f14]">
-            Designed for Cost Efficient Execution.
-          </span>
+          Built for Growth{" "}
+          <span className="text-[#bb7f14]">Optimized for Efficiency</span>
         </motion.h2>
 
         <motion.p
