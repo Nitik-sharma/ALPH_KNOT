@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import FinalHero from "../assets/videos/Laptop.mp4";
 import mobileHero from "../assets/images/Home/Alph.png";
 import { NavLink } from "react-router-dom";
+import tabletVideo from "../assets/videos/Tablet Landscape.mp4"
+import mobileVideo from "../assets/videos/Mobile.mp4"
 
 const line1 = ["U.S.-Based", "Support", "Partner"];
 const line2 = ["for", "Ambitious", "CEO's", "and"];
@@ -42,13 +44,31 @@ const Hero = () => {
         <source src={FinalHero} type="video/mp4" />
       </video>
 
-      {/* BACKGROUND IMAGE - mobile/tablet */}
-      <img
-        src={mobileHero}
-        alt="AlphknotHero"
-        onLoad={() => setLoading(false)}
-        className="absolute inset-0 w-full h-full object-cover object-top z-0 block lg:hidden"
-      />
+      {/* Tablet Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onCanPlay={() => setLoading(false)}
+        className="absolute inset-0 w-full h-full object-cover object-top z-0 hidden md:block lg:hidden"
+      >
+        <source src={tabletVideo} type="video/mp4" />
+      </video>
+
+      {/* Mobile Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onCanPlay={() => setLoading(false)}
+        className="absolute inset-0 w-full h-full object-cover object-top z-0 block md:hidden"
+      >
+        <source src={mobileVideo} type="video/mp4" />
+      </video>
 
       {/* CONTENT */}
     </section>
