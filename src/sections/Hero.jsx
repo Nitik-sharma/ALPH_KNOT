@@ -4,7 +4,7 @@ import FinalHero from "../assets/videos/Laptop.mp4";
 import mobileHero from "../assets/images/Home/Alph.png";
 import { NavLink } from "react-router-dom";
 import tabletVideo from "../assets/videos/Tablet Landscape.mp4"
-import mobileVideo from "../assets/videos/Mobile.mp4"
+import mobileVideo from "../assets/videos/Mobile (1).mp4"
 
 const line1 = ["U.S.-Based", "Support", "Partner"];
 const line2 = ["for", "Ambitious", "CEO's", "and"];
